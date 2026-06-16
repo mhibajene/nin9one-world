@@ -14,11 +14,11 @@ Citadel Foundation
 
 ## Active Ticket
 
-None
+WORLD-FOUNDATION-005
 
-Next ticket is queued but not active.
+Realm Presence Pass
 
-Status: Awaiting activation
+Status: Implemented on `feature/world-foundation-005`; awaiting founder review.
 
 ## Completed
 
@@ -48,9 +48,7 @@ Depth & Mystery Pass
 
 ## Upcoming
 
-WORLD-FOUNDATION-005
-
-Discovery Layer
+Pending founder review outcome for WORLD-FOUNDATION-005.
 
 ## District Registry
 
