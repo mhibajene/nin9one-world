@@ -6,11 +6,11 @@ Phase 1 — Citadel Foundation
 
 ## Active Ticket
 
-WORLD-FOUNDATION-002
+None
 
-Build The Citadel 3D Scene Prototype
+Next ticket is queued but not active.
 
-Status: In Progress
+Status: Awaiting activation
 
 ## Completed
 
@@ -22,11 +22,15 @@ WORLD-FOUNDATION-001
 
 Repository Structure
 
-## Upcoming
+WORLD-FOUNDATION-002
+
+Build The Citadel 3D Scene Prototype
 
 WORLD-FOUNDATION-003
 
 Environment Blockout
+
+## Upcoming
 
 WORLD-FOUNDATION-004
 
