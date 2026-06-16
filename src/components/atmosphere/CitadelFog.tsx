@@ -3,6 +3,7 @@
 import { useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useMemo, useRef } from "react";
 import { AdditiveBlending, CanvasTexture, FogExp2, type Points } from "three";
+import { materialLanguage } from "@/data/materials/nin9oneMaterialLanguage";
 
 type HazePlane = {
   name: string;
@@ -17,35 +18,35 @@ const hazePlanes: HazePlane[] = [
     name: "foreground-low-atmosphere",
     position: [0, 9, 5],
     size: [190, 36],
-    color: "#14100d",
+    color: materialLanguage.atmosphericMatter.lowHaze,
     opacity: 0.18,
   },
   {
     name: "mid-distance-atmosphere",
     position: [0, 25, -54],
     size: [275, 80],
-    color: "#20160e",
+    color: materialLanguage.atmosphericMatter.warmHaze,
     opacity: 0.3,
   },
   {
     name: "deep-distance-atmosphere",
     position: [0, 46, -122],
     size: [410, 126],
-    color: "#07070a",
+    color: materialLanguage.atmosphericMatter.deepHaze,
     opacity: 0.68,
   },
   {
     name: "horizon-uncertainty",
     position: [0, 29, -206],
     size: [560, 96],
-    color: "#050507",
+    color: materialLanguage.atmosphericMatter.horizon,
     opacity: 0.78,
   },
   {
     name: "vertical-crown-fade",
     position: [0, 47, -20],
     size: [118, 88],
-    color: "#08070a",
+    color: materialLanguage.atmosphericMatter.fog,
     opacity: 0.38,
   },
 ];
@@ -139,7 +140,7 @@ function LowMistBanks() {
         >
           <circleGeometry args={[1, 96]} />
           <meshBasicMaterial
-            color="#332416"
+            color={materialLanguage.atmosphericMatter.mistWarm}
             transparent
             opacity={bank.opacity}
             depthWrite={false}
@@ -195,7 +196,7 @@ function AmbientParticles() {
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
       <pointsMaterial
-        color="#d6a45f"
+        color={materialLanguage.atmosphericMatter.particleGold}
         size={0.34}
         transparent
         opacity={0.22}
@@ -211,7 +212,7 @@ export function CitadelFog() {
 
   useEffect(() => {
     const previousFog = scene.fog;
-    scene.fog = new FogExp2("#08070a", 0.0088);
+    scene.fog = new FogExp2(materialLanguage.atmosphericMatter.fog, 0.0088);
 
     return () => {
       scene.fog = previousFog;

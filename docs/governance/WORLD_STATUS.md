@@ -14,11 +14,11 @@ Citadel Foundation
 
 ## Active Ticket
 
-WORLD-FOUNDATION-005
+WORLD-FOUNDATION-006
 
-Realm Presence Pass
+Preliminary Material Language Pass
 
-Status: Implemented on `feature/world-foundation-005`; awaiting founder review.
+Status: Implemented on `feature/world-foundation-006`; awaiting founder review.
 
 ## Completed
 
@@ -46,9 +46,19 @@ WORLD-FOUNDATION-004A
 
 Depth & Mystery Pass
 
+WORLD-FOUNDATION-005
+
+Realm Presence Pass
+
 ## Upcoming
 
-Pending founder review outcome for WORLD-FOUNDATION-005.
+Pending founder review outcome for WORLD-FOUNDATION-006.
+
+WORLD-FOUNDATION-006A
+
+Material Ontology Exploration
+
+Status: Deferred pending mythology and realm workshop.
 
 ## District Registry
 

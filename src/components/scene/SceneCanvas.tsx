@@ -3,6 +3,7 @@
 import { Canvas, useThree } from "@react-three/fiber";
 import { useEffect, type ReactNode } from "react";
 import { Color, PerspectiveCamera } from "three";
+import { materialLanguage } from "@/data/materials/nin9oneMaterialLanguage";
 
 type SceneCanvasProps = {
   children: ReactNode;
@@ -42,8 +43,8 @@ export function SceneCanvas({ children }: SceneCanvasProps) {
       gl={{ antialias: true, alpha: false, powerPreference: "high-performance" }}
       onCreated={({ camera, gl, scene }) => {
         camera.lookAt(...monumentalCameraTarget);
-        gl.setClearColor(new Color("#040407"));
-        scene.background = new Color("#040407");
+        gl.setClearColor(new Color(materialLanguage.obsidianMatter.base));
+        scene.background = new Color(materialLanguage.obsidianMatter.base);
       }}
       style={{
         display: "block",
