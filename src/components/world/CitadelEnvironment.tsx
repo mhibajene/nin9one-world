@@ -13,37 +13,133 @@ type RockBlockout = {
   rotation: Vec3;
 };
 
+type CitadelMass = {
+  position: Vec3;
+  geometry: "cylinder" | "cone";
+  args: [number, number, number, number] | [number, number, number];
+  color: string;
+  metalness: number;
+  roughness: number;
+  receiveShadow?: boolean;
+};
+
+type VerticalAccent = {
+  position: Vec3;
+  radius: number;
+  height: number;
+};
+
 const supportingSpires: SpireBlockout[] = [
-  { position: [-14, 0, -7], radius: 1.9, height: 9.5, tiers: 3 },
-  { position: [-9, 0, -13], radius: 1.2, height: 6.5, tiers: 2 },
-  { position: [10.5, 0, -11], radius: 1.35, height: 7.4, tiers: 2 },
-  { position: [17, 0, -6], radius: 2.2, height: 11.2, tiers: 3 },
-  { position: [-5.5, 0, 3.5], radius: 0.75, height: 4.8, tiers: 2 },
-  { position: [6.2, 0, 2.2], radius: 0.9, height: 5.2, tiers: 2 },
+  { position: [-38, 0, -16], radius: 2.5, height: 23, tiers: 4 },
+  { position: [-25, 0, -36], radius: 1.8, height: 18, tiers: 3 },
+  { position: [28, 0, -34], radius: 1.95, height: 19.5, tiers: 3 },
+  { position: [43, 0, -14], radius: 2.8, height: 27, tiers: 4 },
+  { position: [-18, 0, 13], radius: 1.25, height: 13.5, tiers: 3 },
+  { position: [19, 0, 10], radius: 1.4, height: 15, tiers: 3 },
+  { position: [-55, 0, -54], radius: 1.85, height: 26, tiers: 3 },
+  { position: [58, 0, -50], radius: 2.05, height: 29, tiers: 3 },
+  { position: [-7, 0, -61], radius: 1.1, height: 20, tiers: 2 },
+  { position: [9, 0, -72], radius: 1.25, height: 22, tiers: 2 },
 ];
 
 const rockFormations: RockBlockout[] = [
-  { position: [-24, 1.1, -2], scale: [6.8, 2.4, 5.4], rotation: [0.2, 0.6, -0.18] },
-  { position: [24, 1.3, -1.8], scale: [7.4, 2.8, 5.8], rotation: [-0.1, -0.48, 0.16] },
-  { position: [-18, 0.55, 9], scale: [4.8, 1.4, 3.8], rotation: [0.06, -0.25, 0.12] },
-  { position: [18, 0.62, 8], scale: [4.4, 1.55, 3.4], rotation: [0.15, 0.34, -0.08] },
-  { position: [-9, 0.42, 14], scale: [2.8, 0.95, 2.2], rotation: [-0.05, 0.8, 0.08] },
-  { position: [7.5, 0.36, 13], scale: [2.4, 0.85, 2], rotation: [0.08, -0.6, -0.04] },
-  { position: [-31, 1.8, -13], scale: [7.8, 3.9, 6.4], rotation: [0.3, 0.22, -0.22] },
-  { position: [31, 1.65, -12], scale: [7.2, 3.5, 6.8], rotation: [-0.25, -0.18, 0.24] },
+  { position: [-48, 2.4, 2], scale: [12.5, 5.8, 9.2], rotation: [0.2, 0.6, -0.18] },
+  { position: [50, 2.7, 0], scale: [13.2, 6.1, 10.4], rotation: [-0.1, -0.48, 0.16] },
+  { position: [-31, 1.25, 23], scale: [8.2, 2.8, 6.4], rotation: [0.06, -0.25, 0.12] },
+  { position: [32, 1.35, 21], scale: [7.8, 2.95, 5.9], rotation: [0.15, 0.34, -0.08] },
+  { position: [-14, 0.72, 31], scale: [4.8, 1.55, 3.8], rotation: [-0.05, 0.8, 0.08] },
+  { position: [13, 0.66, 29], scale: [4.2, 1.45, 3.5], rotation: [0.08, -0.6, -0.04] },
+  { position: [-67, 3.8, -42], scale: [14.8, 8.2, 11.5], rotation: [0.3, 0.22, -0.22] },
+  { position: [69, 3.65, -40], scale: [14.2, 7.5, 12.4], rotation: [-0.25, -0.18, 0.24] },
+  { position: [-39, 2.2, -68], scale: [9.5, 5.4, 8.2], rotation: [-0.18, 0.54, -0.16] },
+  { position: [42, 2.05, -70], scale: [9.1, 5.1, 8.8], rotation: [0.2, -0.5, 0.14] },
+];
+
+const citadelMasses: CitadelMass[] = [
+  {
+    position: [0, 0.85, 0],
+    geometry: "cylinder",
+    args: [12.4, 16.5, 1.7, 12],
+    color: "#100d11",
+    roughness: 0.74,
+    metalness: 0.2,
+    receiveShadow: true,
+  },
+  {
+    position: [0, 3.05, 0],
+    geometry: "cylinder",
+    args: [9.2, 12.4, 4.4, 12],
+    color: "#151116",
+    roughness: 0.7,
+    metalness: 0.24,
+    receiveShadow: true,
+  },
+  {
+    position: [0, 7.3, 0],
+    geometry: "cylinder",
+    args: [6.5, 9.1, 4.1, 10],
+    color: "#171216",
+    roughness: 0.66,
+    metalness: 0.28,
+    receiveShadow: true,
+  },
+  {
+    position: [0, 12.6, 0],
+    geometry: "cylinder",
+    args: [4.2, 6.3, 6.5, 10],
+    color: "#130f13",
+    roughness: 0.62,
+    metalness: 0.32,
+    receiveShadow: true,
+  },
+  {
+    position: [0, 20.8, 0],
+    geometry: "cylinder",
+    args: [2.2, 4, 9.9, 9],
+    color: "#0d0a0f",
+    roughness: 0.58,
+    metalness: 0.35,
+  },
+  {
+    position: [0, 31.2, 0],
+    geometry: "cone",
+    args: [1.8, 11.8, 9],
+    color: "#09080b",
+    roughness: 0.54,
+    metalness: 0.38,
+  },
+  {
+    position: [0, 39.4, 0],
+    geometry: "cone",
+    args: [0.38, 4.6, 8],
+    color: "#040305",
+    roughness: 0.46,
+    metalness: 0.44,
+  },
+];
+
+const verticalAccents: VerticalAccent[] = [
+  { position: [-7.2, 5.2, -1.6], radius: 1.25, height: 10.4 },
+  { position: [7.1, 5.05, -1.35], radius: 1.18, height: 10 },
+  { position: [-5.3, 9.7, 1.5], radius: 0.85, height: 13.8 },
+  { position: [5.5, 10.2, 1.25], radius: 0.9, height: 14.4 },
+  { position: [-3.2, 16.5, -1], radius: 0.62, height: 17.2 },
+  { position: [3.1, 17.2, -0.8], radius: 0.66, height: 18.4 },
+  { position: [-1.35, 22.5, 1.1], radius: 0.38, height: 18.8 },
+  { position: [1.45, 23.4, 0.95], radius: 0.42, height: 20.4 },
 ];
 
 function WaterPlane() {
   return (
     <group>
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.18, -28]} receiveShadow>
-        <planeGeometry args={[180, 220, 1, 1]} />
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.2, -54]} receiveShadow>
+        <planeGeometry args={[340, 420, 1, 1]} />
         <meshStandardMaterial color="#05070b" roughness={0.22} metalness={0.68} />
       </mesh>
 
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.16, 2]}>
-        <planeGeometry args={[7, 68, 1, 1]} />
-        <meshBasicMaterial color="#b56d1d" transparent opacity={0.18} />
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.18, -10]}>
+        <planeGeometry args={[3.4, 104, 1, 1]} />
+        <meshBasicMaterial color="#d08325" transparent opacity={0.11} />
       </mesh>
     </group>
   );
@@ -51,14 +147,14 @@ function WaterPlane() {
 
 function CelestialBody() {
   return (
-    <group position={[0, 13, -38]}>
+    <group position={[0, 28, -92]}>
       <mesh>
-        <circleGeometry args={[12, 96]} />
-        <meshBasicMaterial color="#d98925" transparent opacity={0.78} />
+        <circleGeometry args={[30, 128]} />
+        <meshBasicMaterial color="#d98925" transparent opacity={0.78} fog={false} />
       </mesh>
       <mesh position={[0, 0, -0.04]}>
-        <circleGeometry args={[15.4, 96]} />
-        <meshBasicMaterial color="#ffae3b" transparent opacity={0.12} />
+        <circleGeometry args={[38, 128]} />
+        <meshBasicMaterial color="#ffae3b" transparent opacity={0.14} fog={false} />
       </mesh>
     </group>
   );
@@ -66,48 +162,35 @@ function CelestialBody() {
 
 function CentralCitadel() {
   return (
-    <group position={[0, -0.05, -7]}>
-      <mesh position={[0, 0.55, 0]} castShadow receiveShadow>
-        <cylinderGeometry args={[7.6, 9.8, 1.1, 10]} />
-        <meshStandardMaterial color="#100d11" roughness={0.74} metalness={0.2} />
-      </mesh>
+    <group position={[0, -0.05, -18]}>
+      {citadelMasses.map((mass) => (
+        <mesh key={`${mass.geometry}-${mass.position.join("-")}`} position={mass.position} castShadow receiveShadow={mass.receiveShadow}>
+          {mass.geometry === "cylinder" ? (
+            <cylinderGeometry args={mass.args as [number, number, number, number]} />
+          ) : (
+            <coneGeometry args={mass.args as [number, number, number]} />
+          )}
+          <meshStandardMaterial
+            color={mass.color}
+            roughness={mass.roughness}
+            metalness={mass.metalness}
+            emissive="#1f1207"
+            emissiveIntensity={0.08}
+          />
+        </mesh>
+      ))}
 
-      <mesh position={[0, 1.8, 0]} castShadow receiveShadow>
-        <cylinderGeometry args={[5.2, 7, 2.5, 10]} />
-        <meshStandardMaterial color="#151116" roughness={0.7} metalness={0.24} />
-      </mesh>
-
-      <mesh position={[0, 3.8, 0]} castShadow receiveShadow>
-        <cylinderGeometry args={[3.35, 5, 3.4, 9]} />
-        <meshStandardMaterial color="#171216" roughness={0.66} metalness={0.28} />
-      </mesh>
-
-      <mesh position={[0, 6.65, 0]} castShadow receiveShadow>
-        <cylinderGeometry args={[1.75, 3.1, 4.1, 8]} />
-        <meshStandardMaterial color="#130f13" roughness={0.62} metalness={0.32} />
-      </mesh>
-
-      <mesh position={[0, 10.55, 0]} castShadow>
-        <coneGeometry args={[1.25, 6.6, 8]} />
-        <meshStandardMaterial color="#09080b" roughness={0.54} metalness={0.38} />
-      </mesh>
-
-      <mesh position={[0, 14.8, 0]} castShadow>
-        <coneGeometry args={[0.26, 2.8, 7]} />
-        <meshStandardMaterial color="#040305" roughness={0.46} metalness={0.44} />
-      </mesh>
-
-      {[
-        [-4.2, 2.3, -0.8, 0.9, 4.6],
-        [4.1, 2.15, -0.7, 0.82, 4.2],
-        [-2.8, 4.2, 0.95, 0.58, 5.8],
-        [3, 4.55, 0.8, 0.64, 6.1],
-      ].map(([x, y, z, radius, height]) => (
-        <mesh key={`${x}-${z}`} position={[x, y, z]} castShadow>
+      {verticalAccents.map(({ position, radius, height }) => (
+        <mesh key={position.join("-")} position={position} castShadow>
           <coneGeometry args={[radius, height, 7]} />
           <meshStandardMaterial color="#08070a" roughness={0.58} metalness={0.35} />
         </mesh>
       ))}
+
+      <mesh position={[0, 3.2, 6.4]}>
+        <boxGeometry args={[2.6, 5.4, 0.42]} />
+        <meshBasicMaterial color="#f2a436" transparent opacity={0.72} />
+      </mesh>
     </group>
   );
 }

@@ -8,7 +8,7 @@ type SceneCanvasProps = {
   children: ReactNode;
 };
 
-const cameraTarget = [0, 5.5, -8] as const;
+const monumentalCameraTarget = [0, 21, -18] as const;
 
 function CameraComposition() {
   const camera = useThree((state) => state.camera);
@@ -20,9 +20,9 @@ function CameraComposition() {
       return;
     }
 
-    camera.position.set(0, isPortrait ? 2.15 : 1.75, isPortrait ? 56 : 42);
-    camera.fov = isPortrait ? 54 : 50;
-    camera.lookAt(...cameraTarget);
+    camera.position.set(0, isPortrait ? 1.1 : 0.85, isPortrait ? 150 : 92);
+    camera.fov = isPortrait ? 66 : 54;
+    camera.lookAt(...monumentalCameraTarget);
     camera.updateProjectionMatrix();
   }, [camera, isPortrait]);
 
@@ -33,14 +33,14 @@ export function SceneCanvas({ children }: SceneCanvasProps) {
   return (
     <Canvas
       camera={{
-        position: [0, 1.75, 42],
-        fov: 50,
+        position: [0, 0.85, 92],
+        fov: 54,
         near: 0.1,
-        far: 180,
+        far: 320,
       }}
       gl={{ antialias: true, alpha: false }}
       onCreated={({ camera, gl, scene }) => {
-        camera.lookAt(...cameraTarget);
+        camera.lookAt(...monumentalCameraTarget);
         gl.setClearColor(new Color("#060608"));
         scene.background = new Color("#060608");
       }}
