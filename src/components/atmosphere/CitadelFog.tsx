@@ -14,25 +14,39 @@ type HazePlane = {
 
 const hazePlanes: HazePlane[] = [
   {
-    name: "near-low-mist",
+    name: "foreground-low-atmosphere",
     position: [0, 9, 5],
-    size: [180, 34],
-    color: "#17110d",
-    opacity: 0.16,
+    size: [190, 36],
+    color: "#14100d",
+    opacity: 0.18,
   },
   {
-    name: "mid-distance-haze",
-    position: [0, 30, -58],
-    size: [250, 74],
-    color: "#21170e",
-    opacity: 0.24,
+    name: "mid-distance-atmosphere",
+    position: [0, 25, -54],
+    size: [275, 80],
+    color: "#20160e",
+    opacity: 0.3,
   },
   {
-    name: "far-atmospheric-fade",
-    position: [0, 52, -132],
-    size: [360, 132],
+    name: "deep-distance-atmosphere",
+    position: [0, 46, -122],
+    size: [410, 126],
     color: "#07070a",
-    opacity: 0.72,
+    opacity: 0.68,
+  },
+  {
+    name: "horizon-uncertainty",
+    position: [0, 29, -206],
+    size: [560, 96],
+    color: "#050507",
+    opacity: 0.78,
+  },
+  {
+    name: "vertical-crown-fade",
+    position: [0, 47, -20],
+    size: [118, 88],
+    color: "#08070a",
+    opacity: 0.38,
   },
 ];
 
@@ -111,7 +125,10 @@ function LowMistBanks() {
       {[
         { position: [-42, 2.2, -10] as const, scale: [38, 5.2, 1] as const, opacity: 0.12 },
         { position: [38, 2.6, -26] as const, scale: [45, 6.4, 1] as const, opacity: 0.1 },
-        { position: [0, 2.9, -56] as const, scale: [80, 8.8, 1] as const, opacity: 0.14 },
+        { position: [0, 2.9, -56] as const, scale: [82, 9.4, 1] as const, opacity: 0.16 },
+        { position: [-82, 3.3, -104] as const, scale: [88, 12, 1] as const, opacity: 0.13 },
+        { position: [84, 3.1, -116] as const, scale: [96, 12.8, 1] as const, opacity: 0.14 },
+        { position: [0, 3.9, -162] as const, scale: [168, 18, 1] as const, opacity: 0.18 },
       ].map((bank) => (
         <mesh
           key={bank.position.join("-")}
@@ -139,9 +156,14 @@ function createParticlePositions(count: number) {
 
   for (let index = 0; index < count; index += 1) {
     const seed = index * 16807;
-    const x = Math.sin(seed * 0.013) * 76 + Math.sin(seed * 0.037) * 18;
-    const y = 3 + Math.abs(Math.sin(seed * 0.017)) * 38;
-    const z = -92 + Math.sin(seed * 0.019) * 86;
+    const distanceBand = index % 3;
+    const depthCenter = distanceBand === 0 ? -52 : distanceBand === 1 ? -112 : -176;
+    const depthRange = distanceBand === 0 ? 72 : distanceBand === 1 ? 92 : 118;
+    const xRange = distanceBand === 0 ? 76 : distanceBand === 1 ? 118 : 170;
+
+    const x = Math.sin(seed * 0.013) * xRange + Math.sin(seed * 0.037) * 18;
+    const y = 2.5 + Math.abs(Math.sin(seed * 0.017)) * (distanceBand === 2 ? 52 : 38);
+    const z = depthCenter + Math.sin(seed * 0.019) * depthRange;
 
     positions[index * 3] = x;
     positions[index * 3 + 1] = y;
@@ -153,7 +175,7 @@ function createParticlePositions(count: number) {
 
 function AmbientParticles() {
   const pointsRef = useRef<Points>(null);
-  const positions = useMemo(() => createParticlePositions(260), []);
+  const positions = useMemo(() => createParticlePositions(420), []);
 
   useFrame(({ clock }) => {
     const elapsed = clock.getElapsedTime();
@@ -174,9 +196,9 @@ function AmbientParticles() {
       </bufferGeometry>
       <pointsMaterial
         color="#d6a45f"
-        size={0.3}
+        size={0.34}
         transparent
-        opacity={0.28}
+        opacity={0.22}
         depthWrite={false}
         blending={AdditiveBlending}
       />
@@ -189,7 +211,7 @@ export function CitadelFog() {
 
   useEffect(() => {
     const previousFog = scene.fog;
-    scene.fog = new FogExp2("#08070a", 0.0115);
+    scene.fog = new FogExp2("#08070a", 0.0088);
 
     return () => {
       scene.fog = previousFog;

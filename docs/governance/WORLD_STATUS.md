@@ -42,6 +42,10 @@ WORLD-FOUNDATION-004
 
 Atmosphere Pass
 
+WORLD-FOUNDATION-004A
+
+Depth & Mystery Pass
+
 ## Upcoming
 
 WORLD-FOUNDATION-005
