@@ -20,8 +20,29 @@ type RockBlockout = {
 type DistantSilhouette = {
   position: Vec3;
   scale: Vec3;
-  shape: "spire" | "tower" | "island";
+  shape: "spire" | "tower" | "island" | "ruin" | "monument";
   opacity: number;
+};
+
+type HorizonMass = {
+  position: Vec3;
+  scale: Vec3;
+  rotation: Vec3;
+  opacity: number;
+};
+
+type RealmLightSignal = {
+  position: Vec3;
+  scale: Vec3;
+  opacity: number;
+  color: string;
+};
+
+type WaterInterruption = {
+  position: Vec3;
+  scale: Vec3;
+  rotation: Vec3;
+  form: "outcrop" | "pillar" | "fragment";
 };
 
 type CitadelMass = {
@@ -74,11 +95,38 @@ const rockFormations: RockBlockout[] = [
 ];
 
 const distantSilhouettes: DistantSilhouette[] = [
-  { position: [-118, 1.4, -178], scale: [13, 24, 11], shape: "spire", opacity: 0.16 },
-  { position: [-76, 0.9, -214], scale: [20, 9, 18], shape: "island", opacity: 0.12 },
-  { position: [-42, 1.2, -192], scale: [7, 30, 7], shape: "tower", opacity: 0.14 },
-  { position: [63, 1.1, -202], scale: [10, 38, 10], shape: "spire", opacity: 0.13 },
-  { position: [127, 1, -184], scale: [22, 12, 19], shape: "island", opacity: 0.11 },
+  { position: [-168, 1.6, -238], scale: [11, 32, 9], shape: "spire", opacity: 0.12 },
+  { position: [-132, 1.1, -286], scale: [31, 10, 23], shape: "island", opacity: 0.1 },
+  { position: [-96, 1.3, -216], scale: [8, 25, 8], shape: "tower", opacity: 0.13 },
+  { position: [-58, 1.1, -258], scale: [18, 18, 13], shape: "ruin", opacity: 0.105 },
+  { position: [74, 1.2, -248], scale: [9, 35, 9], shape: "spire", opacity: 0.115 },
+  { position: [116, 1.1, -302], scale: [12, 27, 11], shape: "monument", opacity: 0.095 },
+  { position: [158, 1, -226], scale: [32, 12, 24], shape: "island", opacity: 0.1 },
+  { position: [206, 1.5, -276], scale: [7, 22, 7], shape: "tower", opacity: 0.085 },
+];
+
+const horizonMasses: HorizonMass[] = [
+  { position: [-236, 0.1, -304], scale: [58, 14, 31], rotation: [0.05, 0.42, -0.04], opacity: 0.18 },
+  { position: [-156, 0.2, -336], scale: [74, 18, 38], rotation: [-0.04, -0.18, 0.05], opacity: 0.14 },
+  { position: [-28, 0.12, -318], scale: [48, 11, 26], rotation: [0.02, 0.28, 0.02], opacity: 0.12 },
+  { position: [104, 0.15, -342], scale: [86, 21, 43], rotation: [-0.03, -0.34, -0.03], opacity: 0.15 },
+  { position: [226, 0.08, -308], scale: [62, 16, 34], rotation: [0.04, 0.14, 0.04], opacity: 0.17 },
+];
+
+const realmLightSignals: RealmLightSignal[] = [
+  { position: [-144, 10.5, -232], scale: [1.1, 1.1, 1], opacity: 0.26, color: "#d2944a" },
+  { position: [-61, 8.8, -258], scale: [0.8, 0.8, 1], opacity: 0.2, color: "#c17632" },
+  { position: [88, 13.5, -250], scale: [1.05, 1.05, 1], opacity: 0.24, color: "#dca35c" },
+  { position: [121, 6.7, -304], scale: [0.7, 0.7, 1], opacity: 0.18, color: "#a96f37" },
+  { position: [190, 9.2, -278], scale: [0.75, 0.75, 1], opacity: 0.16, color: "#c98b46" },
+];
+
+const waterInterruptions: WaterInterruption[] = [
+  { position: [-82, 0.55, -104], scale: [6.8, 2.6, 4.5], rotation: [0.02, 0.38, -0.05], form: "outcrop" },
+  { position: [74, 0.48, -118], scale: [5.6, 2.2, 4.2], rotation: [-0.04, -0.3, 0.06], form: "outcrop" },
+  { position: [-46, 0.85, -148], scale: [2.8, 5.8, 2.5], rotation: [0.02, 0.08, -0.06], form: "pillar" },
+  { position: [36, 0.58, -164], scale: [7.4, 2.1, 3.1], rotation: [0.05, -0.52, 0.02], form: "fragment" },
+  { position: [108, 0.4, -174], scale: [7.2, 1.9, 4.8], rotation: [-0.04, 0.24, -0.03], form: "outcrop" },
 ];
 
 const citadelMasses: CitadelMass[] = [
@@ -336,17 +384,47 @@ function DistantStructure({ position, scale, shape, opacity }: DistantSilhouette
       {shape === "island" ? (
         <mesh position={[0, 0.28, 0]} rotation={[0.08, 0.34, -0.04]}>
           <dodecahedronGeometry args={[1, 0]} />
-          <meshBasicMaterial color="#130f0d" transparent opacity={opacity} depthWrite={false} />
+          <meshBasicMaterial color="#130f0d" transparent opacity={opacity} depthWrite={false} fog={false} />
         </mesh>
+      ) : shape === "ruin" ? (
+        <>
+          <mesh position={[-0.34, 0.46, 0]} rotation={[0.05, 0.08, -0.12]}>
+            <boxGeometry args={[0.26, 0.92, 0.24]} />
+            <meshBasicMaterial color="#100d0d" transparent opacity={opacity} depthWrite={false} fog={false} />
+          </mesh>
+          <mesh position={[0.06, 0.58, 0]} rotation={[0, 0.02, 0.04]}>
+            <boxGeometry args={[0.3, 1.16, 0.28]} />
+            <meshBasicMaterial color="#15100d" transparent opacity={opacity * 0.92} depthWrite={false} fog={false} />
+          </mesh>
+          <mesh position={[0.43, 0.34, 0]} rotation={[-0.02, -0.04, 0.16]}>
+            <boxGeometry args={[0.22, 0.68, 0.22]} />
+            <meshBasicMaterial color="#0d0b0b" transparent opacity={opacity * 0.78} depthWrite={false} fog={false} />
+          </mesh>
+        </>
+      ) : shape === "monument" ? (
+        <>
+          <mesh position={[0, 0.35, 0]}>
+            <cylinderGeometry args={[0.34, 0.48, 0.7, 5]} />
+            <meshBasicMaterial color="#120e0d" transparent opacity={opacity} depthWrite={false} fog={false} />
+          </mesh>
+          <mesh position={[0, 0.86, 0]}>
+            <boxGeometry args={[0.58, 0.72, 0.38]} />
+            <meshBasicMaterial color="#15100d" transparent opacity={opacity * 0.82} depthWrite={false} fog={false} />
+          </mesh>
+          <mesh position={[0, 1.33, 0]}>
+            <coneGeometry args={[0.34, 0.66, 5]} />
+            <meshBasicMaterial color="#0e0b0b" transparent opacity={opacity * 0.68} depthWrite={false} fog={false} />
+          </mesh>
+        </>
       ) : (
         <>
           <mesh position={[0, 0.35, 0]}>
             <cylinderGeometry args={[0.34, shape === "spire" ? 0.55 : 0.48, 0.7, 5]} />
-            <meshBasicMaterial color="#15100d" transparent opacity={opacity} depthWrite={false} />
+            <meshBasicMaterial color="#15100d" transparent opacity={opacity} depthWrite={false} fog={false} />
           </mesh>
           <mesh position={[0, 0.96, 0]}>
             <coneGeometry args={[shape === "spire" ? 0.46 : 0.34, shape === "spire" ? 1.18 : 0.78, 5]} />
-            <meshBasicMaterial color="#100d0c" transparent opacity={opacity * 0.9} depthWrite={false} />
+            <meshBasicMaterial color="#100d0c" transparent opacity={opacity * 0.9} depthWrite={false} fog={false} />
           </mesh>
         </>
       )}
@@ -354,12 +432,128 @@ function DistantStructure({ position, scale, shape, opacity }: DistantSilhouette
   );
 }
 
-function DistantSilhouetteLayer() {
+function HorizonInterestLayer() {
+  return (
+    <group>
+      {horizonMasses.map((mass) => (
+        <mesh
+          key={mass.position.join("-")}
+          position={mass.position}
+          scale={mass.scale}
+          rotation={mass.rotation}
+          renderOrder={-6}
+        >
+          <dodecahedronGeometry args={[1, 0]} />
+          <meshBasicMaterial color="#0a090b" transparent opacity={mass.opacity} depthWrite={false} fog={false} />
+        </mesh>
+      ))}
+    </group>
+  );
+}
+
+function OuterRealmStructureLayer() {
   return (
     <group>
       {distantSilhouettes.map((silhouette) => (
         <DistantStructure key={silhouette.position.join("-")} {...silhouette} />
       ))}
+    </group>
+  );
+}
+
+function RealmLightSignals() {
+  return (
+    <group>
+      {realmLightSignals.map((signal) => (
+        <sprite key={signal.position.join("-")} position={signal.position} scale={signal.scale} renderOrder={-3}>
+          <spriteMaterial
+            color={signal.color}
+            transparent
+            opacity={signal.opacity}
+            depthWrite={false}
+            blending={AdditiveBlending}
+            fog={false}
+          />
+        </sprite>
+      ))}
+    </group>
+  );
+}
+
+function WaterInterruption({ position, scale, rotation, form }: WaterInterruption) {
+  const opacity = position[2] < -140 ? 0.2 : 0.32;
+
+  if (form === "pillar") {
+    return (
+      <group position={position} scale={scale} rotation={rotation}>
+        <mesh position={[0, 0.36, 0]}>
+          <cylinderGeometry args={[0.22, 0.28, 0.72, 5]} />
+          <meshBasicMaterial color="#0b090a" transparent opacity={opacity} depthWrite={false} />
+        </mesh>
+        <mesh position={[0.2, 0.94, 0.06]} rotation={[0.04, 0, 0.12]}>
+          <boxGeometry args={[0.18, 0.42, 0.16]} />
+          <meshBasicMaterial color="#120d0b" transparent opacity={opacity * 0.78} depthWrite={false} />
+        </mesh>
+      </group>
+    );
+  }
+
+  if (form === "fragment") {
+    return (
+      <group position={position} scale={scale} rotation={rotation}>
+        <mesh position={[0, 0.16, 0]} rotation={[0.06, 0.12, -0.03]}>
+          <boxGeometry args={[0.92, 0.24, 0.42]} />
+          <meshBasicMaterial color="#100c0a" transparent opacity={opacity * 0.78} depthWrite={false} />
+        </mesh>
+        <mesh position={[-0.34, 0.44, 0.04]} rotation={[0.04, -0.08, -0.12]}>
+          <boxGeometry args={[0.22, 0.62, 0.2]} />
+          <meshBasicMaterial color="#0d0b0a" transparent opacity={opacity * 0.68} depthWrite={false} />
+        </mesh>
+      </group>
+    );
+  }
+
+  return (
+    <mesh position={position} scale={scale} rotation={rotation} castShadow receiveShadow>
+      <dodecahedronGeometry args={[1, 0]} />
+      <meshStandardMaterial
+        color="#0b090a"
+        roughness={0.94}
+        metalness={0.06}
+        transparent
+        opacity={opacity}
+      />
+    </mesh>
+  );
+}
+
+function RealmWaterInterruptions() {
+  return (
+    <group>
+      {waterInterruptions.map((interruption) => (
+        <WaterInterruption key={interruption.position.join("-")} {...interruption} />
+      ))}
+    </group>
+  );
+}
+
+function ForegroundScaleReference() {
+  return (
+    <group position={[-28, 0.18, 41]} rotation={[0, -0.38, 0]} scale={[1.8, 1.8, 1.8]}>
+      <mesh position={[0, 0.08, 0]} receiveShadow>
+        <boxGeometry args={[7.4, 0.18, 3.1]} />
+        <meshStandardMaterial color="#0c0909" roughness={0.9} metalness={0.12} />
+      </mesh>
+      {Array.from({ length: 4 }).map((_, index) => (
+        <mesh key={index} position={[2.3 - index * 1.05, 0.18 + index * 0.12, -1.92 - index * 0.18]} receiveShadow>
+          <boxGeometry args={[1.05, 0.2, 1.8]} />
+          <meshStandardMaterial color="#100b09" roughness={0.88} metalness={0.12} />
+        </mesh>
+      ))}
+      <mesh position={[-2.9, 0.62, 0.94]} rotation={[0.12, 0.04, -0.18]} castShadow>
+        <cylinderGeometry args={[0.24, 0.34, 1.15, 6]} />
+        <meshStandardMaterial color="#090708" roughness={0.84} metalness={0.18} />
+      </mesh>
     </group>
   );
 }
@@ -428,7 +622,10 @@ export function CitadelEnvironment() {
     <group>
       <CelestialBody />
       <WaterPlane />
-      <DistantSilhouetteLayer />
+      <HorizonInterestLayer />
+      <OuterRealmStructureLayer />
+      <RealmLightSignals />
+      <RealmWaterInterruptions />
       <CentralCitadel />
 
       {supportingSpires.map((spire) => (
@@ -438,6 +635,8 @@ export function CitadelEnvironment() {
       {rockFormations.map((rock) => (
         <RockFormation key={rock.position.join("-")} {...rock} />
       ))}
+
+      <ForegroundScaleReference />
     </group>
   );
 }
