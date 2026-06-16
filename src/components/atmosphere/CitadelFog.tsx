@@ -9,7 +9,7 @@ export function CitadelFog() {
 
   useEffect(() => {
     const previousFog = scene.fog;
-    scene.fog = new Fog("#08080d", 10, 42);
+    scene.fog = new Fog("#060608", 18, 92);
 
     return () => {
       scene.fog = previousFog;
