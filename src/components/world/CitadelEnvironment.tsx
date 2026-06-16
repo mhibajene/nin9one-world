@@ -1,6 +1,14 @@
 "use client";
 
-import { AdditiveBlending, BackSide } from "three";
+import { AdditiveBlending } from "three";
+import { materialLanguage } from "@/data/materials/nin9oneMaterialLanguage";
+import {
+  BlackWaterMaterial,
+  CelestialGoldMaterial,
+  CelestialGoldRimMaterial,
+  ObsidianMatterMaterial,
+  WeatheredRemnantMaterial,
+} from "@/components/world/WorldMaterials";
 
 type Vec3 = [number, number, number];
 
@@ -114,11 +122,11 @@ const horizonMasses: HorizonMass[] = [
 ];
 
 const realmLightSignals: RealmLightSignal[] = [
-  { position: [-144, 10.5, -232], scale: [1.1, 1.1, 1], opacity: 0.26, color: "#d2944a" },
-  { position: [-61, 8.8, -258], scale: [0.8, 0.8, 1], opacity: 0.2, color: "#c17632" },
-  { position: [88, 13.5, -250], scale: [1.05, 1.05, 1], opacity: 0.24, color: "#dca35c" },
-  { position: [121, 6.7, -304], scale: [0.7, 0.7, 1], opacity: 0.18, color: "#a96f37" },
-  { position: [190, 9.2, -278], scale: [0.75, 0.75, 1], opacity: 0.16, color: "#c98b46" },
+  { position: [-144, 10.5, -232], scale: [1.1, 1.1, 1], opacity: 0.24, color: materialLanguage.celestialGold.signalWarm },
+  { position: [-61, 8.8, -258], scale: [0.8, 0.8, 1], opacity: 0.18, color: materialLanguage.celestialGold.signalMuted },
+  { position: [88, 13.5, -250], scale: [1.05, 1.05, 1], opacity: 0.22, color: materialLanguage.celestialGold.signalWarm },
+  { position: [121, 6.7, -304], scale: [0.7, 0.7, 1], opacity: 0.16, color: materialLanguage.celestialGold.reflectedDeep },
+  { position: [190, 9.2, -278], scale: [0.75, 0.75, 1], opacity: 0.15, color: materialLanguage.celestialGold.signalMuted },
 ];
 
 const waterInterruptions: WaterInterruption[] = [
@@ -134,7 +142,7 @@ const citadelMasses: CitadelMass[] = [
     position: [0, 0.85, 0],
     geometry: "cylinder",
     args: [12.4, 16.5, 1.7, 12],
-    color: "#100d11",
+    color: materialLanguage.obsidianMatter.mid,
     roughness: 0.74,
     metalness: 0.2,
     receiveShadow: true,
@@ -143,7 +151,7 @@ const citadelMasses: CitadelMass[] = [
     position: [0, 3.05, 0],
     geometry: "cylinder",
     args: [9.2, 12.4, 4.4, 12],
-    color: "#151116",
+    color: materialLanguage.obsidianMatter.edge,
     roughness: 0.7,
     metalness: 0.24,
     receiveShadow: true,
@@ -152,7 +160,7 @@ const citadelMasses: CitadelMass[] = [
     position: [0, 7.3, 0],
     geometry: "cylinder",
     args: [6.5, 9.1, 4.1, 10],
-    color: "#171216",
+    color: materialLanguage.obsidianMatter.edge,
     roughness: 0.66,
     metalness: 0.28,
     receiveShadow: true,
@@ -161,7 +169,7 @@ const citadelMasses: CitadelMass[] = [
     position: [0, 12.6, 0],
     geometry: "cylinder",
     args: [4.2, 6.3, 6.5, 10],
-    color: "#130f13",
+    color: materialLanguage.obsidianMatter.upper,
     roughness: 0.62,
     metalness: 0.32,
     receiveShadow: true,
@@ -170,7 +178,7 @@ const citadelMasses: CitadelMass[] = [
     position: [0, 20.8, 0],
     geometry: "cylinder",
     args: [2.2, 4, 9.9, 9],
-    color: "#0d0a0f",
+    color: materialLanguage.obsidianMatter.mid,
     roughness: 0.58,
     metalness: 0.35,
   },
@@ -178,7 +186,7 @@ const citadelMasses: CitadelMass[] = [
     position: [0, 31.2, 0],
     geometry: "cone",
     args: [1.8, 11.8, 9],
-    color: "#09080b",
+    color: materialLanguage.obsidianMatter.low,
     roughness: 0.54,
     metalness: 0.38,
   },
@@ -186,7 +194,7 @@ const citadelMasses: CitadelMass[] = [
     position: [0, 39.4, 0],
     geometry: "cone",
     args: [0.38, 4.6, 8],
-    color: "#040305",
+    color: materialLanguage.obsidianMatter.base,
     roughness: 0.46,
     metalness: 0.44,
   },
@@ -208,16 +216,16 @@ function distanceMood(position: Vec3): DistanceMood {
 
   if (atmosphericDepth > 0.72) {
     return {
-      color: "#17100d",
+      color: materialLanguage.weatheredRemnants.far,
       opacity: 0.34,
-      roughness: 0.92,
+      roughness: materialLanguage.weatheredRemnants.roughness,
       emissiveIntensity: 0.01,
     };
   }
 
   if (atmosphericDepth > 0.45) {
     return {
-      color: "#100d0d",
+      color: materialLanguage.weatheredRemnants.mid,
       opacity: 0.54,
       roughness: 0.86,
       emissiveIntensity: 0.016,
@@ -225,7 +233,7 @@ function distanceMood(position: Vec3): DistanceMood {
   }
 
   return {
-    color: "#08070a",
+    color: materialLanguage.obsidianMatter.low,
     opacity: 0.88,
     roughness: 0.76,
     emissiveIntensity: 0.024,
@@ -237,13 +245,13 @@ function WaterPlane() {
     <group>
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.24, -116]} receiveShadow>
         <planeGeometry args={[620, 780, 1, 1]} />
-        <meshStandardMaterial color="#020307" roughness={0.18} metalness={0.84} />
+        <BlackWaterMaterial />
       </mesh>
 
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.17, -70]} scale={[24, 6.6, 1]} renderOrder={-1}>
         <circleGeometry args={[1, 96]} />
         <meshBasicMaterial
-          color="#ffad46"
+          color={materialLanguage.celestialGold.reflection}
           transparent
           opacity={0.16}
           depthWrite={false}
@@ -255,7 +263,7 @@ function WaterPlane() {
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.16, -42]} scale={[8.5, 22, 1]} renderOrder={-1}>
         <circleGeometry args={[1, 96]} />
         <meshBasicMaterial
-          color="#b66c23"
+          color={materialLanguage.celestialGold.reflectedDeep}
           transparent
           opacity={0.075}
           depthWrite={false}
@@ -267,7 +275,7 @@ function WaterPlane() {
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.15, -16]}>
         <planeGeometry args={[2.6, 120, 1, 1]} />
         <meshBasicMaterial
-          color="#7d461b"
+          color={materialLanguage.celestialGold.trace}
           transparent
           opacity={0.07}
           depthWrite={false}
@@ -278,17 +286,17 @@ function WaterPlane() {
 
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.135, -176]} scale={[140, 42, 1]} renderOrder={-2}>
         <circleGeometry args={[1, 128]} />
-        <meshBasicMaterial color="#050507" transparent opacity={0.44} depthWrite={false} fog={false} />
+        <meshBasicMaterial color={materialLanguage.blackWater.farMirror} transparent opacity={0.44} depthWrite={false} fog={false} />
       </mesh>
 
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[-118, -0.12, -186]} scale={[58, 18, 1]} renderOrder={-2}>
         <circleGeometry args={[1, 96]} />
-        <meshBasicMaterial color="#030305" transparent opacity={0.56} depthWrite={false} fog={false} />
+        <meshBasicMaterial color={materialLanguage.blackWater.deep} transparent opacity={0.56} depthWrite={false} fog={false} />
       </mesh>
 
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[132, -0.12, -194]} scale={[64, 20, 1]} renderOrder={-2}>
         <circleGeometry args={[1, 96]} />
-        <meshBasicMaterial color="#030305" transparent opacity={0.52} depthWrite={false} fog={false} />
+        <meshBasicMaterial color={materialLanguage.blackWater.deep} transparent opacity={0.52} depthWrite={false} fog={false} />
       </mesh>
     </group>
   );
@@ -299,15 +307,15 @@ function CelestialBody() {
     <group position={[0, 28, -92]}>
       <mesh>
         <circleGeometry args={[30, 128]} />
-        <meshBasicMaterial color="#e8952b" transparent opacity={0.88} fog={false} />
+        <CelestialGoldMaterial color={materialLanguage.celestialGold.body} opacity={0.88} />
       </mesh>
       <mesh position={[0, 0, -0.04]}>
         <circleGeometry args={[38, 128]} />
-        <meshBasicMaterial color="#ffb95d" transparent opacity={0.18} depthWrite={false} fog={false} />
+        <meshBasicMaterial color={materialLanguage.celestialGold.halo} transparent opacity={0.18} depthWrite={false} fog={false} />
       </mesh>
       <mesh position={[0, 0, -0.08]}>
         <circleGeometry args={[55, 128]} />
-        <meshBasicMaterial color="#ff9c2e" transparent opacity={0.055} depthWrite={false} fog={false} />
+        <meshBasicMaterial color={materialLanguage.celestialGold.reflection} transparent opacity={0.055} depthWrite={false} fog={false} />
       </mesh>
     </group>
   );
@@ -323,12 +331,10 @@ function CentralCitadel() {
           ) : (
             <coneGeometry args={mass.args as [number, number, number]} />
           )}
-          <meshStandardMaterial
+          <ObsidianMatterMaterial
             color={mass.color}
             roughness={mass.roughness}
             metalness={mass.metalness}
-            emissive="#1a0f07"
-            emissiveIntensity={0.035}
           />
         </mesh>
       ))}
@@ -345,23 +351,15 @@ function CentralCitadel() {
           ) : (
             <coneGeometry args={mass.args as [number, number, number]} />
           )}
-          <meshBasicMaterial
-            color="#ffb04a"
-            transparent
-            opacity={mass.position[1] > 20 ? 0.045 : 0.09}
-            side={BackSide}
-            depthWrite={false}
-            blending={AdditiveBlending}
-            fog={false}
-          />
+          <CelestialGoldRimMaterial opacity={mass.position[1] > 20 ? 0.04 : 0.075} />
         </mesh>
       ))}
 
       {verticalAccents.map(({ position, radius, height }) => (
         <mesh key={position.join("-")} position={position} castShadow>
           <coneGeometry args={[radius, height, 7]} />
-          <meshStandardMaterial
-            color="#08070a"
+          <ObsidianMatterMaterial
+            color={materialLanguage.obsidianMatter.low}
             roughness={0.58}
             metalness={0.35}
             transparent={position[1] > 16}
@@ -372,7 +370,7 @@ function CentralCitadel() {
 
       <mesh position={[0, 3.2, 6.4]}>
         <boxGeometry args={[2.6, 5.4, 0.42]} />
-        <meshBasicMaterial color="#f2a436" transparent opacity={0.48} />
+        <CelestialGoldMaterial opacity={0.44} />
       </mesh>
     </group>
   );
@@ -384,47 +382,47 @@ function DistantStructure({ position, scale, shape, opacity }: DistantSilhouette
       {shape === "island" ? (
         <mesh position={[0, 0.28, 0]} rotation={[0.08, 0.34, -0.04]}>
           <dodecahedronGeometry args={[1, 0]} />
-          <meshBasicMaterial color="#130f0d" transparent opacity={opacity} depthWrite={false} fog={false} />
+          <meshBasicMaterial color={materialLanguage.weatheredRemnants.mutedWarm} transparent opacity={opacity} depthWrite={false} fog={false} />
         </mesh>
       ) : shape === "ruin" ? (
         <>
           <mesh position={[-0.34, 0.46, 0]} rotation={[0.05, 0.08, -0.12]}>
             <boxGeometry args={[0.26, 0.92, 0.24]} />
-            <meshBasicMaterial color="#100d0d" transparent opacity={opacity} depthWrite={false} fog={false} />
+            <meshBasicMaterial color={materialLanguage.weatheredRemnants.mid} transparent opacity={opacity} depthWrite={false} fog={false} />
           </mesh>
           <mesh position={[0.06, 0.58, 0]} rotation={[0, 0.02, 0.04]}>
             <boxGeometry args={[0.3, 1.16, 0.28]} />
-            <meshBasicMaterial color="#15100d" transparent opacity={opacity * 0.92} depthWrite={false} fog={false} />
+            <meshBasicMaterial color={materialLanguage.weatheredRemnants.far} transparent opacity={opacity * 0.92} depthWrite={false} fog={false} />
           </mesh>
           <mesh position={[0.43, 0.34, 0]} rotation={[-0.02, -0.04, 0.16]}>
             <boxGeometry args={[0.22, 0.68, 0.22]} />
-            <meshBasicMaterial color="#0d0b0b" transparent opacity={opacity * 0.78} depthWrite={false} fog={false} />
+            <meshBasicMaterial color={materialLanguage.weatheredRemnants.near} transparent opacity={opacity * 0.78} depthWrite={false} fog={false} />
           </mesh>
         </>
       ) : shape === "monument" ? (
         <>
           <mesh position={[0, 0.35, 0]}>
             <cylinderGeometry args={[0.34, 0.48, 0.7, 5]} />
-            <meshBasicMaterial color="#120e0d" transparent opacity={opacity} depthWrite={false} fog={false} />
+            <meshBasicMaterial color={materialLanguage.weatheredRemnants.mutedWarm} transparent opacity={opacity} depthWrite={false} fog={false} />
           </mesh>
           <mesh position={[0, 0.86, 0]}>
             <boxGeometry args={[0.58, 0.72, 0.38]} />
-            <meshBasicMaterial color="#15100d" transparent opacity={opacity * 0.82} depthWrite={false} fog={false} />
+            <meshBasicMaterial color={materialLanguage.weatheredRemnants.far} transparent opacity={opacity * 0.82} depthWrite={false} fog={false} />
           </mesh>
           <mesh position={[0, 1.33, 0]}>
             <coneGeometry args={[0.34, 0.66, 5]} />
-            <meshBasicMaterial color="#0e0b0b" transparent opacity={opacity * 0.68} depthWrite={false} fog={false} />
+            <meshBasicMaterial color={materialLanguage.weatheredRemnants.near} transparent opacity={opacity * 0.68} depthWrite={false} fog={false} />
           </mesh>
         </>
       ) : (
         <>
           <mesh position={[0, 0.35, 0]}>
             <cylinderGeometry args={[0.34, shape === "spire" ? 0.55 : 0.48, 0.7, 5]} />
-            <meshBasicMaterial color="#15100d" transparent opacity={opacity} depthWrite={false} fog={false} />
+            <meshBasicMaterial color={materialLanguage.weatheredRemnants.far} transparent opacity={opacity} depthWrite={false} fog={false} />
           </mesh>
           <mesh position={[0, 0.96, 0]}>
             <coneGeometry args={[shape === "spire" ? 0.46 : 0.34, shape === "spire" ? 1.18 : 0.78, 5]} />
-            <meshBasicMaterial color="#100d0c" transparent opacity={opacity * 0.9} depthWrite={false} fog={false} />
+            <meshBasicMaterial color={materialLanguage.weatheredRemnants.mid} transparent opacity={opacity * 0.9} depthWrite={false} fog={false} />
           </mesh>
         </>
       )}
@@ -444,7 +442,7 @@ function HorizonInterestLayer() {
           renderOrder={-6}
         >
           <dodecahedronGeometry args={[1, 0]} />
-          <meshBasicMaterial color="#0a090b" transparent opacity={mass.opacity} depthWrite={false} fog={false} />
+          <meshBasicMaterial color={materialLanguage.weatheredRemnants.horizon} transparent opacity={mass.opacity} depthWrite={false} fog={false} />
         </mesh>
       ))}
     </group>
@@ -488,11 +486,11 @@ function WaterInterruption({ position, scale, rotation, form }: WaterInterruptio
       <group position={position} scale={scale} rotation={rotation}>
         <mesh position={[0, 0.36, 0]}>
           <cylinderGeometry args={[0.22, 0.28, 0.72, 5]} />
-          <meshBasicMaterial color="#0b090a" transparent opacity={opacity} depthWrite={false} />
+          <meshBasicMaterial color={materialLanguage.weatheredRemnants.near} transparent opacity={opacity} depthWrite={false} />
         </mesh>
         <mesh position={[0.2, 0.94, 0.06]} rotation={[0.04, 0, 0.12]}>
           <boxGeometry args={[0.18, 0.42, 0.16]} />
-          <meshBasicMaterial color="#120d0b" transparent opacity={opacity * 0.78} depthWrite={false} />
+          <meshBasicMaterial color={materialLanguage.weatheredRemnants.mutedWarm} transparent opacity={opacity * 0.78} depthWrite={false} />
         </mesh>
       </group>
     );
@@ -503,11 +501,11 @@ function WaterInterruption({ position, scale, rotation, form }: WaterInterruptio
       <group position={position} scale={scale} rotation={rotation}>
         <mesh position={[0, 0.16, 0]} rotation={[0.06, 0.12, -0.03]}>
           <boxGeometry args={[0.92, 0.24, 0.42]} />
-          <meshBasicMaterial color="#100c0a" transparent opacity={opacity * 0.78} depthWrite={false} />
+          <meshBasicMaterial color={materialLanguage.weatheredRemnants.mid} transparent opacity={opacity * 0.78} depthWrite={false} />
         </mesh>
         <mesh position={[-0.34, 0.44, 0.04]} rotation={[0.04, -0.08, -0.12]}>
           <boxGeometry args={[0.22, 0.62, 0.2]} />
-          <meshBasicMaterial color="#0d0b0a" transparent opacity={opacity * 0.68} depthWrite={false} />
+          <meshBasicMaterial color={materialLanguage.weatheredRemnants.near} transparent opacity={opacity * 0.68} depthWrite={false} />
         </mesh>
       </group>
     );
@@ -516,10 +514,7 @@ function WaterInterruption({ position, scale, rotation, form }: WaterInterruptio
   return (
     <mesh position={position} scale={scale} rotation={rotation} castShadow receiveShadow>
       <dodecahedronGeometry args={[1, 0]} />
-      <meshStandardMaterial
-        color="#0b090a"
-        roughness={0.94}
-        metalness={0.06}
+      <WeatheredRemnantMaterial
         transparent
         opacity={opacity}
       />
@@ -542,17 +537,17 @@ function ForegroundScaleReference() {
     <group position={[-28, 0.18, 41]} rotation={[0, -0.38, 0]} scale={[1.8, 1.8, 1.8]}>
       <mesh position={[0, 0.08, 0]} receiveShadow>
         <boxGeometry args={[7.4, 0.18, 3.1]} />
-        <meshStandardMaterial color="#0c0909" roughness={0.9} metalness={0.12} />
+        <WeatheredRemnantMaterial color={materialLanguage.weatheredRemnants.near} roughness={0.9} metalness={0.12} />
       </mesh>
       {Array.from({ length: 4 }).map((_, index) => (
         <mesh key={index} position={[2.3 - index * 1.05, 0.18 + index * 0.12, -1.92 - index * 0.18]} receiveShadow>
           <boxGeometry args={[1.05, 0.2, 1.8]} />
-          <meshStandardMaterial color="#100b09" roughness={0.88} metalness={0.12} />
+          <WeatheredRemnantMaterial color={materialLanguage.weatheredRemnants.mid} roughness={0.88} metalness={0.12} />
         </mesh>
       ))}
       <mesh position={[-2.9, 0.62, 0.94]} rotation={[0.12, 0.04, -0.18]} castShadow>
         <cylinderGeometry args={[0.24, 0.34, 1.15, 6]} />
-        <meshStandardMaterial color="#090708" roughness={0.84} metalness={0.18} />
+        <ObsidianMatterMaterial color={materialLanguage.obsidianMatter.low} roughness={0.84} metalness={0.18} />
       </mesh>
     </group>
   );
@@ -571,12 +566,10 @@ function SupportingSpire({ position, radius, height, tiers }: SpireBlockout) {
         return (
           <mesh key={index} position={[0, y, 0]} castShadow receiveShadow>
             <cylinderGeometry args={[tierRadius * 0.72, tierRadius, tierHeight, 7]} />
-            <meshStandardMaterial
+            <ObsidianMatterMaterial
               color={mood.color}
               roughness={mood.roughness}
               metalness={0.22}
-              emissive="#211207"
-              emissiveIntensity={mood.emissiveIntensity}
               transparent={mood.opacity < 1}
               opacity={mood.opacity}
             />
@@ -586,12 +579,10 @@ function SupportingSpire({ position, radius, height, tiers }: SpireBlockout) {
 
       <mesh position={[0, height * 0.78, 0]} castShadow>
         <coneGeometry args={[radius * 0.62, height * 0.56, 7]} />
-        <meshStandardMaterial
+        <ObsidianMatterMaterial
           color={mood.color}
           roughness={Math.max(0.6, mood.roughness - 0.08)}
           metalness={0.3}
-          emissive="#211207"
-          emissiveIntensity={mood.emissiveIntensity}
           transparent={mood.opacity < 1}
           opacity={mood.opacity}
         />
@@ -606,7 +597,7 @@ function RockFormation({ position, scale, rotation }: RockBlockout) {
   return (
     <mesh position={position} scale={scale} rotation={rotation} castShadow receiveShadow>
       <dodecahedronGeometry args={[1, 0]} />
-      <meshStandardMaterial
+      <WeatheredRemnantMaterial
         color={mood.color}
         roughness={Math.max(0.86, mood.roughness)}
         metalness={0.08}
