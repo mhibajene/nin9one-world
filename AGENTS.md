@@ -44,6 +44,38 @@ Do not add, change, or imply canon unless the decision is explicitly founder-app
 
 Check it before starting work to avoid duplicate execution or drift.
 
+## Branching Guidance
+
+main represents the stable world state.
+New work should be completed on feature branches and merged after review.
+
+Examples:
+
+- feature/world-foundation-003
+- feature/atmosphere-pass-001
+- feature/citadel-lighting-001
+
+Avoid direct commits to main unless explicitly approved by the founder.
+
+## Governance Scope
+
+NIN9ONE World intentionally uses lightweight governance.
+
+The objective is:
+
+- Alignment
+- Architectural consistency
+- Canon protection
+
+The objective is not:
+
+- Bureaucracy
+- Heavy process
+- Sprint management
+- Approval bottlenecks
+
+Governance should remain proportional to project complexity.
+
 ## Pull Request Governance
 
 ### Class A — Auto Merge Eligible
@@ -76,13 +108,26 @@ Class C changes require explicit founder approval before implementation or merge
 
 Examples:
 
-- New dependencies
+- Introduction of new external dependencies
 - Architecture changes
 - Multiplayer
 - Authentication
 - Backend services
 - Monetization systems
 - Canon modifications
+
+#### Introduction of new external dependencies
+
+Approved foundation dependencies:
+
+- Next.js
+- TypeScript
+- Three.js
+- React Three Fiber
+- @react-three/drei
+
+Use of approved dependencies does not require additional approval.
+Only introduction of new external packages requires Class C review.
 
 ## Philosophy
 

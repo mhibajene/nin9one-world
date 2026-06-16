@@ -4,6 +4,14 @@
 
 Phase 1 — Citadel Foundation
 
+## Repository Version
+
+0.1.0
+
+### Milestone
+
+Citadel Foundation
+
 ## Active Ticket
 
 WORLD-FOUNDATION-002
