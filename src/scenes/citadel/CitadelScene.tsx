@@ -11,14 +11,14 @@ export function CitadelScene() {
     <SceneCanvas>
       <CitadelFog />
       <CitadelLighting />
-      <Stars radius={120} depth={55} count={1100} factor={2.8} saturation={0} fade speed={0.12} />
+      <Stars radius={260} depth={120} count={1500} factor={3.1} saturation={0} fade speed={0.08} />
       <CitadelEnvironment />
       <OrbitControls
-        target={[0, 5.5, -8]}
-        minDistance={20}
-        maxDistance={62}
-        maxPolarAngle={Math.PI * 0.47}
-        minPolarAngle={Math.PI * 0.16}
+        target={[0, 21, -18]}
+        minDistance={48}
+        maxDistance={142}
+        maxPolarAngle={Math.PI * 0.62}
+        minPolarAngle={Math.PI * 0.2}
         enablePan={false}
         dampingFactor={0.08}
         enableDamping
