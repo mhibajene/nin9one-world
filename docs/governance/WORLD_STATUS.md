@@ -38,11 +38,11 @@ WORLD-FOUNDATION-003
 
 Environment Blockout
 
-## Upcoming
-
 WORLD-FOUNDATION-004
 
 Atmosphere Pass
+
+## Upcoming
 
 WORLD-FOUNDATION-005
 
