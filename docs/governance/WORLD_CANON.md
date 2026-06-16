@@ -1,5 +1,10 @@
 # NIN9ONE WORLD CANON
 
+## Canon Authority
+
+WORLD_CANON.md is the only authoritative source for confirmed world lore.
+Ideas, explorations, mockups, conversations, prototype content, and draft mythology are not considered canon until recorded here.
+
 ## Confirmed Mythos
 
 Pending
