@@ -1,3 +1,7 @@
+"use client";
+
+import { AdditiveBlending, BackSide } from "three";
+
 type Vec3 = [number, number, number];
 
 type SpireBlockout = {
@@ -27,6 +31,13 @@ type VerticalAccent = {
   position: Vec3;
   radius: number;
   height: number;
+};
+
+type DistanceMood = {
+  color: string;
+  opacity: number;
+  roughness: number;
+  emissiveIntensity: number;
 };
 
 const supportingSpires: SpireBlockout[] = [
@@ -129,17 +140,77 @@ const verticalAccents: VerticalAccent[] = [
   { position: [1.45, 23.4, 0.95], radius: 0.42, height: 20.4 },
 ];
 
+function distanceMood(position: Vec3): DistanceMood {
+  const atmosphericDepth = Math.min(Math.hypot(position[0] * 0.48, position[2] + 18) / 82, 1);
+
+  if (atmosphericDepth > 0.72) {
+    return {
+      color: "#1b130d",
+      opacity: 0.42,
+      roughness: 0.92,
+      emissiveIntensity: 0.018,
+    };
+  }
+
+  if (atmosphericDepth > 0.45) {
+    return {
+      color: "#120d0c",
+      opacity: 0.66,
+      roughness: 0.86,
+      emissiveIntensity: 0.026,
+    };
+  }
+
+  return {
+    color: "#08070a",
+    opacity: 1,
+    roughness: 0.76,
+    emissiveIntensity: 0.038,
+  };
+}
+
 function WaterPlane() {
   return (
     <group>
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.2, -54]} receiveShadow>
-        <planeGeometry args={[340, 420, 1, 1]} />
-        <meshStandardMaterial color="#05070b" roughness={0.22} metalness={0.68} />
+        <planeGeometry args={[360, 440, 1, 1]} />
+        <meshStandardMaterial color="#020307" roughness={0.18} metalness={0.84} />
       </mesh>
 
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.18, -10]}>
-        <planeGeometry args={[3.4, 104, 1, 1]} />
-        <meshBasicMaterial color="#d08325" transparent opacity={0.11} />
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.17, -70]} scale={[24, 6.6, 1]} renderOrder={-1}>
+        <circleGeometry args={[1, 96]} />
+        <meshBasicMaterial
+          color="#ffad46"
+          transparent
+          opacity={0.16}
+          depthWrite={false}
+          blending={AdditiveBlending}
+          fog={false}
+        />
+      </mesh>
+
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.16, -42]} scale={[8.5, 22, 1]} renderOrder={-1}>
+        <circleGeometry args={[1, 96]} />
+        <meshBasicMaterial
+          color="#b66c23"
+          transparent
+          opacity={0.075}
+          depthWrite={false}
+          blending={AdditiveBlending}
+          fog={false}
+        />
+      </mesh>
+
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.15, -16]}>
+        <planeGeometry args={[2.6, 120, 1, 1]} />
+        <meshBasicMaterial
+          color="#7d461b"
+          transparent
+          opacity={0.07}
+          depthWrite={false}
+          blending={AdditiveBlending}
+          fog={false}
+        />
       </mesh>
     </group>
   );
@@ -150,11 +221,15 @@ function CelestialBody() {
     <group position={[0, 28, -92]}>
       <mesh>
         <circleGeometry args={[30, 128]} />
-        <meshBasicMaterial color="#d98925" transparent opacity={0.78} fog={false} />
+        <meshBasicMaterial color="#e8952b" transparent opacity={0.88} fog={false} />
       </mesh>
       <mesh position={[0, 0, -0.04]}>
         <circleGeometry args={[38, 128]} />
-        <meshBasicMaterial color="#ffae3b" transparent opacity={0.14} fog={false} />
+        <meshBasicMaterial color="#ffb95d" transparent opacity={0.18} depthWrite={false} fog={false} />
+      </mesh>
+      <mesh position={[0, 0, -0.08]}>
+        <circleGeometry args={[55, 128]} />
+        <meshBasicMaterial color="#ff9c2e" transparent opacity={0.055} depthWrite={false} fog={false} />
       </mesh>
     </group>
   );
@@ -174,8 +249,32 @@ function CentralCitadel() {
             color={mass.color}
             roughness={mass.roughness}
             metalness={mass.metalness}
-            emissive="#1f1207"
-            emissiveIntensity={0.08}
+            emissive="#1a0f07"
+            emissiveIntensity={0.035}
+          />
+        </mesh>
+      ))}
+
+      {citadelMasses.map((mass) => (
+        <mesh
+          key={`rim-${mass.geometry}-${mass.position.join("-")}`}
+          position={mass.position}
+          scale={[1.026, 1.012, 1.026]}
+          renderOrder={1}
+        >
+          {mass.geometry === "cylinder" ? (
+            <cylinderGeometry args={mass.args as [number, number, number, number]} />
+          ) : (
+            <coneGeometry args={mass.args as [number, number, number]} />
+          )}
+          <meshBasicMaterial
+            color="#ffb04a"
+            transparent
+            opacity={0.105}
+            side={BackSide}
+            depthWrite={false}
+            blending={AdditiveBlending}
+            fog={false}
           />
         </mesh>
       ))}
@@ -189,13 +288,15 @@ function CentralCitadel() {
 
       <mesh position={[0, 3.2, 6.4]}>
         <boxGeometry args={[2.6, 5.4, 0.42]} />
-        <meshBasicMaterial color="#f2a436" transparent opacity={0.72} />
+        <meshBasicMaterial color="#f2a436" transparent opacity={0.48} />
       </mesh>
     </group>
   );
 }
 
 function SupportingSpire({ position, radius, height, tiers }: SpireBlockout) {
+  const mood = distanceMood(position);
+
   return (
     <group position={position}>
       {Array.from({ length: tiers }).map((_, index) => {
@@ -206,24 +307,48 @@ function SupportingSpire({ position, radius, height, tiers }: SpireBlockout) {
         return (
           <mesh key={index} position={[0, y, 0]} castShadow receiveShadow>
             <cylinderGeometry args={[tierRadius * 0.72, tierRadius, tierHeight, 7]} />
-            <meshStandardMaterial color="#0d0b0f" roughness={0.68} metalness={0.26} />
+            <meshStandardMaterial
+              color={mood.color}
+              roughness={mood.roughness}
+              metalness={0.22}
+              emissive="#211207"
+              emissiveIntensity={mood.emissiveIntensity}
+              transparent={mood.opacity < 1}
+              opacity={mood.opacity}
+            />
           </mesh>
         );
       })}
 
       <mesh position={[0, height * 0.78, 0]} castShadow>
         <coneGeometry args={[radius * 0.62, height * 0.56, 7]} />
-        <meshStandardMaterial color="#050407" roughness={0.55} metalness={0.34} />
+        <meshStandardMaterial
+          color={mood.color}
+          roughness={Math.max(0.6, mood.roughness - 0.08)}
+          metalness={0.3}
+          emissive="#211207"
+          emissiveIntensity={mood.emissiveIntensity}
+          transparent={mood.opacity < 1}
+          opacity={mood.opacity}
+        />
       </mesh>
     </group>
   );
 }
 
 function RockFormation({ position, scale, rotation }: RockBlockout) {
+  const mood = distanceMood(position);
+
   return (
     <mesh position={position} scale={scale} rotation={rotation} castShadow receiveShadow>
       <dodecahedronGeometry args={[1, 0]} />
-      <meshStandardMaterial color="#07070a" roughness={0.86} metalness={0.12} />
+      <meshStandardMaterial
+        color={mood.color}
+        roughness={Math.max(0.86, mood.roughness)}
+        metalness={0.08}
+        transparent={mood.opacity < 1}
+        opacity={mood.opacity}
+      />
     </mesh>
   );
 }

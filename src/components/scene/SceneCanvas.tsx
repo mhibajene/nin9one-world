@@ -32,17 +32,18 @@ function CameraComposition() {
 export function SceneCanvas({ children }: SceneCanvasProps) {
   return (
     <Canvas
+      shadows
       camera={{
         position: [0, 0.85, 92],
         fov: 54,
         near: 0.1,
         far: 320,
       }}
-      gl={{ antialias: true, alpha: false }}
+      gl={{ antialias: true, alpha: false, powerPreference: "high-performance" }}
       onCreated={({ camera, gl, scene }) => {
         camera.lookAt(...monumentalCameraTarget);
-        gl.setClearColor(new Color("#060608"));
-        scene.background = new Color("#060608");
+        gl.setClearColor(new Color("#040407"));
+        scene.background = new Color("#040407");
       }}
       style={{
         display: "block",
