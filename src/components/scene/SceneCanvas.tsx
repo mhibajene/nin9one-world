@@ -37,7 +37,7 @@ export function SceneCanvas({ children }: SceneCanvasProps) {
         position: [0, 0.85, 92],
         fov: 54,
         near: 0.1,
-        far: 320,
+        far: 560,
       }}
       gl={{ antialias: true, alpha: false, powerPreference: "high-performance" }}
       onCreated={({ camera, gl, scene }) => {

@@ -17,6 +17,13 @@ type RockBlockout = {
   rotation: Vec3;
 };
 
+type DistantSilhouette = {
+  position: Vec3;
+  scale: Vec3;
+  shape: "spire" | "tower" | "island";
+  opacity: number;
+};
+
 type CitadelMass = {
   position: Vec3;
   geometry: "cylinder" | "cone";
@@ -64,6 +71,14 @@ const rockFormations: RockBlockout[] = [
   { position: [69, 3.65, -40], scale: [14.2, 7.5, 12.4], rotation: [-0.25, -0.18, 0.24] },
   { position: [-39, 2.2, -68], scale: [9.5, 5.4, 8.2], rotation: [-0.18, 0.54, -0.16] },
   { position: [42, 2.05, -70], scale: [9.1, 5.1, 8.8], rotation: [0.2, -0.5, 0.14] },
+];
+
+const distantSilhouettes: DistantSilhouette[] = [
+  { position: [-118, 1.4, -178], scale: [13, 24, 11], shape: "spire", opacity: 0.16 },
+  { position: [-76, 0.9, -214], scale: [20, 9, 18], shape: "island", opacity: 0.12 },
+  { position: [-42, 1.2, -192], scale: [7, 30, 7], shape: "tower", opacity: 0.14 },
+  { position: [63, 1.1, -202], scale: [10, 38, 10], shape: "spire", opacity: 0.13 },
+  { position: [127, 1, -184], scale: [22, 12, 19], shape: "island", opacity: 0.11 },
 ];
 
 const citadelMasses: CitadelMass[] = [
@@ -145,35 +160,35 @@ function distanceMood(position: Vec3): DistanceMood {
 
   if (atmosphericDepth > 0.72) {
     return {
-      color: "#1b130d",
-      opacity: 0.42,
+      color: "#17100d",
+      opacity: 0.34,
       roughness: 0.92,
-      emissiveIntensity: 0.018,
+      emissiveIntensity: 0.01,
     };
   }
 
   if (atmosphericDepth > 0.45) {
     return {
-      color: "#120d0c",
-      opacity: 0.66,
+      color: "#100d0d",
+      opacity: 0.54,
       roughness: 0.86,
-      emissiveIntensity: 0.026,
+      emissiveIntensity: 0.016,
     };
   }
 
   return {
     color: "#08070a",
-    opacity: 1,
+    opacity: 0.88,
     roughness: 0.76,
-    emissiveIntensity: 0.038,
+    emissiveIntensity: 0.024,
   };
 }
 
 function WaterPlane() {
   return (
     <group>
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.2, -54]} receiveShadow>
-        <planeGeometry args={[360, 440, 1, 1]} />
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.24, -116]} receiveShadow>
+        <planeGeometry args={[620, 780, 1, 1]} />
         <meshStandardMaterial color="#020307" roughness={0.18} metalness={0.84} />
       </mesh>
 
@@ -211,6 +226,21 @@ function WaterPlane() {
           blending={AdditiveBlending}
           fog={false}
         />
+      </mesh>
+
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.135, -176]} scale={[140, 42, 1]} renderOrder={-2}>
+        <circleGeometry args={[1, 128]} />
+        <meshBasicMaterial color="#050507" transparent opacity={0.44} depthWrite={false} fog={false} />
+      </mesh>
+
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[-118, -0.12, -186]} scale={[58, 18, 1]} renderOrder={-2}>
+        <circleGeometry args={[1, 96]} />
+        <meshBasicMaterial color="#030305" transparent opacity={0.56} depthWrite={false} fog={false} />
+      </mesh>
+
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[132, -0.12, -194]} scale={[64, 20, 1]} renderOrder={-2}>
+        <circleGeometry args={[1, 96]} />
+        <meshBasicMaterial color="#030305" transparent opacity={0.52} depthWrite={false} fog={false} />
       </mesh>
     </group>
   );
@@ -270,7 +300,7 @@ function CentralCitadel() {
           <meshBasicMaterial
             color="#ffb04a"
             transparent
-            opacity={0.105}
+            opacity={mass.position[1] > 20 ? 0.045 : 0.09}
             side={BackSide}
             depthWrite={false}
             blending={AdditiveBlending}
@@ -282,7 +312,13 @@ function CentralCitadel() {
       {verticalAccents.map(({ position, radius, height }) => (
         <mesh key={position.join("-")} position={position} castShadow>
           <coneGeometry args={[radius, height, 7]} />
-          <meshStandardMaterial color="#08070a" roughness={0.58} metalness={0.35} />
+          <meshStandardMaterial
+            color="#08070a"
+            roughness={0.58}
+            metalness={0.35}
+            transparent={position[1] > 16}
+            opacity={position[1] > 16 ? 0.68 : 0.92}
+          />
         </mesh>
       ))}
 
@@ -290,6 +326,40 @@ function CentralCitadel() {
         <boxGeometry args={[2.6, 5.4, 0.42]} />
         <meshBasicMaterial color="#f2a436" transparent opacity={0.48} />
       </mesh>
+    </group>
+  );
+}
+
+function DistantStructure({ position, scale, shape, opacity }: DistantSilhouette) {
+  return (
+    <group position={position} scale={scale}>
+      {shape === "island" ? (
+        <mesh position={[0, 0.28, 0]} rotation={[0.08, 0.34, -0.04]}>
+          <dodecahedronGeometry args={[1, 0]} />
+          <meshBasicMaterial color="#130f0d" transparent opacity={opacity} depthWrite={false} />
+        </mesh>
+      ) : (
+        <>
+          <mesh position={[0, 0.35, 0]}>
+            <cylinderGeometry args={[0.34, shape === "spire" ? 0.55 : 0.48, 0.7, 5]} />
+            <meshBasicMaterial color="#15100d" transparent opacity={opacity} depthWrite={false} />
+          </mesh>
+          <mesh position={[0, 0.96, 0]}>
+            <coneGeometry args={[shape === "spire" ? 0.46 : 0.34, shape === "spire" ? 1.18 : 0.78, 5]} />
+            <meshBasicMaterial color="#100d0c" transparent opacity={opacity * 0.9} depthWrite={false} />
+          </mesh>
+        </>
+      )}
+    </group>
+  );
+}
+
+function DistantSilhouetteLayer() {
+  return (
+    <group>
+      {distantSilhouettes.map((silhouette) => (
+        <DistantStructure key={silhouette.position.join("-")} {...silhouette} />
+      ))}
     </group>
   );
 }
@@ -358,6 +428,7 @@ export function CitadelEnvironment() {
     <group>
       <CelestialBody />
       <WaterPlane />
+      <DistantSilhouetteLayer />
       <CentralCitadel />
 
       {supportingSpires.map((spire) => (
