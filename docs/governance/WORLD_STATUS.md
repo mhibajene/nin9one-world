@@ -14,11 +14,11 @@ Citadel Foundation
 
 ## Active Ticket
 
-WORLD-FOUNDATION-006
+WORLD-FOUNDATION-006A
 
-Preliminary Material Language Pass
+Material Ontology & World Substance Theory
 
-Status: Implemented on `feature/world-foundation-006`; awaiting founder review.
+Status: Implemented on `feature/world-foundation-006a`; awaiting founder review.
 
 ## Completed
 
@@ -50,15 +50,17 @@ WORLD-FOUNDATION-005
 
 Realm Presence Pass
 
+WORLD-FOUNDATION-006
+
+Preliminary Material Language Pass
+
+WORLD-CANON-001
+
+Foundational Mythos
+
 ## Upcoming
 
-Pending founder review outcome for WORLD-FOUNDATION-006.
-
-WORLD-FOUNDATION-006A
-
-Material Ontology Exploration
-
-Status: Deferred pending mythology and realm workshop.
+Pending founder review outcome for WORLD-FOUNDATION-006A.
 
 ## District Registry
 
