@@ -1,6 +1,6 @@
 "use client";
 
-import { AdditiveBlending } from "three";
+import { AdditiveBlending, DoubleSide } from "three";
 import { materialLanguage } from "@/data/materials/nin9oneMaterialLanguage";
 import {
   BlackWaterMaterial,
@@ -67,6 +67,34 @@ type VerticalAccent = {
   position: Vec3;
   radius: number;
   height: number;
+};
+
+type GoldVein = {
+  position: Vec3;
+  scale: Vec3;
+  rotation: Vec3;
+  opacity: number;
+};
+
+type SolariObelisk = {
+  position: Vec3;
+  scale: Vec3;
+  rotation: Vec3;
+};
+
+type SolariBanner = {
+  position: Vec3;
+  rotation: Vec3;
+  scale: Vec3;
+  symbolScale: number;
+  opacity: number;
+};
+
+type SolarMark = {
+  position: Vec3;
+  rotation: Vec3;
+  scale: number;
+  opacity: number;
 };
 
 type DistanceMood = {
@@ -211,6 +239,39 @@ const verticalAccents: VerticalAccent[] = [
   { position: [1.45, 23.4, 0.95], radius: 0.42, height: 20.4 },
 ];
 
+const solariGoldVeins: GoldVein[] = [
+  { position: [0, 6.3, 6.72], scale: [0.1, 3.4, 0.08], rotation: [0, 0, 0], opacity: 0.48 },
+  { position: [-3.9, 7.6, 5.56], scale: [0.08, 2.2, 0.06], rotation: [0, -0.36, 0], opacity: 0.34 },
+  { position: [3.9, 7.6, 5.56], scale: [0.08, 2.2, 0.06], rotation: [0, 0.36, 0], opacity: 0.34 },
+  { position: [-2.6, 14.8, 4.2], scale: [0.07, 3.6, 0.055], rotation: [0, -0.28, 0], opacity: 0.28 },
+  { position: [2.6, 14.8, 4.2], scale: [0.07, 3.6, 0.055], rotation: [0, 0.28, 0], opacity: 0.28 },
+  { position: [0, 23.8, 2.38], scale: [0.055, 4.8, 0.05], rotation: [0, 0, 0], opacity: 0.22 },
+];
+
+const illuminatedSeams: GoldVein[] = [
+  { position: [0, 1.96, 9.78], scale: [5.8, 0.055, 0.05], rotation: [0, 0, 0], opacity: 0.16 },
+  { position: [0, 5.28, 7.72], scale: [4.4, 0.048, 0.05], rotation: [0, 0, 0], opacity: 0.13 },
+  { position: [0, 10.12, 5.45], scale: [3.2, 0.044, 0.05], rotation: [0, 0, 0], opacity: 0.1 },
+];
+
+const solariObelisks: SolariObelisk[] = [
+  { position: [-18.5, 0, -1.5], scale: [1.5, 14.5, 1.5], rotation: [0, 0.2, 0] },
+  { position: [18.5, 0, -1.5], scale: [1.5, 14.5, 1.5], rotation: [0, -0.2, 0] },
+  { position: [-13.2, 0, 11.5], scale: [1.05, 9.4, 1.05], rotation: [0, -0.1, 0] },
+  { position: [13.2, 0, 11.5], scale: [1.05, 9.4, 1.05], rotation: [0, 0.1, 0] },
+];
+
+const solariBanners: SolariBanner[] = [
+  { position: [-10.8, 11.6, 5.4], rotation: [0, 0.18, 0.035], scale: [1.7, 3.9, 1], symbolScale: 0.38, opacity: 0.72 },
+  { position: [10.8, 11.6, 5.4], rotation: [0, -0.18, -0.035], scale: [1.7, 3.9, 1], symbolScale: 0.38, opacity: 0.72 },
+  { position: [0, 17.4, 3.95], rotation: [0, 0, 0.02], scale: [1.35, 3.1, 1], symbolScale: 0.32, opacity: 0.58 },
+];
+
+const solarMarks: SolarMark[] = [
+  { position: [0, 5.9, 6.98], rotation: [0, 0, 0], scale: 1.1, opacity: 0.42 },
+  { position: [0, 13.3, 4.68], rotation: [0, 0, 0], scale: 0.74, opacity: 0.24 },
+];
+
 function distanceMood(position: Vec3): DistanceMood {
   const atmosphericDepth = Math.min(Math.hypot(position[0] * 0.48, position[2] + 18) / 82, 1);
 
@@ -272,6 +333,30 @@ function WaterPlane() {
         />
       </mesh>
 
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[-18, -0.155, -24]} scale={[2.2, 16, 1]} renderOrder={-1}>
+        <circleGeometry args={[1, 64]} />
+        <meshBasicMaterial
+          color={materialLanguage.celestialGold.signalMuted}
+          transparent
+          opacity={0.055}
+          depthWrite={false}
+          blending={AdditiveBlending}
+          fog={false}
+        />
+      </mesh>
+
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[18, -0.155, -24]} scale={[2.2, 16, 1]} renderOrder={-1}>
+        <circleGeometry args={[1, 64]} />
+        <meshBasicMaterial
+          color={materialLanguage.celestialGold.signalMuted}
+          transparent
+          opacity={0.055}
+          depthWrite={false}
+          blending={AdditiveBlending}
+          fog={false}
+        />
+      </mesh>
+
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.15, -16]}>
         <planeGeometry args={[2.6, 120, 1, 1]} />
         <meshBasicMaterial
@@ -316,6 +401,132 @@ function CelestialBody() {
       <mesh position={[0, 0, -0.08]}>
         <circleGeometry args={[55, 128]} />
         <meshBasicMaterial color={materialLanguage.celestialGold.reflection} transparent opacity={0.055} depthWrite={false} fog={false} />
+      </mesh>
+    </group>
+  );
+}
+
+function GoldVeinInlay({ position, scale, rotation, opacity }: GoldVein) {
+  return (
+    <mesh position={position} scale={scale} rotation={rotation} renderOrder={2}>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshBasicMaterial
+        color={materialLanguage.celestialGold.core}
+        transparent
+        opacity={opacity}
+        depthWrite={false}
+        blending={AdditiveBlending}
+        fog={false}
+      />
+    </mesh>
+  );
+}
+
+function SolarSymbol({ position, rotation, scale, opacity }: SolarMark) {
+  return (
+    <group position={position} rotation={rotation} scale={[scale, scale, scale]} renderOrder={3}>
+      <mesh>
+        <torusGeometry args={[0.48, 0.032, 8, 36]} />
+        <meshBasicMaterial
+          color={materialLanguage.celestialGold.core}
+          transparent
+          opacity={opacity}
+          depthWrite={false}
+          blending={AdditiveBlending}
+          fog={false}
+        />
+      </mesh>
+      <mesh position={[0, 0, 0.018]}>
+        <circleGeometry args={[0.15, 24]} />
+        <meshBasicMaterial
+          color={materialLanguage.celestialGold.signalWarm}
+          transparent
+          opacity={opacity * 0.86}
+          depthWrite={false}
+          blending={AdditiveBlending}
+          fog={false}
+        />
+      </mesh>
+      {Array.from({ length: 8 }).map((_, index) => (
+        <mesh key={index} position={[0, 0.75, 0.012]} rotation={[0, 0, (Math.PI / 4) * index]}>
+          <boxGeometry args={[0.045, 0.32, 0.032]} />
+          <meshBasicMaterial
+            color={materialLanguage.celestialGold.signalMuted}
+            transparent
+            opacity={opacity * 0.66}
+            depthWrite={false}
+            blending={AdditiveBlending}
+            fog={false}
+          />
+        </mesh>
+      ))}
+    </group>
+  );
+}
+
+function SolariObelisk({ position, scale, rotation }: SolariObelisk) {
+  const height = scale[1];
+  const width = scale[0];
+
+  return (
+    <group position={position} rotation={rotation}>
+      <mesh position={[0, 0.18, 0]} castShadow receiveShadow>
+        <cylinderGeometry args={[width * 0.7, width * 0.92, 0.36, 4]} />
+        <ObsidianMatterMaterial color={materialLanguage.obsidianMatter.edge} roughness={0.68} metalness={0.3} />
+      </mesh>
+      <mesh position={[0, height * 0.48, 0]} castShadow receiveShadow>
+        <cylinderGeometry args={[width * 0.34, width * 0.52, height * 0.86, 4]} />
+        <ObsidianMatterMaterial color={materialLanguage.obsidianMatter.low} roughness={0.56} metalness={0.38} />
+      </mesh>
+      <mesh position={[0, height * 0.93, 0]} castShadow>
+        <coneGeometry args={[width * 0.38, height * 0.18, 4]} />
+        <ObsidianMatterMaterial color={materialLanguage.obsidianMatter.base} roughness={0.5} metalness={0.44} />
+      </mesh>
+      <GoldVeinInlay
+        position={[0, height * 0.53, width * 0.42]}
+        scale={[width * 0.055, height * 0.42, 0.04]}
+        rotation={[0, 0, 0]}
+        opacity={0.22}
+      />
+      <SolarSymbol
+        position={[0, height * 0.72, width * 0.45]}
+        rotation={[0, 0, 0]}
+        scale={width * 0.26}
+        opacity={0.2}
+      />
+    </group>
+  );
+}
+
+function SolariBanner({ position, rotation, scale, symbolScale, opacity }: SolariBanner) {
+  return (
+    <group position={position} rotation={rotation} scale={scale}>
+      <mesh position={[0, 0.55, -0.012]}>
+        <boxGeometry args={[1.18, 0.045, 0.035]} />
+        <ObsidianMatterMaterial color={materialLanguage.obsidianMatter.base} roughness={0.62} metalness={0.28} />
+      </mesh>
+      <mesh position={[0, -0.12, 0]} rotation={[0.012, 0, 0]}>
+        <planeGeometry args={[0.78, 1.36, 4, 6]} />
+        <meshStandardMaterial
+          color={materialLanguage.obsidianMatter.low}
+          roughness={0.9}
+          metalness={0.05}
+          transparent
+          opacity={opacity}
+          side={DoubleSide}
+        />
+      </mesh>
+      <SolarSymbol position={[0, -0.08, 0.028]} rotation={[0, 0, 0]} scale={symbolScale} opacity={0.44} />
+      <mesh position={[0, -0.82, 0.03]} scale={[0.52, 0.08, 1]}>
+        <circleGeometry args={[1, 36, 0, Math.PI]} />
+        <meshBasicMaterial
+          color={materialLanguage.celestialGold.trace}
+          transparent
+          opacity={0.18}
+          depthWrite={false}
+          blending={AdditiveBlending}
+          fog={false}
+        />
       </mesh>
     </group>
   );
@@ -366,6 +577,26 @@ function CentralCitadel() {
             opacity={position[1] > 16 ? 0.68 : 0.92}
           />
         </mesh>
+      ))}
+
+      {solariGoldVeins.map((vein) => (
+        <GoldVeinInlay key={`vein-${vein.position.join("-")}`} {...vein} />
+      ))}
+
+      {illuminatedSeams.map((seam) => (
+        <GoldVeinInlay key={`seam-${seam.position.join("-")}`} {...seam} />
+      ))}
+
+      {solarMarks.map((mark) => (
+        <SolarSymbol key={`mark-${mark.position.join("-")}`} {...mark} />
+      ))}
+
+      {solariObelisks.map((obelisk) => (
+        <SolariObelisk key={`obelisk-${obelisk.position.join("-")}`} {...obelisk} />
+      ))}
+
+      {solariBanners.map((banner) => (
+        <SolariBanner key={`banner-${banner.position.join("-")}`} {...banner} />
       ))}
 
       <mesh position={[0, 3.2, 6.4]}>
