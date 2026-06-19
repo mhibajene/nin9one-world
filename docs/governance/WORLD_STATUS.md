@@ -14,11 +14,11 @@ Citadel Foundation
 
 ## Active Ticket
 
-WORLD-FOUNDATION-006A
+WORLD-ONTOLOGY-001
 
-Material Ontology & World Substance Theory
+Archetypes, Transformation & Purpose
 
-Status: Implemented on `feature/world-foundation-006a`; awaiting founder review.
+Status: Implemented on `feature/world-ontology-001`; awaiting founder review.
 
 ## Completed
 
@@ -58,9 +58,13 @@ WORLD-CANON-001
 
 Foundational Mythos
 
+WORLD-FOUNDATION-006A
+
+Material Ontology & World Substance Theory
+
 ## Upcoming
 
-Pending founder review outcome for WORLD-FOUNDATION-006A.
+Pending founder review outcome for WORLD-ONTOLOGY-001.
 
 ## District Registry
 
