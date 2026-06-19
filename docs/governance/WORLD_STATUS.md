@@ -14,11 +14,11 @@ Citadel Foundation
 
 ## Active Ticket
 
-WORLD-ONTOLOGY-001
+WORLD-FOUNDATION-007A
 
-Archetypes, Transformation & Purpose
+Solar Iconography Pass
 
-Status: Implemented on `feature/world-ontology-001`; awaiting founder review.
+Status: Implemented on `feature/world-foundation-007a`; awaiting founder review.
 
 ## Completed
 
@@ -65,6 +65,7 @@ Material Ontology & World Substance Theory
 ## Upcoming
 
 Pending founder review outcome for WORLD-ONTOLOGY-001.
+Pending founder review outcome for WORLD-FOUNDATION-007A.
 
 ## District Registry
 

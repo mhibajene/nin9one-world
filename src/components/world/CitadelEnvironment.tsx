@@ -90,11 +90,14 @@ type SolariBanner = {
   opacity: number;
 };
 
+type SolariSigilTier = "primary" | "architectural" | "decorative";
+
 type SolarMark = {
   position: Vec3;
   rotation: Vec3;
   scale: number;
   opacity: number;
+  tier: SolariSigilTier;
 };
 
 type DistanceMood = {
@@ -262,14 +265,21 @@ const solariObelisks: SolariObelisk[] = [
 ];
 
 const solariBanners: SolariBanner[] = [
-  { position: [-10.8, 11.6, 5.4], rotation: [0, 0.18, 0.035], scale: [1.7, 3.9, 1], symbolScale: 0.38, opacity: 0.72 },
-  { position: [10.8, 11.6, 5.4], rotation: [0, -0.18, -0.035], scale: [1.7, 3.9, 1], symbolScale: 0.38, opacity: 0.72 },
-  { position: [0, 17.4, 3.95], rotation: [0, 0, 0.02], scale: [1.35, 3.1, 1], symbolScale: 0.32, opacity: 0.58 },
+  { position: [-10.8, 11.6, 5.4], rotation: [0, 0.18, 0.035], scale: [1.7, 3.9, 1], symbolScale: 0.52, opacity: 0.72 },
+  { position: [10.8, 11.6, 5.4], rotation: [0, -0.18, -0.035], scale: [1.7, 3.9, 1], symbolScale: 0.52, opacity: 0.72 },
+  { position: [0, 17.4, 3.95], rotation: [0, 0, 0.02], scale: [1.35, 3.1, 1], symbolScale: 0.42, opacity: 0.58 },
+  { position: [-18.5, 8.4, 8.9], rotation: [0, 0.28, -0.035], scale: [1.15, 3.25, 1], symbolScale: 0.46, opacity: 0.62 },
+  { position: [18.5, 8.4, 8.9], rotation: [0, -0.28, 0.035], scale: [1.15, 3.25, 1], symbolScale: 0.46, opacity: 0.62 },
+  { position: [-28, 5.4, 16.5], rotation: [0, 0.42, -0.04], scale: [0.92, 2.55, 1], symbolScale: 0.42, opacity: 0.5 },
+  { position: [28, 5.4, 16.5], rotation: [0, -0.42, 0.04], scale: [0.92, 2.55, 1], symbolScale: 0.42, opacity: 0.5 },
 ];
 
 const solarMarks: SolarMark[] = [
-  { position: [0, 5.9, 6.98], rotation: [0, 0, 0], scale: 1.1, opacity: 0.42 },
-  { position: [0, 13.3, 4.68], rotation: [0, 0, 0], scale: 0.74, opacity: 0.24 },
+  { position: [0, 7.4, 10.2], rotation: [0, 0, 0], scale: 2.9, opacity: 0.82, tier: "primary" },
+  { position: [0, 14.2, 4.92], rotation: [0, 0, 0], scale: 1.15, opacity: 0.36, tier: "architectural" },
+  { position: [-5.1, 7.7, 5.92], rotation: [0, -0.08, 0], scale: 0.42, opacity: 0.2, tier: "decorative" },
+  { position: [5.1, 7.7, 5.92], rotation: [0, 0.08, 0], scale: 0.42, opacity: 0.2, tier: "decorative" },
+  { position: [0, 22.8, 2.58], rotation: [0, 0, 0], scale: 0.46, opacity: 0.16, tier: "architectural" },
 ];
 
 function distanceMood(position: Vec3): DistanceMood {
@@ -332,6 +342,14 @@ function WaterPlane() {
           fog={false}
         />
       </mesh>
+
+      <SolariSigil
+        position={[0, -0.142, -38]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={5.2}
+        opacity={0.032}
+        tier="architectural"
+      />
 
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[-18, -0.155, -24]} scale={[2.2, 16, 1]} renderOrder={-1}>
         <circleGeometry args={[1, 64]} />
@@ -422,44 +440,103 @@ function GoldVeinInlay({ position, scale, rotation, opacity }: GoldVein) {
   );
 }
 
-function SolarSymbol({ position, rotation, scale, opacity }: SolarMark) {
+type SigilStrokeProps = {
+  color?: string;
+  opacity: number;
+};
+
+function SigilStroke({ color = materialLanguage.celestialGold.core, opacity }: SigilStrokeProps) {
+  return (
+    <meshBasicMaterial
+      color={color}
+      transparent
+      opacity={opacity}
+      depthWrite={false}
+      blending={AdditiveBlending}
+      fog={false}
+    />
+  );
+}
+
+function SolariSigil({ position, rotation, scale, opacity, tier }: SolarMark) {
+  const isPrimary = tier === "primary";
+  const isDecorative = tier === "decorative";
+  const ringOpacity = isPrimary ? opacity : opacity * 0.78;
+  const rayCount = isPrimary ? 24 : 12;
+  const markerCount = isDecorative ? 4 : 8;
+
   return (
     <group position={position} rotation={rotation} scale={[scale, scale, scale]} renderOrder={3}>
       <mesh>
-        <torusGeometry args={[0.48, 0.032, 8, 36]} />
-        <meshBasicMaterial
-          color={materialLanguage.celestialGold.core}
-          transparent
-          opacity={opacity}
-          depthWrite={false}
-          blending={AdditiveBlending}
-          fog={false}
-        />
+        <circleGeometry args={[0.16, 36]} />
+        <SigilStroke color={materialLanguage.celestialGold.signalWarm} opacity={opacity * 0.92} />
       </mesh>
-      <mesh position={[0, 0, 0.018]}>
-        <circleGeometry args={[0.15, 24]} />
-        <meshBasicMaterial
-          color={materialLanguage.celestialGold.signalWarm}
-          transparent
-          opacity={opacity * 0.86}
-          depthWrite={false}
-          blending={AdditiveBlending}
-          fog={false}
-        />
+      <mesh position={[0, 0, 0.012]}>
+        <torusGeometry args={[0.3, 0.018, 8, 48]} />
+        <SigilStroke opacity={ringOpacity} />
       </mesh>
-      {Array.from({ length: 8 }).map((_, index) => (
-        <mesh key={index} position={[0, 0.75, 0.012]} rotation={[0, 0, (Math.PI / 4) * index]}>
-          <boxGeometry args={[0.045, 0.32, 0.032]} />
-          <meshBasicMaterial
-            color={materialLanguage.celestialGold.signalMuted}
-            transparent
-            opacity={opacity * 0.66}
-            depthWrite={false}
-            blending={AdditiveBlending}
-            fog={false}
-          />
+      <mesh position={[0, 0, 0.01]}>
+        <torusGeometry args={[0.56, 0.014, 8, 64]} />
+        <SigilStroke opacity={ringOpacity * 0.78} />
+      </mesh>
+      {!isDecorative && (
+        <mesh position={[0, 0, 0.006]} scale={[1.45, 0.48, 1]} rotation={[0, 0, Math.PI * 0.08]}>
+          <torusGeometry args={[0.54, 0.01, 8, 64]} />
+          <SigilStroke color={materialLanguage.celestialGold.signalMuted} opacity={opacity * 0.52} />
         </mesh>
-      ))}
+      )}
+      {!isDecorative && (
+        <mesh position={[0, 0, 0.004]} scale={[1.45, 0.48, 1]} rotation={[0, 0, -Math.PI * 0.08]}>
+          <torusGeometry args={[0.54, 0.01, 8, 64]} />
+          <SigilStroke color={materialLanguage.celestialGold.signalMuted} opacity={opacity * 0.42} />
+        </mesh>
+      )}
+      <mesh position={[0, 0, 0.02]}>
+        <boxGeometry args={[0.04, isPrimary ? 1.82 : 1.44, 0.028]} />
+        <SigilStroke opacity={opacity * 0.86} />
+      </mesh>
+      <mesh position={[0, 0, 0.018]} rotation={[0, 0, Math.PI / 2]}>
+        <boxGeometry args={[0.04, isPrimary ? 1.82 : 1.44, 0.028]} />
+        <SigilStroke opacity={opacity * 0.72} />
+      </mesh>
+      {Array.from({ length: rayCount }).map((_, index) => {
+        const angle = (Math.PI * 2 * index) / rayCount;
+        const majorRay = index % 6 === 0;
+        return (
+          <mesh key={`ray-${index}`} position={[0, majorRay ? 0.49 : 0.43, 0.016]} rotation={[0, 0, angle]}>
+            <boxGeometry args={[majorRay ? 0.026 : 0.014, majorRay ? 0.34 : 0.22, 0.024]} />
+            <SigilStroke color={materialLanguage.celestialGold.signalMuted} opacity={opacity * (majorRay ? 0.58 : 0.34)} />
+          </mesh>
+        );
+      })}
+      {Array.from({ length: markerCount }).map((_, index) => {
+        const angle = (Math.PI * 2 * index) / markerCount;
+        const radius = isDecorative ? 0.6 : 0.74;
+        return (
+          <mesh
+            key={`marker-${index}`}
+            position={[Math.sin(angle) * radius, Math.cos(angle) * radius, 0.024]}
+            rotation={[0, 0, -angle]}
+          >
+            <circleGeometry args={[index % 2 === 0 ? 0.04 : 0.028, 18]} />
+            <SigilStroke color={materialLanguage.celestialGold.halo} opacity={opacity * 0.62} />
+          </mesh>
+        );
+      })}
+      {isPrimary && (
+        <>
+          {[0, Math.PI / 2, Math.PI, Math.PI * 1.5].map((angle) => (
+            <mesh
+              key={`cardinal-${angle}`}
+              position={[Math.sin(angle) * 0.98, Math.cos(angle) * 0.98, 0.03]}
+              rotation={[0, 0, -angle]}
+            >
+              <coneGeometry args={[0.055, 0.2, 4]} />
+              <SigilStroke color={materialLanguage.celestialGold.core} opacity={opacity * 0.82} />
+            </mesh>
+          ))}
+        </>
+      )}
     </group>
   );
 }
@@ -488,11 +565,18 @@ function SolariObelisk({ position, scale, rotation }: SolariObelisk) {
         rotation={[0, 0, 0]}
         opacity={0.22}
       />
-      <SolarSymbol
+      {[0.38, 0.5, 0.62].map((markHeight, index) => (
+        <mesh key={`obelisk-glyph-${index}`} position={[0, height * markHeight, width * 0.45]} rotation={[0, 0, index % 2 === 0 ? 0 : Math.PI / 2]}>
+          <boxGeometry args={[width * 0.11, height * 0.018, 0.03]} />
+          <SigilStroke color={materialLanguage.celestialGold.trace} opacity={0.18 - index * 0.025} />
+        </mesh>
+      ))}
+      <SolariSigil
         position={[0, height * 0.72, width * 0.45]}
         rotation={[0, 0, 0]}
         scale={width * 0.26}
         opacity={0.2}
+        tier="decorative"
       />
     </group>
   );
@@ -516,7 +600,15 @@ function SolariBanner({ position, rotation, scale, symbolScale, opacity }: Solar
           side={DoubleSide}
         />
       </mesh>
-      <SolarSymbol position={[0, -0.08, 0.028]} rotation={[0, 0, 0]} scale={symbolScale} opacity={0.44} />
+      <mesh position={[-0.46, -0.12, 0.026]}>
+        <boxGeometry args={[0.035, 1.18, 0.026]} />
+        <SigilStroke color={materialLanguage.celestialGold.trace} opacity={0.2} />
+      </mesh>
+      <mesh position={[0.46, -0.12, 0.026]}>
+        <boxGeometry args={[0.035, 1.18, 0.026]} />
+        <SigilStroke color={materialLanguage.celestialGold.trace} opacity={0.2} />
+      </mesh>
+      <SolariSigil position={[0, -0.08, 0.028]} rotation={[0, 0, 0]} scale={symbolScale} opacity={0.7} tier="architectural" />
       <mesh position={[0, -0.82, 0.03]} scale={[0.52, 0.08, 1]}>
         <circleGeometry args={[1, 36, 0, Math.PI]} />
         <meshBasicMaterial
@@ -588,7 +680,7 @@ function CentralCitadel() {
       ))}
 
       {solarMarks.map((mark) => (
-        <SolarSymbol key={`mark-${mark.position.join("-")}`} {...mark} />
+        <SolariSigil key={`mark-${mark.position.join("-")}`} {...mark} />
       ))}
 
       {solariObelisks.map((obelisk) => (
@@ -598,6 +690,14 @@ function CentralCitadel() {
       {solariBanners.map((banner) => (
         <SolariBanner key={`banner-${banner.position.join("-")}`} {...banner} />
       ))}
+
+      <SolariSigil
+        position={[0, 0.34, 17.6]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={4.8}
+        opacity={0.16}
+        tier="primary"
+      />
 
       <mesh position={[0, 3.2, 6.4]}>
         <boxGeometry args={[2.6, 5.4, 0.42]} />
