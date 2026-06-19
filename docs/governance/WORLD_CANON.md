@@ -105,7 +105,15 @@ Known as:
 
 Queen Nefera Sol is the ruling sovereign of the Solari.
 
-Future mythology and origin details remain under exploration.
+Queen Nefera Sol represents the highest known form of enlightenment currently established within Nexus IV.
+
+She is:
+
+- The Sun Mother
+- Bearer of ancestral memory
+- Steward of the Solari
+
+Her future mythology and origin details remain under exploration.
 
 ## Confirmed Locations
 
@@ -117,7 +125,182 @@ The Citadel serves as a central place of convergence, revelation, and understand
 
 It is one of the most important locations currently established within Nexus IV.
 
+The Citadel functions simultaneously as:
+
+- A physical destination at the center of Nexus IV.
+- A symbolic destination representing realization and understanding.
+
+Travelers seek the city.
+
+Seekers understand its meaning.
+
 Detailed history remains under exploration.
+
+## Archetypes and Transformation
+
+The foundational archetypes of Nexus IV describe the roles characters may embody.
+
+They do not define individual characters.
+
+The central transformational thesis of Nexus IV is:
+
+The journey is not about external validation.
+
+The journey is about who you become while pursuing it.
+
+### Traveler
+
+Status: Canonical
+
+A Traveler is an individual pursuing the promise of discovery.
+
+Characteristics:
+
+- Seeks treasure
+- Seeks answers
+- Seeks purpose
+- Believes value lies ahead
+
+Relationship to The Citadel:
+
+The Traveler sees The Citadel as a destination.
+
+Symbolic function:
+
+The Traveler represents pursuit.
+
+### Seeker
+
+Status: Canonical
+
+A Seeker is a Traveler who begins to understand that the journey itself is transformative.
+
+Characteristics:
+
+- Questions assumptions
+- Looks beyond appearances
+- Pursues meaning rather than reward
+
+Relationship to Gold:
+
+The Seeker understands that gold is symbolic rather than merely material.
+
+Relationship to The Citadel:
+
+The Seeker begins to understand what The Citadel represents.
+
+Symbolic function:
+
+The Seeker represents awakening.
+
+### Sovereign
+
+Status: Canonical
+
+A Sovereign is an individual who has achieved alignment between purpose, identity, and understanding.
+
+Sovereignty is not inherited.
+
+Sovereignty is realized.
+
+Characteristics:
+
+- Clarity
+- Wisdom
+- Stewardship
+- Responsibility
+
+Relationship to Gold:
+
+The Sovereign understands the true nature of gold.
+
+Relationship to The Citadel:
+
+The Sovereign understands the purpose of the destination.
+
+Symbolic function:
+
+The Sovereign represents realization.
+
+### Sun Mother
+
+Status: Canonical
+
+The Sun Mother is the highest known embodiment of realization and ancestral understanding.
+
+Current bearer:
+
+Queen Nefera Sol
+
+Characteristics:
+
+- Wisdom
+- Stewardship
+- Memory
+- Guidance
+
+Symbolic function:
+
+The Sun Mother represents enlightenment.
+
+### Wraith
+
+Status: Canonical
+
+Wraiths are ancient preservers of order that predate modern civilization.
+
+Characteristics:
+
+- Primordial
+- Enduring
+- Independent
+- Selective
+
+The Wraiths are not controlled.
+
+They choose.
+
+Symbolic function:
+
+Wraiths represent continuity, memory, and balance.
+
+Open question:
+
+The precise origin of the Wraiths remains unresolved.
+
+### Transformation Path
+
+The current symbolic path of transformation is:
+
+```txt
+Traveler
+    ↓
+Seeker
+    ↓
+Realization
+    ↓
+Sovereign
+```
+
+The Sun Mother represents the highest known realization of this journey.
+
+### Queen Nefera Sol Origin Status
+
+Status: Exploratory
+
+The possibility that The Girl becomes Queen Nefera Sol remains under active exploration and is not yet canonical.
+
+### Deferred Ontology
+
+The following topics require future founder approval:
+
+- The Girl
+- Individual Riders
+- Individual Wraiths
+- Kingdom histories
+- Solari hierarchy
+- Origin mythologies
+- Additional worlds
 
 ## Material Ontology
 
@@ -293,10 +476,13 @@ These relationships are symbolic and may evolve as mythology develops.
 The following topics remain exploratory and are not yet canonical:
 
 - Origin story of Queen Nefera Sol
+- The Girl becoming Queen Nefera Sol
 - The Girl storyline
 - Skyward Wraith mythology
+- Individual Wraiths
 - Rider mythology
 - Kingdom histories
+- Solari hierarchy
 - Weapon histories
 - Additional worlds
 - Unapproved material ontology extensions
