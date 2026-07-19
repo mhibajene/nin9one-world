@@ -4,7 +4,7 @@
 
 Preliminary.
 
-Implemented on `feature/world-foundation-006`; awaiting founder review.
+Implemented on `feature/world-foundation-006` and recorded complete in `WORLD_STATUS.md`.
 
 This document records the first visual material language pass for The Citadel and future district inheritance. It is presentation guidance, not canon. `docs/governance/WORLD_CANON.md` remains the only authority for founder-approved lore.
 
@@ -140,10 +140,8 @@ Suggest history and passage of time.
 - Final visual polish
 - Mythology-driven materials
 
-## Future Exploration
+## Completed Follow-up
 
-Potential follow-up:
+WORLD-FOUNDATION-006A — Material Ontology & World Substance Theory
 
-WORLD-FOUNDATION-006A — Material Ontology Exploration
-
-Deferred pending mythology and realm workshop.
+Status: Complete. Canonical substance definitions are recorded in `WORLD_CANON.md`.
