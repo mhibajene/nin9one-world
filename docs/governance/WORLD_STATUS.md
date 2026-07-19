@@ -4,21 +4,44 @@
 
 Phase 1 — Citadel Foundation
 
+Status: Complete.
+
+Founder-approved on 2026-07-19 through the Citadel Foundation closeout disposition.
+
+## Active Lane
+
+Discovery
+
 ## Repository Version
 
 0.1.0
 
 ### Milestone
 
-Citadel Foundation
+Citadel Foundation — Complete
 
 ## Active Ticket
 
-WORLD-FOUNDATION-007A
+WORLD-DISCOVERY-001
 
-Solar Iconography Pass
+Citadel Landmark Discovery Foundation
 
-Status: Implemented on `feature/world-foundation-007a`; awaiting founder review.
+Status: Active for governance and scope definition.
+
+Implementation is not authorized by the Citadel Foundation closeout disposition.
+
+Intent:
+
+- Establish the first discovery interaction for The Citadel.
+- Represent landmarks and their lore as reusable, data-driven entities.
+- Reveal only canon already approved in `WORLD_CANON.md`.
+- Preserve atmosphere and exploration as the dominant experience.
+
+Approval boundary:
+
+- No new or implied canon.
+- No implementation until separately founder-authorized.
+- Experience or presentation changes remain Class B.
 
 ## Completed
 
@@ -62,10 +85,17 @@ WORLD-FOUNDATION-006A
 
 Material Ontology & World Substance Theory
 
+WORLD-ONTOLOGY-001
+
+World Ontology, Archetypes & Transformation Path
+
+WORLD-FOUNDATION-007A
+
+Solar Iconography Pass
+
 ## Upcoming
 
-Pending founder review outcome for WORLD-ONTOLOGY-001.
-Pending founder review outcome for WORLD-FOUNDATION-007A.
+Define the bounded execution brief and founder-review gate for WORLD-DISCOVERY-001.
 
 ## District Registry
 

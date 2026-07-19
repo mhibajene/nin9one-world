@@ -2,7 +2,9 @@
 
 ## Status
 
-Proposed
+Accepted
+
+Accepted by the NIN9ONE Founder / Creative Direction on 2026-07-19 during Citadel Foundation closeout.
 
 ## Context
 
