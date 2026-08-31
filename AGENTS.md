@@ -108,6 +108,8 @@ Examples:
 - Visual direction changes
 - World presentation changes
 
+Class B work normally requires Founder review before merge. When the Founder explicitly opens a three-ticket auto-merge window under `AGENT_AUTONOMY.md`, bounded Class B work inside an already-approved experiential direction may auto-merge after all recorded eligibility and validation gates pass.
+
 ### Class C — Explicit Founder Approval
 
 Class C changes require explicit founder approval before implementation or merge.
