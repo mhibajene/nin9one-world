@@ -18,15 +18,15 @@ Discovery
 
 ### Milestone
 
-Founder Discovery Surface Reconciliation — Complete
+Environmental Discovery Surface Reset — Complete
 
 ## Operating Mode
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Previous review window: Closed and reviewed — 3 of 3 moves merged.
+Current review window: Move 1 of 3.
 
-Next autonomous window: Founder-authorized on 2026-08-31. It opens only after this governance closeout merges and the first bounded environmental ticket is activated.
+Auto-merge window: Founder-opened on 2026-08-31 after the discovery-surface governance closeout.
 
 Eligible pull requests may use native squash auto-merge under the gates in `AGENT_AUTONOMY.md`. The repository-level capability does not override ticket, canon, Class C, review, or validation boundaries.
 
@@ -44,7 +44,7 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-None — governance closeout must merge before the next environmental ticket is activated.
+Unassigned — autonomous Move 2 selection.
 
 ## Completed
 
@@ -188,12 +188,41 @@ Founder-directed governance closeout recorded on 2026-08-31. This Class A docume
 - Directs the next intervention toward environmental discovery and quieter contextual lore.
 - Adds no canon and authorizes no Founder-reserved decision.
 
+WORLD-DISCOVERY-004
+
+Environmental Discovery Surface Reset
+
+Implemented and merged as Move 1 of the Founder-opened autonomous window on 2026-08-31.
+
+Observed weakness:
+
+- The persistent numbered landmark list presented discovery as tracked progression and competed with the Citadel as a place.
+- Lore panels exposed internal canon classifications and discovery-state labels.
+
+Implemented result:
+
+- Removes the persistent visual landmark list, numbering, counts, and player-facing discovery states.
+- Direct world interaction becomes the primary discovery surface.
+- World attention produces a small temporary landmark-name cue that disappears when attention leaves.
+- The existing landmark controls remain available as a visually hidden keyboard and assistive route; focus produces the same temporary world response and cue.
+- Lore panels no longer expose canon classifications, `Discovered`, or `Revisited` labels.
+- Assistive discovery announcements no longer expose progression-state wording.
+- Existing discovery state, session restoration, landmarks, lore text, and canon remain unchanged.
+
+Validation evidence:
+
+- TypeScript typecheck and production build passed locally and in required hosted validation.
+- Clean-session desktop and mobile views present the Citadel without a persistent discovery HUD.
+- Direct world discovery, lore activation, dismissal, focus return, and session restoration passed in the browser.
+- Source verification confirms pointer attention and keyboard focus feed the same temporary cue while native buttons retain keyboard activation semantics.
+- Player-facing DOM inspection confirms internal canon and discovery-state labels are absent.
+- Reduced-motion behavior remains stable.
+
 ## Upcoming
 
-1. Merge the governance-only closeout.
-2. Activate Move 1 of the next window only after the closeout is present on `main`.
-3. Select the smallest intervention that removes persistent HUD leadership while preserving accessible, contextual discovery.
-4. Keep all work inside established Citadel Discovery and current canon.
+1. Evaluate whether the contextual cue is quiet enough and keyboard discovery remains legible.
+2. Select Move 2 from observed use, prioritizing quieter lore or stronger existing material response.
+3. Keep all work inside established Citadel Discovery and current canon.
 
 ## District Registry
 

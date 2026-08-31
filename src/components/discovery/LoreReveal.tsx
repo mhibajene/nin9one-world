@@ -1,25 +1,14 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import type {
-  CitadelLandmark,
-  LandmarkCanonStatus,
-  LandmarkDiscoveryState,
-} from "@/systems/discovery/landmarkTypes";
+import type { CitadelLandmark } from "@/systems/discovery/landmarkTypes";
 
 type LoreRevealProps = {
   landmark: CitadelLandmark;
-  state: LandmarkDiscoveryState;
   onDismiss: () => void;
 };
 
-const canonLabels: Record<LandmarkCanonStatus, string> = {
-  canonical: "Canon fragment",
-  atmospheric: "Atmospheric reading",
-  exploratory: "Unresolved signal",
-};
-
-export function LoreReveal({ landmark, state, onDismiss }: LoreRevealProps) {
+export function LoreReveal({ landmark, onDismiss }: LoreRevealProps) {
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -44,10 +33,6 @@ export function LoreReveal({ landmark, state, onDismiss }: LoreRevealProps) {
       aria-describedby="lore-reveal-text"
     >
       <div className="lore-reveal__line" aria-hidden="true" />
-      <div className="lore-reveal__meta">
-        <span>{canonLabels[landmark.canonStatus]}</span>
-        <span>{state === "revisited" ? "Revisited" : "Discovered"}</span>
-      </div>
       <p className="lore-reveal__landmark">{landmark.displayName}</p>
       <h2 id="lore-reveal-title">{landmark.loreTitle}</h2>
       <p id="lore-reveal-text" className="lore-reveal__text">
