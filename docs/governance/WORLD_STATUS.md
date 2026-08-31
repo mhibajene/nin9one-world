@@ -18,7 +18,7 @@ Discovery
 
 ### Milestone
 
-Landmark Response & Attention Refinement — Founder review
+Three-ticket autonomous execution — Active
 
 ## Operating Mode
 
@@ -26,52 +26,15 @@ Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
 Current review window: Move 2 of 3.
 
+Auto-merge window: Founder-opened on 2026-08-31.
+
+Eligible pull requests may use native squash auto-merge under the gates in `AGENT_AUTONOMY.md`. The repository-level capability does not override ticket, canon, Class C, review, or validation boundaries.
+
 ## Active Ticket
 
-WORLD-DISCOVERY-002
+Unassigned — autonomous Move 3 selection.
 
-Landmark Response & Attention Refinement
-
-Status: Implemented on `feature/world-discovery-002`; Class B Founder review is required before merge.
-
-Activated on 2026-08-31 under the delegated ticket authority in `AGENT_AUTONOMY.md` after Founder approval of WORLD-DISCOVERY-001.
-
-Intent:
-
-- Distinguish a landmark that has been noticed from one receiving current attention.
-- Make first discovery earn a persistent environmental response.
-- Preserve keyboard and pointer attention when both inputs are used together.
-- Refine the existing three-landmark proof without adding content or systems.
-
-Approval boundary:
-
-- The existing landmark set and lore remain unchanged.
-- No new dependency, persistence, camera, audio, or progression system.
-- No new or implied canon.
-- Experience or presentation changes remain Class B.
-
-Implemented refinement:
-
-- Renames the durable pre-discovery state from `Within attention` to `Noticed`.
-- Tracks keyboard focus and pointer hover independently, with pointer attention temporarily taking precedence.
-- Restores keyboard-led landmark response when pointer attention leaves.
-- Uses each landmark's declared visual-response type to set restrained attended and discovered light levels.
-- Reduces rupture veins before attention and strengthens them only through attention or discovery.
-- Introduces no new animation, so reduced-motion behavior remains stable.
-
-Evaluation evidence:
-
-- TypeScript typecheck and production build pass on 2026-08-31.
-- Desktop and mobile layouts load without an error overlay or horizontal overflow.
-- Keyboard focus, pointer hover, pointer leave, first discovery, dismissal, and focus return pass.
-- Mixed pointer and keyboard attention restores the still-focused keyboard landmark correctly.
-- Undiscovered, noticed, and discovered responses remain visually and semantically distinct.
-- The existing lore, canon classifications, and atmospheric composition remain unchanged.
-
-Known issues:
-
-- Three.js emits non-blocking dependency deprecation warnings for `Clock` and `PCFSoftShadowMap`.
-- The response refinement remains unapproved until the Founder completes Class B review.
+Status: Evaluate the merged discovery experience and activate the smallest meaningful final move in the current window.
 
 ## Completed
 
@@ -133,15 +96,44 @@ Founder-approved on 2026-08-31 with the implemented classifications preserved:
 - Solar Obelisk — atmospheric
 - Ruptured Obsidian — canonical
 
+WORLD-DISCOVERY-002
+
+Landmark Response & Attention Refinement
+
+Founder-approved and merged on 2026-08-31.
+
+Implemented result:
+
+- The durable pre-discovery state is named `Noticed`.
+- Keyboard focus and pointer hover retain independent attention state.
+- Pointer attention temporarily takes precedence and keyboard attention restores on pointer leave.
+- Each landmark's declared visual-response type controls restrained attended and discovered light levels.
+- Rupture veins remain subdued before attention and strengthen through attention or discovery.
+- The landmark set, lore, canon classifications, and atmospheric composition remain unchanged.
+
+Validation evidence:
+
+- TypeScript typecheck and production build passed.
+- Desktop, mobile, keyboard, pointer, mixed-input, first-discovery, dismissal, and focus-return paths passed.
+- Three.js continues to emit non-blocking dependency deprecation warnings for `Clock` and `PCFSoftShadowMap`.
+
+WORLD-OPS-001
+
+Three-Ticket Auto-Merge Guardrails
+
+Founder-authorized on 2026-08-31. This operational setup does not consume an experiential move.
+
+- Adds required hosted typecheck and production-build validation.
+- Adds a pull-request authority and evidence checklist.
+- Records the per-ticket auto-merge eligibility and stop conditions.
+- Preserves Founder review for canon, Class C work, and work outside an open window.
+
 ## Upcoming
 
-Complete Founder review for WORLD-DISCOVERY-002.
-
-Upon approval:
-
-1. Mark WORLD-DISCOVERY-002 complete.
-2. Preserve the existing landmark set, lore, and canon classifications.
-3. Select the final move in the current autonomous window from observed experience rather than assuming expansion.
+1. Verify the repository auto-merge and required-check configuration.
+2. Select and activate Move 3 from observed experience.
+3. Execute one eligible ticket through the guarded auto-merge path.
+4. Close the window and prepare the Founder Review after Move 3 merges.
 
 ## District Registry
 

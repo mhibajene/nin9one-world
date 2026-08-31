@@ -199,6 +199,40 @@ A meaningful move should produce a material improvement or substantive learning.
 
 > **You have three moves. Make them count.**
 
+## Three-Ticket Auto-Merge Window
+
+The Founder may explicitly open an auto-merge window for up to three meaningful implementation tickets between Founder reviews.
+
+Opening a window delegates merge authority for eligible work; it does not expand creative, canonical, architectural, or financial authority.
+
+An autonomous ticket is auto-merge eligible only when all of the following are true:
+
+1. The ticket is recorded in `WORLD_STATUS.md` and remains inside an open three-ticket window.
+2. The change is Class A, or it is Class B within an already-approved experiential direction.
+3. The pull request remains limited to the declared ticket.
+4. Canon and Founder-reserved decisions are unchanged.
+5. No new external dependency or other Class C decision is introduced.
+6. Local typecheck and production build pass.
+7. Relevant visual or interaction behavior is reviewed when experience or presentation changes.
+8. Required hosted checks pass against current `main`.
+9. The branch is conflict-free and no unresolved review thread or requested change remains.
+
+For every eligible pull request, the agent may enable native GitHub auto-merge using squash merge and branch deletion. The ticket counts as a move only after it merges into `main`.
+
+The agent must not enable auto-merge when:
+
+- the window is closed or its three tickets have merged;
+- the work touches canon or another Founder-reserved decision;
+- the work is Class C;
+- validation fails or cannot run;
+- the branch is conflicted;
+- review feedback remains unresolved;
+- the implementation produced a materially ambiguous or unsuccessful result.
+
+Repository-level auto-merge availability does not itself authorize a pull request to merge. Eligibility comes from the open window and this charter.
+
+After each merge, synchronize `main`, verify the merged result, update the window count in `WORLD_STATUS.md`, and select the next move from observed experience. After the third merge, close the window and prepare the Founder Review before further implementation.
+
 ## Usage Escalation
 
 Founder approval is not required for normal repository work, coding, local builds, testing, visual inspection, browser validation, or routine refactoring.
