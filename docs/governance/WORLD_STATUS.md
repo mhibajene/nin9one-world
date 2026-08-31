@@ -18,7 +18,7 @@ Discovery
 
 ### Milestone
 
-Attentive Material Response — Complete
+Citadel Discovery Founder Review 002 — Prepared
 
 ## Operating Mode
 
@@ -32,6 +32,8 @@ Eligible pull requests may use native squash auto-merge under the gates in `AGEN
 
 Founder disposition: [`FOUNDER_REVIEW_CITADEL_DISCOVERY_001.md`](FOUNDER_REVIEW_CITADEL_DISCOVERY_001.md).
 
+Current Founder Review: [`FOUNDER_REVIEW_CITADEL_DISCOVERY_002.md`](FOUNDER_REVIEW_CITADEL_DISCOVERY_002.md).
+
 The persistent numbered landmark HUD is rejected as the primary discovery surface. Discovery must become environmental; UI must remain contextual, temporary, and subordinate. Internal canon classifications must not appear in the player experience. This direction does not authorize new canon.
 
 Operating roles:
@@ -44,7 +46,7 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-None — Founder Review required before further implementation.
+None — awaiting Founder disposition.
 
 ## Completed
 
@@ -273,11 +275,22 @@ Validation evidence:
 - Desktop and mobile compositions retain the established hierarchy and contextual cue behavior.
 - No new dependency, canon, lore, landmark, or architecture was introduced.
 
+WORLD-GOVERNANCE-002
+
+Citadel Discovery Founder Review 002
+
+Governance-only closeout prepared after the three-move window closed on 2026-08-31.
+
+- Files the complete seven-section Founder Review for WORLD-DISCOVERY-004 through WORLD-DISCOVERY-006.
+- Records the read-only World Steward verdict: `NO OBJECTION — continue autonomous execution.`
+- Leaves the autonomous and auto-merge window closed pending Founder disposition.
+- Adds no implementation authority, canon, or experiential change.
+
 ## Upcoming
 
-1. File the seven-section Founder Review for `WORLD-DISCOVERY-004` through `WORLD-DISCOVERY-006`.
-2. Obtain the required read-only Grokbot World Steward challenge.
-3. Await Founder disposition before opening another autonomous window.
+1. Founder reviews `FOUNDER_REVIEW_CITADEL_DISCOVERY_002.md` and records a disposition.
+2. If authorized, open a new autonomous window inside the resulting direction.
+3. Do not begin further experiential implementation before that disposition.
 
 ## District Registry
 
