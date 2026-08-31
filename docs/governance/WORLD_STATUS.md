@@ -66,7 +66,7 @@ Implemented result:
 
 Validation evidence:
 
-- TypeScript typecheck and production build passed locally.
+- TypeScript typecheck and production build passed locally and in required hosted validation.
 - Untouched desktop and mobile compositions retain the accepted discovery baseline.
 - Extreme desktop and portrait orbit paths preserve The Citadel and solar field while revealing side silhouettes and parallax.
 - Direct landmark attention and reflection activation continue to work after camera movement.
