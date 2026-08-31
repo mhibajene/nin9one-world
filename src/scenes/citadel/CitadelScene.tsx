@@ -80,8 +80,6 @@ export function CitadelScene() {
           attendedLandmarkId={attendedLandmarkId}
           onFocus={focusLandmark}
           onBlur={blurLandmark}
-          onPointerEnter={hoverLandmark}
-          onPointerLeave={unhoverLandmark}
           onActivate={activateLandmark}
         />
       )}
@@ -89,18 +87,13 @@ export function CitadelScene() {
       {activeLandmark && (
         <LoreReveal
           landmark={activeLandmark}
-          state={discoveryState[activeLandmark.id]}
           onDismiss={handleDismiss}
         />
       )}
 
       <p className="sr-only" aria-live="polite">
         {activeLandmark
-          ? `${activeLandmark.displayName} ${
-              discoveryState[activeLandmark.id] === "revisited"
-                ? "revisited"
-                : "discovered"
-            }. ${activeLandmark.loreTitle}`
+          ? `${activeLandmark.displayName}. ${activeLandmark.loreTitle}`
           : ""}
       </p>
     </div>

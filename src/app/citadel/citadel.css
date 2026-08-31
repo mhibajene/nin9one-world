@@ -16,120 +16,49 @@
     linear-gradient(0deg, rgba(8, 8, 13, 0.5), transparent 24%);
 }
 
-.discovery-prompt,
+.discovery-cue,
 .lore-reveal {
   position: absolute;
   z-index: 2;
   color: #f3d6a1;
 }
 
-.discovery-prompt {
+.discovery-cue {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
   left: clamp(1rem, 3vw, 3rem);
   bottom: clamp(1rem, 4vh, 3rem);
   width: min(22rem, calc(100vw - 2rem));
+  padding: 0.65rem 0;
+  border-top: 1px solid rgba(226, 177, 88, 0.24);
+  pointer-events: none;
+  animation: discovery-cue-enter 240ms ease-out both;
 }
 
-.discovery-prompt__heading {
-  display: flex;
-  align-items: baseline;
-  gap: 0.75rem;
-  margin-bottom: 0.6rem;
-}
-
-.discovery-prompt__eyebrow,
-.lore-reveal__meta,
-.discovery-prompt__state,
-.discovery-prompt__index {
+.discovery-cue__eyebrow {
   color: rgba(224, 176, 91, 0.72);
   font-size: 0.62rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
-.discovery-prompt h1 {
-  margin: 0;
+.discovery-cue__name {
   color: rgba(255, 238, 204, 0.9);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1rem, 1.7vw, 1.25rem);
-  font-weight: 400;
-  letter-spacing: 0.04em;
-}
-
-.discovery-prompt__guidance {
-  max-width: 20rem;
-  margin: 0 0 0.85rem;
-  color: rgba(235, 220, 193, 0.56);
-  font-size: 0.72rem;
-  line-height: 1.5;
-}
-
-.discovery-prompt__list {
-  display: grid;
-  gap: 0.35rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.discovery-prompt__signal {
-  display: grid;
-  grid-template-columns: 2rem 1fr auto;
-  gap: 0.7rem;
-  align-items: center;
-  width: 100%;
-  min-height: 2.55rem;
-  padding: 0.55rem 0.65rem;
-  border: 1px solid rgba(218, 164, 76, 0.12);
-  border-left-color: rgba(226, 177, 88, 0.34);
-  border-radius: 0;
-  background: rgba(8, 8, 13, 0.38);
-  color: rgba(247, 230, 199, 0.72);
-  text-align: left;
-  backdrop-filter: blur(8px);
-  cursor: pointer;
-  transition:
-    border-color 180ms ease,
-    background-color 180ms ease,
-    color 180ms ease,
-    transform 180ms ease;
-}
-
-.discovery-prompt__signal:hover,
-.discovery-prompt__signal:focus-visible,
-.discovery-prompt__signal[data-active="true"] {
-  border-color: rgba(232, 185, 99, 0.48);
-  background: rgba(24, 20, 18, 0.72);
-  color: #fff0d1;
-  outline: none;
-  transform: translateX(0.2rem);
-}
-
-.discovery-prompt__signal:focus-visible {
-  box-shadow: 0 0 0 2px rgba(8, 8, 13, 0.94), 0 0 0 3px #d7a957;
-}
-
-.discovery-prompt__signal[data-state="discovered"],
-.discovery-prompt__signal[data-state="revisited"] {
-  border-left-color: rgba(244, 194, 103, 0.76);
-}
-
-.discovery-prompt__name {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   letter-spacing: 0.025em;
 }
 
-.discovery-prompt__signal[data-state="undiscovered"] .discovery-prompt__name {
-  color: rgba(235, 220, 193, 0.48);
-  font-family: inherit;
-  font-size: 0.66rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.discovery-prompt__state {
-  text-align: right;
-  letter-spacing: 0.11em;
+@keyframes discovery-cue-enter {
+  from {
+    opacity: 0;
+    transform: translateY(0.35rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .lore-reveal {
@@ -151,13 +80,6 @@
   margin-bottom: 1.3rem;
   background: linear-gradient(90deg, #edbd69, transparent);
   box-shadow: 0 0 1rem rgba(237, 189, 105, 0.4);
-}
-
-.lore-reveal__meta {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 2.2rem;
 }
 
 .lore-reveal__landmark {
@@ -229,24 +151,10 @@
 }
 
 @media (max-width: 720px), (max-height: 660px) {
-  .discovery-prompt {
+  .discovery-cue {
     bottom: 0.75rem;
     left: 0.75rem;
     width: min(19rem, calc(100vw - 1.5rem));
-  }
-
-  .discovery-prompt__guidance,
-  .discovery-prompt__heading {
-    display: none;
-  }
-
-  .discovery-prompt__signal {
-    min-height: 2.25rem;
-    padding-block: 0.42rem;
-  }
-
-  .discovery-prompt__state {
-    display: none;
   }
 
   .lore-reveal {
@@ -274,9 +182,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .discovery-prompt__signal,
+  .discovery-cue,
   .lore-reveal {
-    transition: none;
     animation: none;
   }
 }
