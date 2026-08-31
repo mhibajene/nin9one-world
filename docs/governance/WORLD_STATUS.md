@@ -30,6 +30,14 @@ Auto-merge window: Founder-opened on 2026-08-31.
 
 Eligible pull requests may use native squash auto-merge under the gates in `AGENT_AUTONOMY.md`. The repository-level capability does not override ticket, canon, Class C, review, or validation boundaries.
 
+Operating roles:
+
+- Founder — canon and major creative authority.
+- Codex — autonomous world builder and sole agent implementation writer.
+- Grokbot — independent, read-only World Steward and adversarial reviewer of Codex Founder Reviews.
+
+Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWARD.md`](GROKBOT_WORLD_STEWARD.md) before they are presented together to the Founder. Grokbot may return `NO OBJECTION — continue autonomous execution`, but cannot approve canon, approve a merge, or expand or reset the three-move budget.
+
 ## Active Ticket
 
 Unassigned — autonomous Move 3 selection.
@@ -127,6 +135,17 @@ Founder-authorized on 2026-08-31. This operational setup does not consume an exp
 - Adds a pull-request authority and evidence checklist.
 - Records the per-ticket auto-merge eligibility and stop conditions.
 - Preserves Founder review for canon, Class C work, and work outside an open window.
+
+WORLD-OPS-002
+
+Grokbot World Steward Setup
+
+Founder-authorized on 2026-08-31. This is a Class A governance-only change and does not consume an experiential move; the current window remains at Move 2 of 3.
+
+- Defines Founder, Codex, and Grokbot operating roles without changing canon.
+- Keeps Codex as the sole agent implementation writer.
+- Adds a standing read-only Grokbot review prompt and advisory verdict format.
+- Integrates independent challenge into the existing Founder Review loop.
 
 ## Upcoming
 

@@ -50,6 +50,8 @@ Check it before starting work to avoid duplicate execution or drift.
 
 Autonomous execution must remain within current canon and the active ticket recorded in `WORLD_STATUS.md`.
 
+Among agents, Codex is the sole implementation writer. Grokbot is a read-only World Steward that independently challenges Codex Founder Reviews using [docs/governance/GROKBOT_WORLD_STEWARD.md](docs/governance/GROKBOT_WORLD_STEWARD.md). Grokbot must not author or apply repository changes.
+
 ## Branching Guidance
 
 main represents the stable world state.
