@@ -10,7 +10,7 @@ Phase 1 — Citadel Foundation was founder-approved and closed on 2026-07-19.
 
 ## Active Lane
 
-Discovery
+Camera / Navigation
 
 ## Repository Version
 
@@ -18,23 +18,21 @@ Discovery
 
 ### Milestone
 
-Citadel Discovery Founder Review 002 — Prepared
+Anchored Camera Exploration — In Review
 
 ## Operating Mode
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Closed — 3 of 3 moves merged.
+Current review window: Open — 0 of 3 moves merged; Move 1 implemented and in review.
 
-Auto-merge window: Closed on 2026-08-31 after Move 3 merged.
+Auto-merge window: Closed. The Citadel Discovery 002 disposition opens autonomous execution but does not separately open a three-ticket auto-merge window.
 
 Eligible pull requests may use native squash auto-merge under the gates in `AGENT_AUTONOMY.md`. The repository-level capability does not override ticket, canon, Class C, review, or validation boundaries.
 
-Founder disposition: [`FOUNDER_REVIEW_CITADEL_DISCOVERY_001.md`](FOUNDER_REVIEW_CITADEL_DISCOVERY_001.md).
+Founder disposition and previous review: [`FOUNDER_REVIEW_CITADEL_DISCOVERY_002.md`](FOUNDER_REVIEW_CITADEL_DISCOVERY_002.md).
 
-Current Founder Review: [`FOUNDER_REVIEW_CITADEL_DISCOVERY_002.md`](FOUNDER_REVIEW_CITADEL_DISCOVERY_002.md).
-
-The persistent numbered landmark HUD is rejected as the primary discovery surface. Discovery must become environmental; UI must remain contextual, temporary, and subordinate. Internal canon classifications must not appear in the player experience. This direction does not authorize new canon.
+The interface-light, environment-led discovery surface is the accepted Citadel baseline. The persistent numbered landmark HUD remains rejected. The current window is selected from fresh use of the merged experience and may improve the broader Citadel experience without adding explanatory lore, expanding canon, or making internal progression visible.
 
 Operating roles:
 
@@ -46,7 +44,34 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-None — awaiting Founder disposition.
+WORLD-NAVIGATION-001
+
+Anchored Camera Exploration
+
+Status: Implemented and locally validated; Class B Founder review is required before merge.
+
+Observed weakness:
+
+- The untouched Citadel read as a strong composition but revealed little of its spatial depth before player input.
+- A normal sustained orbit could push the Citadel almost entirely out of frame, turning exploration into an accidental edge crop and weakening the place's central anchor.
+
+Implemented result:
+
+- Adds a slow ten-second introductory camera drift that quietly reveals parallax and stops after player camera input.
+- Pauses the drift while a landmark is attended or a reflection is open.
+- Honors the player's reduced-motion preference by disabling the automatic drift.
+- Constrains horizontal and vertical orbit to preserve The Citadel and solar field as spatial anchors while still exposing lateral depth.
+- Uses narrower portrait bounds and orientation-aware zoom ranges so mobile exploration preserves the established composition.
+- Adds no interface, landmark, lore, world object, external dependency, architecture, or canon.
+
+Validation evidence:
+
+- TypeScript typecheck and production build passed locally.
+- Untouched desktop and mobile compositions retain the accepted discovery baseline.
+- Extreme desktop and portrait orbit paths preserve The Citadel and solar field while revealing side silhouettes and parallax.
+- Direct landmark attention and reflection activation continue to work after camera movement.
+- Keyboard focus still produces the same contextual cue and world response; the hidden native-button route is unchanged.
+- Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
 
 ## Completed
 
@@ -279,18 +304,22 @@ WORLD-GOVERNANCE-002
 
 Citadel Discovery Founder Review 002
 
-Governance-only closeout prepared after the three-move window closed on 2026-08-31.
+Founder-reviewed and disposition recorded on 2026-08-31.
 
 - Files the complete seven-section Founder Review for WORLD-DISCOVERY-004 through WORLD-DISCOVERY-006.
 - Records the read-only World Steward verdict: `NO OBJECTION — continue autonomous execution.`
-- Leaves the autonomous and auto-merge window closed pending Founder disposition.
-- Adds no implementation authority, canon, or experiential change.
+- Accepts the interface-light, environment-led discovery surface as the Citadel baseline.
+- Opens a new three-move autonomous window under the existing delegated authority.
+- Leaves auto-merge eligibility subject to a separately explicit Founder-opened auto-merge window and the existing charter gates.
+- Directs the next move to the most important weakness found through fresh use rather than pre-committing the window to discovery work.
+- Preserves the rejected persistent-HUD direction, existing canon, and all Founder-reserved boundaries.
 
 ## Upcoming
 
-1. Founder reviews `FOUNDER_REVIEW_CITADEL_DISCOVERY_002.md` and records a disposition.
-2. If authorized, open a new autonomous window inside the resulting direction.
-3. Do not begin further experiential implementation before that disposition.
+1. Complete Founder review and hosted validation for `WORLD-NAVIGATION-001` before merge.
+2. Experience the anchored camera behavior in the merged Citadel rather than assuming a second navigation ticket.
+3. Select Move 2 from the most important remaining experiential weakness supported by fresh observation.
+4. Preserve the accepted discovery baseline, current canon, and Founder-reserved boundaries.
 
 ## District Registry
 

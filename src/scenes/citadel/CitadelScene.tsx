@@ -1,6 +1,8 @@
 "use client";
 
 import { OrbitControls, Stars } from "@react-three/drei";
+import { useThree } from "@react-three/fiber";
+import { useEffect, useState } from "react";
 import { CitadelFog } from "@/components/atmosphere/CitadelFog";
 import { CitadelLighting } from "@/components/atmosphere/CitadelLighting";
 import { DiscoveryPrompt } from "@/components/discovery/DiscoveryPrompt";
@@ -13,6 +15,77 @@ import {
   findCitadelLandmark,
 } from "@/data/landmarks/citadelLandmarks";
 import { useLandmarkDiscovery } from "@/systems/discovery/useLandmarkDiscovery";
+
+const landscapeCameraAzimuthLimit = Math.PI * 0.16;
+const portraitCameraAzimuthLimit = Math.PI * 0.085;
+
+function usePrefersReducedMotion() {
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updatePreference = () => setPrefersReducedMotion(mediaQuery.matches);
+
+    updatePreference();
+    mediaQuery.addEventListener("change", updatePreference);
+
+    return () => mediaQuery.removeEventListener("change", updatePreference);
+  }, []);
+
+  return prefersReducedMotion;
+}
+
+function CitadelCameraControls({
+  enabled,
+  canDrift,
+}: {
+  enabled: boolean;
+  canDrift: boolean;
+}) {
+  const size = useThree((state) => state.size);
+  const isPortrait = size.height > size.width;
+  const azimuthLimit = isPortrait
+    ? portraitCameraAzimuthLimit
+    : landscapeCameraAzimuthLimit;
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const [introDriftActive, setIntroDriftActive] = useState(true);
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      setIntroDriftActive(false);
+      return;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      setIntroDriftActive(false);
+    }, 10_000);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [prefersReducedMotion]);
+
+  return (
+    <OrbitControls
+      target={[0, 21, -18]}
+      minDistance={isPortrait ? 118 : 58}
+      maxDistance={isPortrait ? 178 : 132}
+      minAzimuthAngle={-azimuthLimit}
+      maxAzimuthAngle={azimuthLimit}
+      maxPolarAngle={Math.PI * 0.6}
+      minPolarAngle={Math.PI * 0.24}
+      enablePan={false}
+      rotateSpeed={0.48}
+      zoomSpeed={0.62}
+      dampingFactor={0.08}
+      enableDamping
+      autoRotate={
+        enabled && canDrift && introDriftActive && !prefersReducedMotion
+      }
+      autoRotateSpeed={0.18}
+      onStart={() => setIntroDriftActive(false)}
+      enabled={enabled}
+    />
+  );
+}
 
 export function CitadelScene() {
   const {
@@ -60,16 +133,9 @@ export function CitadelScene() {
           onLeave={unhoverLandmark}
           onActivate={activateLandmark}
         />
-        <OrbitControls
-          target={[0, 21, -18]}
-          minDistance={48}
-          maxDistance={188}
-          maxPolarAngle={Math.PI * 0.62}
-          minPolarAngle={Math.PI * 0.2}
-          enablePan={false}
-          dampingFactor={0.08}
-          enableDamping
+        <CitadelCameraControls
           enabled={!activeLandmark}
+          canDrift={!activeLandmark && !attendedLandmarkId}
         />
       </SceneCanvas>
 
