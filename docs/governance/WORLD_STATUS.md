@@ -18,13 +18,13 @@ Camera / Navigation
 
 ### Milestone
 
-Anchored Camera Exploration — In Review
+Anchored Camera Exploration — Complete
 
 ## Operating Mode
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Open — 0 of 3 moves merged; Move 1 implemented and in review.
+Current review window: Move 1 of 3.
 
 Auto-merge window: Closed. The Citadel Discovery 002 disposition opens autonomous execution but does not separately open a three-ticket auto-merge window.
 
@@ -44,34 +44,7 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-WORLD-NAVIGATION-001
-
-Anchored Camera Exploration
-
-Status: Implemented and locally validated; Class B Founder review is required before merge.
-
-Observed weakness:
-
-- The untouched Citadel read as a strong composition but revealed little of its spatial depth before player input.
-- A normal sustained orbit could push the Citadel almost entirely out of frame, turning exploration into an accidental edge crop and weakening the place's central anchor.
-
-Implemented result:
-
-- Adds a slow ten-second introductory camera drift that quietly reveals parallax and stops after player camera input.
-- Pauses the drift while a landmark is attended or a reflection is open.
-- Honors the player's reduced-motion preference by disabling the automatic drift.
-- Constrains horizontal and vertical orbit to preserve The Citadel and solar field as spatial anchors while still exposing lateral depth.
-- Uses narrower portrait bounds and orientation-aware zoom ranges so mobile exploration preserves the established composition.
-- Adds no interface, landmark, lore, world object, external dependency, architecture, or canon.
-
-Validation evidence:
-
-- TypeScript typecheck and production build passed locally and in required hosted validation.
-- Untouched desktop and mobile compositions retain the accepted discovery baseline.
-- Extreme desktop and portrait orbit paths preserve The Citadel and solar field while revealing side silhouettes and parallax.
-- Direct landmark attention and reflection activation continue to work after camera movement.
-- Keyboard focus still produces the same contextual cue and world response; the hidden native-button route is unchanged.
-- Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
+Unassigned — autonomous Move 2 selection.
 
 ## Completed
 
@@ -314,12 +287,40 @@ Founder-reviewed and disposition recorded on 2026-08-31.
 - Directs the next move to the most important weakness found through fresh use rather than pre-committing the window to discovery work.
 - Preserves the rejected persistent-HUD direction, existing canon, and all Founder-reserved boundaries.
 
+WORLD-NAVIGATION-001
+
+Anchored Camera Exploration
+
+Founder-approved and merged as Move 1 of the current autonomous window on 2026-08-31.
+
+Observed weakness:
+
+- The untouched Citadel read as a strong composition but revealed little of its spatial depth before player input.
+- A normal sustained orbit could push the Citadel almost entirely out of frame, turning exploration into an accidental edge crop and weakening the place's central anchor.
+
+Implemented result:
+
+- Adds a slow ten-second introductory camera drift that quietly reveals parallax and stops after player camera input.
+- Pauses the drift while a landmark is attended or a reflection is open.
+- Honors the player's reduced-motion preference by disabling the automatic drift.
+- Constrains horizontal and vertical orbit to preserve The Citadel and solar field as spatial anchors while still exposing lateral depth.
+- Uses narrower portrait bounds and orientation-aware zoom ranges so mobile exploration preserves the established composition.
+- Adds no interface, landmark, lore, world object, external dependency, architecture, or canon.
+
+Validation evidence:
+
+- TypeScript typecheck and production build passed locally and in required hosted validation.
+- Untouched desktop and mobile compositions retain the accepted discovery baseline.
+- Extreme desktop and portrait orbit paths preserve The Citadel and solar field while revealing side silhouettes and parallax.
+- Direct landmark attention and reflection activation continue to work after camera movement.
+- Keyboard focus still produces the same contextual cue and world response; the hidden native-button route is unchanged.
+- Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
+
 ## Upcoming
 
-1. Complete Founder review and hosted validation for `WORLD-NAVIGATION-001` before merge.
-2. Experience the anchored camera behavior in the merged Citadel rather than assuming a second navigation ticket.
-3. Select Move 2 from the most important remaining experiential weakness supported by fresh observation.
-4. Preserve the accepted discovery baseline, current canon, and Founder-reserved boundaries.
+1. Experience the anchored camera behavior in the merged Citadel rather than assuming a second navigation ticket.
+2. Select Move 2 from the most important remaining experiential weakness supported by fresh observation.
+3. Preserve the accepted discovery baseline, current canon, and Founder-reserved boundaries.
 
 ## District Registry
 
