@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 1 — Citadel Foundation
+Phase 2 — Citadel Discovery
 
-Status: Complete.
+Status: Active.
 
-Founder-approved on 2026-07-19 through the Citadel Foundation closeout disposition.
+Phase 1 — Citadel Foundation was founder-approved and closed on 2026-07-19.
 
 ## Active Lane
 
@@ -18,7 +18,13 @@ Discovery
 
 ### Milestone
 
-Citadel Foundation — Complete
+Citadel Landmark Discovery Foundation — Founder review
+
+## Operating Mode
+
+Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
+
+Current review window: Move 1 of 3.
 
 ## Active Ticket
 
@@ -26,7 +32,7 @@ WORLD-DISCOVERY-001
 
 Citadel Landmark Discovery Foundation
 
-Status: Implementation active on `feature/world-discovery-001`; Class B founder review required before merge.
+Status: Implemented on `feature/world-discovery-001` and merged to `main` in PR #14 on 2026-08-31. Class B Founder review is required before ticket closeout.
 
 Implementation authorized by the founder on 2026-07-19 as a separate instruction from the Citadel Foundation closeout disposition.
 
@@ -42,6 +48,26 @@ Approval boundary:
 - No new or implied canon.
 - Bounded implementation is authorized for the three-landmark foundation.
 - Experience or presentation changes remain Class B.
+
+Implemented landmark set:
+
+- The Citadel — canonical
+- Solar Obelisk — atmospheric
+- Ruptured Obsidian — canonical
+
+Evaluation evidence:
+
+- TypeScript typecheck and production build pass on 2026-08-31.
+- Desktop and mobile layouts load without an error overlay or horizontal overflow.
+- Pointer and keyboard discovery paths work.
+- Lore reveals are dismissible and return focus to the originating landmark signal.
+- Undiscovered, discovered, and revisited states remain stable during the browser session.
+- The existing atmospheric composition remains visible and dominant.
+
+Known issues:
+
+- Three.js emits non-blocking dependency deprecation warnings for `Clock` and `PCFSoftShadowMap`.
+- The experience and lore outcomes remain unapproved until the Founder completes Class B review.
 
 ## Completed
 
@@ -95,7 +121,13 @@ Solar Iconography Pass
 
 ## Upcoming
 
-Complete implementation evidence and founder review for WORLD-DISCOVERY-001.
+Complete Founder review for WORLD-DISCOVERY-001.
+
+Upon approval:
+
+1. Mark WORLD-DISCOVERY-001 complete.
+2. Preserve the recorded canon classifications.
+3. Select the next autonomous direction from observed experience rather than assuming expansion.
 
 ## District Registry
 
