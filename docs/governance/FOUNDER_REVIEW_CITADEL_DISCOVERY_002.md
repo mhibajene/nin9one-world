@@ -2,9 +2,9 @@
 
 ## Status
 
-Three-move autonomous window closed and ready for Founder review.
+Previous three-move autonomous window closed and reviewed.
 
-Founder disposition pending.
+Founder disposition recorded on 2026-08-31.
 
 ## 1. What Changed
 
@@ -80,17 +80,9 @@ The first move should be selected from fresh use of the merged experience rather
 
 ## 7. Founder Decisions
 
-### Decision 1 — Discovery surface baseline
+Founder decisions required: None outstanding.
 
-Accept the current interface-light, environment-led discovery surface as the baseline, or direct a bounded revision.
-
-Recommendation: Accept it as the baseline. The rejected persistent-HUD direction has been removed without discarding the useful state architecture.
-
-### Decision 2 — Next autonomous window
-
-Open a new three-move auto-merge window inside the existing canon and Citadel Discovery direction, or hold implementation at the current review point.
-
-Recommendation: Open the window only if the Founder wants discovery depth to remain the immediate priority. No canon decision is required.
+The disposition below accepts the discovery baseline and opens the next bounded window.
 
 ## Independent World Steward Review
 
@@ -98,4 +90,36 @@ The read-only World Steward returned:
 
 > NO OBJECTION — continue autonomous execution.
 
-This advisory finding does not approve canon, open another autonomous window, or expand the three-move budget. Founder disposition remains required.
+This advisory finding did not approve canon, open another autonomous window, or expand the three-move budget. Founder authority resolves those boundaries through the disposition below.
+
+## Founder Disposition — Citadel Discovery 002
+
+### Accepted baseline
+
+- The Citadel is encountered primarily through the world itself.
+- Attention and intentional interaction drive discovery.
+- Material, lighting, and environmental response carry meaningful feedback where practical.
+- Contextual interface remains temporary and subordinate to the environment.
+- Internal progression and canon metadata remain hidden from the player.
+- Lore suggests and reinforces meaning without explaining the world thesis back to the player.
+- The internal discovery-state architecture may remain where it supports the experience without becoming visible collectible-style progression.
+
+### Accessibility observation
+
+The sighted keyboard-only discovery path remains a valid observation area. Refinement may improve practical usability only while preserving the environment-led baseline; it does not authorize restoration of a persistent landmark HUD.
+
+### Next autonomous window
+
+A new three-move autonomous window is open under the existing delegated authority and charter gates.
+
+This disposition does not separately open a three-ticket auto-merge window. Auto-merge remains subject to an explicit Founder-opened window and all existing charter gates.
+
+The window is not pre-committed to discovery refinement. Its first move must be selected from fresh use of the merged Citadel and answer what would most meaningfully improve what the player can see, feel, discover, understand, or do.
+
+Possible bounded directions include discovery refinement, spatial audio, atmosphere, environmental response, camera and navigation, accessibility, or another intervention supported by observation.
+
+Do not create work merely to continue the previous discovery lane. Do not rebuild persistent discovery UI, add explanatory lore, or expand canon.
+
+### Authority boundary
+
+Codex retains the existing delegated authority and three-move ceiling. The World Steward remains read-only and advisory and will review the next closed autonomous window under the established cadence. All Founder-reserved boundaries remain unchanged.
