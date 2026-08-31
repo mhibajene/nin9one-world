@@ -18,15 +18,15 @@ Discovery
 
 ### Milestone
 
-Three-ticket autonomous execution — Active
+Three-ticket autonomous execution — Founder review
 
 ## Operating Mode
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Move 2 of 3.
+Current review window: Closed — 3 of 3 moves merged.
 
-Auto-merge window: Founder-opened on 2026-08-31.
+Auto-merge window: Closed on 2026-08-31 after Move 3 merged.
 
 Eligible pull requests may use native squash auto-merge under the gates in `AGENT_AUTONOMY.md`. The repository-level capability does not override ticket, canon, Class C, review, or validation boundaries.
 
@@ -40,9 +40,7 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-Unassigned — autonomous Move 3 selection.
-
-Status: Evaluate the merged discovery experience and activate the smallest meaningful final move in the current window.
+None — Founder Review due.
 
 ## Completed
 
@@ -140,19 +138,45 @@ WORLD-OPS-002
 
 Grokbot World Steward Setup
 
-Founder-authorized on 2026-08-31. This is a Class A governance-only change and does not consume an experiential move; the current window remains at Move 2 of 3.
+Founder-authorized on 2026-08-31. This is a Class A governance-only change and did not consume an experiential move.
 
 - Defines Founder, Codex, and Grokbot operating roles without changing canon.
 - Keeps Codex as the sole agent implementation writer.
 - Adds a standing read-only Grokbot review prompt and advisory verdict format.
 - Integrates independent challenge into the existing Founder Review loop.
 
+WORLD-DISCOVERY-003
+
+Attentive Landmark Naming
+
+Implemented and merged through the Founder-opened auto-merge window on 2026-08-31.
+
+Observed weakness:
+
+- The discovery interface named every landmark before the player had paid attention to it.
+- The landmark list therefore behaved more like a directory than a discovery surface.
+
+Implemented result:
+
+- Undiscovered landmarks present as `Unknown signal` while retaining their numbered navigation target.
+- Pointer hover, keyboard focus, or direct world attention reveals the established landmark name.
+- The existing `Noticed` state preserves the revealed name for the remainder of the browser session.
+- Discovered and revisited landmarks retain their established names and state labels.
+- Assistive labels preserve the same attention-first sequence without hiding the control.
+- No landmark, lore fragment, canon classification, dependency, or discovery state was added.
+
+Validation evidence:
+
+- TypeScript typecheck and production build passed locally and in required hosted validation.
+- Desktop and mobile undiscovered, direct-discovery, dismissal, and session-restoration paths passed.
+- Source verification confirms the existing keyboard-focus and pointer-attention routes both transition an undiscovered landmark to `Noticed` before rendering its name.
+- Reduced-motion behavior is unchanged.
+
 ## Upcoming
 
-1. Verify the repository auto-merge and required-check configuration.
-2. Select and activate Move 3 from observed experience.
-3. Execute one eligible ticket through the guarded auto-merge path.
-4. Close the window and prepare the Founder Review after Move 3 merges.
+1. Prepare the Founder Review for the completed three-move window.
+2. Keep the auto-merge window closed until the Founder opens the next bounded window.
+3. Select the next experiential direction only after reviewing what the discovery sequence now reveals.
 
 ## District Registry
 

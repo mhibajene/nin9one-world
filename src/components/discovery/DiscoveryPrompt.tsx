@@ -50,6 +50,12 @@ export function DiscoveryPrompt({
           .map((landmark, index) => {
             const state = discoveryState[landmark.id] ?? "undiscovered";
             const isAttended = attendedLandmarkId === landmark.id;
+            const isNamed = state !== "undiscovered";
+            const signalNumber = String(index + 1).padStart(2, "0");
+            const visibleName = isNamed ? landmark.displayName : "Unknown signal";
+            const accessibleLabel = isNamed
+              ? `${landmark.displayName}. ${stateLabels[state]}. Read lore fragment.`
+              : `Unknown landmark signal ${index + 1}. Focus to notice it.`;
 
             return (
               <li key={landmark.id}>
@@ -70,13 +76,13 @@ export function DiscoveryPrompt({
                       onActivate(landmark.id);
                     }
                   }}
-                  aria-label={`${landmark.displayName}. ${stateLabels[state]}. Read lore fragment.`}
+                  aria-label={accessibleLabel}
                 >
                   <span className="discovery-prompt__index" aria-hidden="true">
-                    {String(index + 1).padStart(2, "0")}
+                    {signalNumber}
                   </span>
                   <span className="discovery-prompt__name">
-                    {landmark.displayName}
+                    {visibleName}
                   </span>
                   <span className="discovery-prompt__state">
                     {stateLabels[state]}
