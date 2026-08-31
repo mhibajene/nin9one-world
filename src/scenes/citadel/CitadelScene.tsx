@@ -19,8 +19,10 @@ export function CitadelScene() {
     discoveryState,
     activeLandmarkId,
     attendedLandmarkId,
-    attendLandmark,
-    leaveLandmark,
+    focusLandmark,
+    blurLandmark,
+    hoverLandmark,
+    unhoverLandmark,
     activateLandmark,
     dismissLandmark,
   } = useLandmarkDiscovery(citadelLandmarks);
@@ -53,8 +55,9 @@ export function CitadelScene() {
         <LandmarkInteraction
           landmarks={citadelLandmarks}
           discoveryState={discoveryState}
-          onAttend={attendLandmark}
-          onLeave={leaveLandmark}
+          attendedLandmarkId={attendedLandmarkId}
+          onAttend={hoverLandmark}
+          onLeave={unhoverLandmark}
           onActivate={activateLandmark}
         />
         <OrbitControls
@@ -75,8 +78,10 @@ export function CitadelScene() {
           landmarks={citadelLandmarks}
           discoveryState={discoveryState}
           attendedLandmarkId={attendedLandmarkId}
-          onAttend={attendLandmark}
-          onLeave={leaveLandmark}
+          onFocus={focusLandmark}
+          onBlur={blurLandmark}
+          onPointerEnter={hoverLandmark}
+          onPointerLeave={unhoverLandmark}
           onActivate={activateLandmark}
         />
       )}

@@ -18,56 +18,60 @@ Discovery
 
 ### Milestone
 
-Citadel Landmark Discovery Foundation — Founder review
+Landmark Response & Attention Refinement — Founder review
 
 ## Operating Mode
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Move 1 of 3.
+Current review window: Move 2 of 3.
 
 ## Active Ticket
 
-WORLD-DISCOVERY-001
+WORLD-DISCOVERY-002
 
-Citadel Landmark Discovery Foundation
+Landmark Response & Attention Refinement
 
-Status: Implemented on `feature/world-discovery-001` and merged to `main` in PR #14 on 2026-08-31. Class B Founder review is required before ticket closeout.
+Status: Implemented on `feature/world-discovery-002`; Class B Founder review is required before merge.
 
-Implementation authorized by the founder on 2026-07-19 as a separate instruction from the Citadel Foundation closeout disposition.
+Activated on 2026-08-31 under the delegated ticket authority in `AGENT_AUTONOMY.md` after Founder approval of WORLD-DISCOVERY-001.
 
 Intent:
 
-- Establish the first discovery interaction for The Citadel.
-- Represent landmarks and their lore as reusable, data-driven entities.
-- Reveal only canon already approved in `WORLD_CANON.md`.
-- Preserve atmosphere and exploration as the dominant experience.
+- Distinguish a landmark that has been noticed from one receiving current attention.
+- Make first discovery earn a persistent environmental response.
+- Preserve keyboard and pointer attention when both inputs are used together.
+- Refine the existing three-landmark proof without adding content or systems.
 
 Approval boundary:
 
+- The existing landmark set and lore remain unchanged.
+- No new dependency, persistence, camera, audio, or progression system.
 - No new or implied canon.
-- Bounded implementation is authorized for the three-landmark foundation.
 - Experience or presentation changes remain Class B.
 
-Implemented landmark set:
+Implemented refinement:
 
-- The Citadel — canonical
-- Solar Obelisk — atmospheric
-- Ruptured Obsidian — canonical
+- Renames the durable pre-discovery state from `Within attention` to `Noticed`.
+- Tracks keyboard focus and pointer hover independently, with pointer attention temporarily taking precedence.
+- Restores keyboard-led landmark response when pointer attention leaves.
+- Uses each landmark's declared visual-response type to set restrained attended and discovered light levels.
+- Reduces rupture veins before attention and strengthens them only through attention or discovery.
+- Introduces no new animation, so reduced-motion behavior remains stable.
 
 Evaluation evidence:
 
 - TypeScript typecheck and production build pass on 2026-08-31.
 - Desktop and mobile layouts load without an error overlay or horizontal overflow.
-- Pointer and keyboard discovery paths work.
-- Lore reveals are dismissible and return focus to the originating landmark signal.
-- Undiscovered, discovered, and revisited states remain stable during the browser session.
-- The existing atmospheric composition remains visible and dominant.
+- Keyboard focus, pointer hover, pointer leave, first discovery, dismissal, and focus return pass.
+- Mixed pointer and keyboard attention restores the still-focused keyboard landmark correctly.
+- Undiscovered, noticed, and discovered responses remain visually and semantically distinct.
+- The existing lore, canon classifications, and atmospheric composition remain unchanged.
 
 Known issues:
 
 - Three.js emits non-blocking dependency deprecation warnings for `Clock` and `PCFSoftShadowMap`.
-- The experience and lore outcomes remain unapproved until the Founder completes Class B review.
+- The response refinement remains unapproved until the Founder completes Class B review.
 
 ## Completed
 
@@ -119,15 +123,25 @@ WORLD-FOUNDATION-007A
 
 Solar Iconography Pass
 
+WORLD-DISCOVERY-001
+
+Citadel Landmark Discovery Foundation
+
+Founder-approved on 2026-08-31 with the implemented classifications preserved:
+
+- The Citadel — canonical
+- Solar Obelisk — atmospheric
+- Ruptured Obsidian — canonical
+
 ## Upcoming
 
-Complete Founder review for WORLD-DISCOVERY-001.
+Complete Founder review for WORLD-DISCOVERY-002.
 
 Upon approval:
 
-1. Mark WORLD-DISCOVERY-001 complete.
-2. Preserve the recorded canon classifications.
-3. Select the next autonomous direction from observed experience rather than assuming expansion.
+1. Mark WORLD-DISCOVERY-002 complete.
+2. Preserve the existing landmark set, lore, and canon classifications.
+3. Select the final move in the current autonomous window from observed experience rather than assuming expansion.
 
 ## District Registry
 
