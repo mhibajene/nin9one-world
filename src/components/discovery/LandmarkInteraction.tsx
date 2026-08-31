@@ -33,21 +33,74 @@ const responseProfiles: Record<
   }
 > = {
   "citadel-resonance": {
-    attendedIntensity: 3.2,
-    discoveredIntensity: 4.8,
+    attendedIntensity: 75,
+    discoveredIntensity: 115,
     distanceMultiplier: 2.6,
   },
   "solar-illumination": {
-    attendedIntensity: 3.8,
-    discoveredIntensity: 5.6,
+    attendedIntensity: 90,
+    discoveredIntensity: 135,
     distanceMultiplier: 2.8,
   },
   "rupture-revelation": {
-    attendedIntensity: 2.8,
-    discoveredIntensity: 4.5,
+    attendedIntensity: 65,
+    discoveredIntensity: 105,
     distanceMultiplier: 2.4,
   },
 };
+
+function AttentiveMaterialTrace({
+  landmark,
+  discoveryState,
+  isAttended,
+}: {
+  landmark: CitadelLandmark;
+  discoveryState: LandmarkDiscoveryState;
+  isAttended: boolean;
+}) {
+  if (landmark.visualResponse === "rupture-revelation") {
+    return null;
+  }
+
+  const hasResponded =
+    discoveryState === "discovered" || discoveryState === "revisited";
+
+  if (!isAttended && !hasResponded) {
+    return null;
+  }
+
+  const isCitadel = landmark.visualResponse === "citadel-resonance";
+  const opacity = hasResponded ? 0.72 : 0.56;
+  const width = isCitadel ? 0.32 : 0.46;
+  const height = isCitadel ? 7.4 : 5.8;
+
+  return (
+    <group position={landmark.scene.responsePosition}>
+      <mesh scale={[width * 4.5, height * 1.04, 0.035]} renderOrder={2}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshBasicMaterial
+          color={materialLanguage.celestialGold.halo}
+          transparent
+          opacity={opacity * 0.13}
+          depthWrite={false}
+          blending={AdditiveBlending}
+          fog={false}
+        />
+      </mesh>
+      <mesh scale={[width, height, 0.06]} renderOrder={3}>
+        <boxGeometry args={[1, 1, 1]} />
+        <meshBasicMaterial
+          color={materialLanguage.celestialGold.core}
+          transparent
+          opacity={opacity}
+          depthWrite={false}
+          blending={AdditiveBlending}
+          fog={false}
+        />
+      </mesh>
+    </group>
+  );
+}
 
 function RuptureVeins({
   landmark,
@@ -60,8 +113,8 @@ function RuptureVeins({
 }) {
   const hasResponded =
     discoveryState === "discovered" || discoveryState === "revisited";
-  const primaryOpacity = hasResponded ? 0.5 : isAttended ? 0.3 : 0.1;
-  const secondaryOpacity = hasResponded ? 0.36 : isAttended ? 0.2 : 0.07;
+  const primaryOpacity = hasResponded ? 0.66 : isAttended ? 0.42 : 0.1;
+  const secondaryOpacity = hasResponded ? 0.48 : isAttended ? 0.3 : 0.07;
 
   return (
     <group position={landmark.scene.responsePosition} rotation={[0.08, -0.4, -0.16]}>
@@ -133,6 +186,12 @@ function LandmarkTarget({
           isAttended={isAttended}
         />
       )}
+
+      <AttentiveMaterialTrace
+        landmark={landmark}
+        discoveryState={currentState}
+        isAttended={isAttended}
+      />
 
       {(isAttended || hasResponded) && (
         <pointLight

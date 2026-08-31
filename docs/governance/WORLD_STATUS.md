@@ -18,15 +18,15 @@ Discovery
 
 ### Milestone
 
-Quiet Lore Pass — Complete
+Attentive Material Response — Complete
 
 ## Operating Mode
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Move 2 of 3.
+Current review window: Closed — 3 of 3 moves merged.
 
-Auto-merge window: Founder-opened on 2026-08-31 after the discovery-surface governance closeout.
+Auto-merge window: Closed on 2026-08-31 after Move 3 merged.
 
 Eligible pull requests may use native squash auto-merge under the gates in `AGENT_AUTONOMY.md`. The repository-level capability does not override ticket, canon, Class C, review, or validation boundaries.
 
@@ -44,7 +44,7 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-Unassigned — autonomous Move 3 selection.
+None — Founder Review required before further implementation.
 
 ## Completed
 
@@ -245,11 +245,39 @@ Validation evidence:
 - Player-facing copy contains no `Traveler`, `Seeker`, canon-classification, or discovery-progression language.
 - Dismissal, focus return, and existing landmark response behavior remain stable.
 
+WORLD-DISCOVERY-006
+
+Attentive Material Response Calibration
+
+Implemented and merged as Move 3 of the Founder-opened autonomous window on 2026-08-31.
+
+Observed weakness:
+
+- In clean-session comparisons, the contextual cue changed under attention while the corresponding world-space illumination was effectively imperceptible.
+- Existing response-light values were too low relative to the established Citadel lighting scale, leaving UI to carry most of the discovery feedback.
+
+Implemented result:
+
+- Calibrates the existing per-landmark point lights to produce restrained local material illumination at the scene's established lighting scale.
+- Strengthens the Citadel's central gold trace and the Solar Obelisk's existing inlay only while attended or after discovery.
+- Strengthens the established rupture veins under attention and after discovery.
+- Keeps responses local, static, and subordinate; no beacon, pulse, icon, list, or new world object is introduced.
+- Preserves all landmarks, lore, discovery states, interaction behavior, and canon.
+
+Validation evidence:
+
+- TypeScript typecheck and production build passed locally and in required hosted validation.
+- Clean-session baseline and all three attention responses were compared in the browser.
+- Keyboard focus and pointer attention continue to drive the same world response.
+- Direct discovery, lore dismissal, focus return, and persistent post-discovery response passed.
+- Desktop and mobile compositions retain the established hierarchy and contextual cue behavior.
+- No new dependency, canon, lore, landmark, or architecture was introduced.
+
 ## Upcoming
 
-1. Experience the quieter fragments alongside each landmark's existing material response.
-2. Select Move 3 from observed use, prioritizing a stronger environmental response only where the world remains too inert.
-3. Keep all work inside established Citadel Discovery and current canon.
+1. File the seven-section Founder Review for `WORLD-DISCOVERY-004` through `WORLD-DISCOVERY-006`.
+2. Obtain the required read-only Grokbot World Steward challenge.
+3. Await Founder disposition before opening another autonomous window.
 
 ## District Registry
 
