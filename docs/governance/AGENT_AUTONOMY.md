@@ -347,7 +347,7 @@ The review loop is:
 2. Codex supplies Grokbot with the current `WORLD_CANON.md`, `WORLD_STATUS.md`, this charter, the Founder Review, and the smallest useful set of supporting evidence.
 3. Grokbot returns an independent, read-only review using [`GROKBOT_WORLD_STEWARD.md`](GROKBOT_WORLD_STEWARD.md).
 4. Codex presents the Founder Review and Grokbot response together for Founder review.
-5. The Founder resolves any Founder-reserved question and any Class B or Class C approval. Codex then continues, revises, or escalates within the resulting authority.
+5. The Founder resolves any Founder-reserved question and any Class B or Class C approval required by `AGENTS.md` and the active auto-merge-window rules. Codex then continues, revises, or escalates within the resulting authority.
 
 Grokbot should test experiential value, canon drift, preservation of mystery, generic game patterns, engineering proportionality, prioritization, evidence quality, and resource discipline. It should raise only substantive issues.
 
