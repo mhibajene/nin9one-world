@@ -9,14 +9,16 @@ type DiscoveryPromptProps = {
   landmarks: readonly CitadelLandmark[];
   discoveryState: Readonly<Record<string, LandmarkDiscoveryState>>;
   attendedLandmarkId: string | null;
-  onAttend: (id: string) => void;
-  onLeave: (id: string) => void;
+  onFocus: (id: string) => void;
+  onBlur: (id: string) => void;
+  onPointerEnter: (id: string) => void;
+  onPointerLeave: (id: string) => void;
   onActivate: (id: string) => void;
 };
 
 const stateLabels: Record<LandmarkDiscoveryState, string> = {
   undiscovered: "Unread",
-  available: "Within attention",
+  available: "Noticed",
   discovered: "Discovered",
   revisited: "Revisited",
 };
@@ -25,8 +27,10 @@ export function DiscoveryPrompt({
   landmarks,
   discoveryState,
   attendedLandmarkId,
-  onAttend,
-  onLeave,
+  onFocus,
+  onBlur,
+  onPointerEnter,
+  onPointerLeave,
   onActivate,
 }: DiscoveryPromptProps) {
   return (
@@ -55,10 +59,10 @@ export function DiscoveryPrompt({
                   data-active={isAttended}
                   data-state={state}
                   data-landmark-id={landmark.id}
-                  onFocus={() => onAttend(landmark.id)}
-                  onBlur={() => onLeave(landmark.id)}
-                  onPointerEnter={() => onAttend(landmark.id)}
-                  onPointerLeave={() => onLeave(landmark.id)}
+                  onFocus={() => onFocus(landmark.id)}
+                  onBlur={() => onBlur(landmark.id)}
+                  onPointerEnter={() => onPointerEnter(landmark.id)}
+                  onPointerLeave={() => onPointerLeave(landmark.id)}
                   onClick={() => onActivate(landmark.id)}
                   onKeyDown={(event) => {
                     if (event.key === "Enter" || event.key === " ") {

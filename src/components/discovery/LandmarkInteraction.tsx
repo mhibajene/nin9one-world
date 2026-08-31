@@ -8,11 +8,13 @@ import { materialLanguage } from "@/data/materials/nin9oneMaterialLanguage";
 import type {
   CitadelLandmark,
   LandmarkDiscoveryState,
+  LandmarkVisualResponse,
 } from "@/systems/discovery/landmarkTypes";
 
 type LandmarkInteractionProps = {
   landmarks: readonly CitadelLandmark[];
   discoveryState: Readonly<Record<string, LandmarkDiscoveryState>>;
+  attendedLandmarkId: string | null;
   onAttend: (id: string) => void;
   onLeave: (id: string) => void;
   onActivate: (id: string) => void;
@@ -22,7 +24,45 @@ type LandmarkTargetProps = Omit<LandmarkInteractionProps, "landmarks"> & {
   landmark: CitadelLandmark;
 };
 
-function RuptureVeins({ landmark }: { landmark: CitadelLandmark }) {
+const responseProfiles: Record<
+  LandmarkVisualResponse,
+  {
+    attendedIntensity: number;
+    discoveredIntensity: number;
+    distanceMultiplier: number;
+  }
+> = {
+  "citadel-resonance": {
+    attendedIntensity: 3.2,
+    discoveredIntensity: 4.8,
+    distanceMultiplier: 2.6,
+  },
+  "solar-illumination": {
+    attendedIntensity: 3.8,
+    discoveredIntensity: 5.6,
+    distanceMultiplier: 2.8,
+  },
+  "rupture-revelation": {
+    attendedIntensity: 2.8,
+    discoveredIntensity: 4.5,
+    distanceMultiplier: 2.4,
+  },
+};
+
+function RuptureVeins({
+  landmark,
+  discoveryState,
+  isAttended,
+}: {
+  landmark: CitadelLandmark;
+  discoveryState: LandmarkDiscoveryState;
+  isAttended: boolean;
+}) {
+  const hasResponded =
+    discoveryState === "discovered" || discoveryState === "revisited";
+  const primaryOpacity = hasResponded ? 0.5 : isAttended ? 0.3 : 0.1;
+  const secondaryOpacity = hasResponded ? 0.36 : isAttended ? 0.2 : 0.07;
+
   return (
     <group position={landmark.scene.responsePosition} rotation={[0.08, -0.4, -0.16]}>
       <mesh scale={[0.12, 2.5, 0.07]} renderOrder={3}>
@@ -30,7 +70,7 @@ function RuptureVeins({ landmark }: { landmark: CitadelLandmark }) {
         <meshBasicMaterial
           color={materialLanguage.celestialGold.core}
           transparent
-          opacity={0.5}
+          opacity={primaryOpacity}
           depthWrite={false}
           blending={AdditiveBlending}
           fog={false}
@@ -41,18 +81,12 @@ function RuptureVeins({ landmark }: { landmark: CitadelLandmark }) {
         <meshBasicMaterial
           color={materialLanguage.celestialGold.signalMuted}
           transparent
-          opacity={0.36}
+          opacity={secondaryOpacity}
           depthWrite={false}
           blending={AdditiveBlending}
           fog={false}
         />
       </mesh>
-      <pointLight
-        color={materialLanguage.celestialGold.signalWarm}
-        intensity={5}
-        distance={12}
-        decay={2}
-      />
     </group>
   );
 }
@@ -60,6 +94,7 @@ function RuptureVeins({ landmark }: { landmark: CitadelLandmark }) {
 function LandmarkTarget({
   landmark,
   discoveryState,
+  attendedLandmarkId,
   onAttend,
   onLeave,
   onActivate,
@@ -67,7 +102,8 @@ function LandmarkTarget({
   const [hovered, setHovered] = useState(false);
   const currentState = discoveryState[landmark.id] ?? "undiscovered";
   const hasResponded = currentState === "discovered" || currentState === "revisited";
-  const isAttended = hovered || currentState === "available";
+  const isAttended = hovered || attendedLandmarkId === landmark.id;
+  const responseProfile = responseProfiles[landmark.visualResponse];
 
   useCursor(hovered, "pointer", "auto");
 
@@ -91,15 +127,23 @@ function LandmarkTarget({
   return (
     <group>
       {landmark.visualResponse === "rupture-revelation" && (
-        <RuptureVeins landmark={landmark} />
+        <RuptureVeins
+          landmark={landmark}
+          discoveryState={currentState}
+          isAttended={isAttended}
+        />
       )}
 
       {(isAttended || hasResponded) && (
         <pointLight
           position={landmark.scene.responsePosition}
           color={materialLanguage.celestialGold.signalWarm}
-          intensity={hasResponded ? 4.5 : 2.5}
-          distance={landmark.interactionRadius * 2.4}
+          intensity={
+            hasResponded
+              ? responseProfile.discoveredIntensity
+              : responseProfile.attendedIntensity
+          }
+          distance={landmark.interactionRadius * responseProfile.distanceMultiplier}
           decay={2}
         />
       )}
@@ -126,6 +170,7 @@ function LandmarkTarget({
 export function LandmarkInteraction({
   landmarks,
   discoveryState,
+  attendedLandmarkId,
   onAttend,
   onLeave,
   onActivate,
@@ -139,6 +184,7 @@ export function LandmarkInteraction({
             key={landmark.id}
             landmark={landmark}
             discoveryState={discoveryState}
+            attendedLandmarkId={attendedLandmarkId}
             onAttend={onAttend}
             onLeave={onLeave}
             onActivate={onActivate}

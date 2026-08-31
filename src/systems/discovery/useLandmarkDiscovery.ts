@@ -58,10 +58,10 @@ export function useLandmarkDiscovery(landmarks: readonly CitadelLandmark[]) {
   const [discoveryState, setDiscoveryState] =
     useState<DiscoveryStateById>(initialState);
   const [activeLandmarkId, setActiveLandmarkId] = useState<string | null>(null);
-  const [attendedLandmarkId, setAttendedLandmarkId] = useState<string | null>(
-    null,
-  );
+  const [focusedLandmarkId, setFocusedLandmarkId] = useState<string | null>(null);
+  const [hoveredLandmarkId, setHoveredLandmarkId] = useState<string | null>(null);
   const [sessionRestored, setSessionRestored] = useState(false);
+  const attendedLandmarkId = hoveredLandmarkId ?? focusedLandmarkId;
 
   useEffect(() => {
     setDiscoveryState(restoreSessionState(landmarks, initialState));
@@ -79,8 +79,7 @@ export function useLandmarkDiscovery(landmarks: readonly CitadelLandmark[]) {
     );
   }, [discoveryState, sessionRestored]);
 
-  const attendLandmark = useCallback((id: string) => {
-    setAttendedLandmarkId(id);
+  const markLandmarkAvailable = useCallback((id: string) => {
     setDiscoveryState((currentState) => {
       if (currentState[id] !== "undiscovered") {
         return currentState;
@@ -90,8 +89,32 @@ export function useLandmarkDiscovery(landmarks: readonly CitadelLandmark[]) {
     });
   }, []);
 
-  const leaveLandmark = useCallback((id: string) => {
-    setAttendedLandmarkId((currentId) => (currentId === id ? null : currentId));
+  const focusLandmark = useCallback(
+    (id: string) => {
+      setFocusedLandmarkId(id);
+      markLandmarkAvailable(id);
+    },
+    [markLandmarkAvailable],
+  );
+
+  const blurLandmark = useCallback((id: string) => {
+    setFocusedLandmarkId((currentId) =>
+      currentId === id ? null : currentId,
+    );
+  }, []);
+
+  const hoverLandmark = useCallback(
+    (id: string) => {
+      setHoveredLandmarkId(id);
+      markLandmarkAvailable(id);
+    },
+    [markLandmarkAvailable],
+  );
+
+  const unhoverLandmark = useCallback((id: string) => {
+    setHoveredLandmarkId((currentId) =>
+      currentId === id ? null : currentId,
+    );
   }, []);
 
   const activateLandmark = useCallback((id: string) => {
@@ -105,7 +128,6 @@ export function useLandmarkDiscovery(landmarks: readonly CitadelLandmark[]) {
 
       return { ...currentState, [id]: nextLandmarkState };
     });
-    setAttendedLandmarkId(id);
     setActiveLandmarkId(id);
   }, []);
 
@@ -117,8 +139,10 @@ export function useLandmarkDiscovery(landmarks: readonly CitadelLandmark[]) {
     discoveryState,
     activeLandmarkId,
     attendedLandmarkId,
-    attendLandmark,
-    leaveLandmark,
+    focusLandmark,
+    blurLandmark,
+    hoverLandmark,
+    unhoverLandmark,
     activateLandmark,
     dismissLandmark,
   };
