@@ -44,6 +44,12 @@ Do not add, change, or imply canon unless the decision is explicitly founder-app
 
 Check it before starting work to avoid duplicate execution or drift.
 
+## Autonomous Execution
+
+[docs/governance/AGENT_AUTONOMY.md](docs/governance/AGENT_AUTONOMY.md) defines the bounded autonomous operating authority, Founder-reserved decisions, three-move work budget, and review format.
+
+Autonomous execution must remain within current canon and the active ticket recorded in `WORLD_STATUS.md`.
+
 ## Branching Guidance
 
 main represents the stable world state.
