@@ -119,6 +119,14 @@
   letter-spacing: 0.025em;
 }
 
+.discovery-prompt__signal[data-state="undiscovered"] .discovery-prompt__name {
+  color: rgba(235, 220, 193, 0.48);
+  font-family: inherit;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .discovery-prompt__state {
   text-align: right;
   letter-spacing: 0.11em;
