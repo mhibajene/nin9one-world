@@ -9,9 +9,9 @@ export const citadelLandmarks = [
     canonStatus: "canonical",
     discoveryMethod: "focus",
     interactionRadius: 12,
-    loreTitle: "A Place of Convergence",
+    loreTitle: "At the Centre",
     loreText:
-      "The Traveler sees a destination. With attention, another meaning emerges: The Citadel is a place of convergence, revelation, and understanding. The distance crossed matters, but what the journey makes visible matters more.",
+      "The Citadel stands at the centre. The distance closes; what the journey made visible remains.",
     visualResponse: "citadel-resonance",
     scene: {
       position: [0, 18, -18],
@@ -30,7 +30,7 @@ export const citadelLandmarks = [
     interactionRadius: 5,
     loreTitle: "A Mark in Gold",
     loreText:
-      "Gold appears within the dark surface, revelation held against the unknown. Whether the mark is instruction, memory, or only light finding a patient surface remains unanswered.",
+      "Gold holds within the dark surface. Instruction, memory, or only light—no answer declares itself.",
     visualResponse: "solar-illumination",
     scene: {
       position: [-18.5, 7, -19.5],
@@ -47,9 +47,9 @@ export const citadelLandmarks = [
     canonStatus: "canonical",
     discoveryMethod: "focus",
     interactionRadius: 7,
-    loreTitle: "What Fracture Reveals",
+    loreTitle: "Within the Fracture",
     loreText:
-      "The fracture does not diminish the obsidian. It reveals what the unbroken surface concealed: gold, not as reward or wealth, but as potential and truth brought into view.",
+      "Gold catches in the broken surface. The fracture holds what the unbroken stone kept from view.",
     visualResponse: "rupture-revelation",
     scene: {
       position: [32, 2.8, 21],

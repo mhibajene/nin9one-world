@@ -18,13 +18,13 @@ Discovery
 
 ### Milestone
 
-Environmental Discovery Surface Reset — Complete
+Quiet Lore Pass — Complete
 
 ## Operating Mode
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Move 1 of 3.
+Current review window: Move 2 of 3.
 
 Auto-merge window: Founder-opened on 2026-08-31 after the discovery-surface governance closeout.
 
@@ -44,7 +44,7 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-Unassigned — autonomous Move 2 selection.
+Unassigned — autonomous Move 3 selection.
 
 ## Completed
 
@@ -218,10 +218,37 @@ Validation evidence:
 - Player-facing DOM inspection confirms internal canon and discovery-state labels are absent.
 - Reduced-motion behavior remains stable.
 
+WORLD-DISCOVERY-005
+
+Quiet Lore Pass
+
+Implemented and merged as Move 2 of the Founder-opened autonomous window on 2026-08-31.
+
+Observed weakness:
+
+- The existing lore fragments explained their symbolism directly, including narrating the Traveler thesis back to the player.
+- The density and certainty of the copy competed with discovery through observation.
+
+Implemented result:
+
+- Rewrites the three existing landmark reflections as shorter environmental observations.
+- Removes direct Traveler narration and explicit explanations of the world thesis from the player-facing copy.
+- Leaves interpretive space around convergence, gold, darkness, and fracture while remaining inside their established meaning.
+- Preserves all landmarks, internal canon classifications, discovery states, interaction behavior, and visual responses.
+- Introduces no historical fact, character detail, mythology, or new canon.
+
+Validation evidence:
+
+- TypeScript typecheck and production build passed locally and in required hosted validation.
+- All three reflections were inspected in the browser through intentional landmark activation.
+- Desktop and mobile lore surfaces remain legible and subordinate to the world.
+- Player-facing copy contains no `Traveler`, `Seeker`, canon-classification, or discovery-progression language.
+- Dismissal, focus return, and existing landmark response behavior remain stable.
+
 ## Upcoming
 
-1. Evaluate whether the contextual cue is quiet enough and keyboard discovery remains legible.
-2. Select Move 2 from observed use, prioritizing quieter lore or stronger existing material response.
+1. Experience the quieter fragments alongside each landmark's existing material response.
+2. Select Move 3 from observed use, prioritizing a stronger environmental response only where the world remains too inert.
 3. Keep all work inside established Citadel Discovery and current canon.
 
 ## District Registry
