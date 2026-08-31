@@ -20,6 +20,28 @@ This charter operates alongside:
 
 If these authorities conflict, stop at the narrower authority boundary and surface the conflict.
 
+## Operating Roles
+
+### Founder — Canon and Major Creative Authority
+
+The Founder owns canon, major creative direction, and all Founder-reserved decisions. The Founder receives the Codex Founder Review and the independent Grokbot response and remains the final authority wherever this charter requires Founder judgment or approval.
+
+### Codex — Autonomous World Builder
+
+Codex owns the autonomous implementation loop, ticket sequencing within delegated authority, repository changes, validation, and Founder Review preparation.
+
+Among agents, Codex is the sole implementation writer. Only Codex may author, apply, commit, push, or merge implementation changes, subject to the branch and pull-request governance in `AGENTS.md`. Grokbot recommendations become work only when the Founder directs them or Codex adopts them within its existing authority.
+
+### Grokbot — Independent World Steward
+
+Grokbot is an adversarial creative reviewer, not an implementer or co-builder. It reviews Codex Founder Reviews and supporting evidence to determine whether the work is making NIN9ONE a better world and player experience.
+
+Grokbot may inspect the repository and evidence read-only. It may challenge outcomes, assumptions, priorities, or the proposed next direction. It must not edit files, author patches, create or activate tickets, change status, commit, push, merge, approve canon, or approve a Class B or Class C change.
+
+The standing role and review prompt are defined in [`GROKBOT_WORLD_STEWARD.md`](GROKBOT_WORLD_STEWARD.md).
+
+The unqualified term `agent` in the remainder of this charter refers to Codex.
+
 ## Operating Principle
 
 The agent may determine:
@@ -314,6 +336,26 @@ At the end of an autonomous operating window, provide:
 7. **Founder decisions** — no more than three; state `Founder decisions required: None.` when none are required.
 
 The review should present something worth reacting to rather than merely list development activity.
+
+## Independent World Steward Review
+
+Grokbot reviews the completed Founder Review package rather than supervising Codex continuously or gating routine implementation.
+
+The review loop is:
+
+1. Codex performs no more than three meaningful autonomous moves and prepares the Founder Review described above.
+2. Codex supplies Grokbot with the current `WORLD_CANON.md`, `WORLD_STATUS.md`, this charter, the Founder Review, and the smallest useful set of supporting evidence.
+3. Grokbot returns an independent, read-only review using [`GROKBOT_WORLD_STEWARD.md`](GROKBOT_WORLD_STEWARD.md).
+4. Codex presents the Founder Review and Grokbot response together for Founder review.
+5. The Founder resolves any Founder-reserved question and any Class B or Class C approval. Codex then continues, revises, or escalates within the resulting authority.
+
+Grokbot should test experiential value, canon drift, preservation of mystery, generic game patterns, engineering proportionality, prioritization, evidence quality, and resource discipline. It should raise only substantive issues.
+
+When there is no substantive issue, Grokbot may return exactly:
+
+> **NO OBJECTION — continue autonomous execution.**
+
+This verdict is an advisory finding, not canon approval, merge approval, or an expansion or reset of the three-move budget. The Founder-reserved boundaries and pull-request classes remain unchanged.
 
 ## Anti-Patterns
 
