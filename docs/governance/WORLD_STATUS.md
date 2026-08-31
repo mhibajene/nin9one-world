@@ -26,9 +26,9 @@ WORLD-DISCOVERY-001
 
 Citadel Landmark Discovery Foundation
 
-Status: Active for governance and scope definition.
+Status: Implementation active on `feature/world-discovery-001`; Class B founder review required before merge.
 
-Implementation is not authorized by the Citadel Foundation closeout disposition.
+Implementation authorized by the founder on 2026-07-19 as a separate instruction from the Citadel Foundation closeout disposition.
 
 Intent:
 
@@ -40,7 +40,7 @@ Intent:
 Approval boundary:
 
 - No new or implied canon.
-- No implementation until separately founder-authorized.
+- Bounded implementation is authorized for the three-landmark foundation.
 - Experience or presentation changes remain Class B.
 
 ## Completed
@@ -95,7 +95,7 @@ Solar Iconography Pass
 
 ## Upcoming
 
-Define the bounded execution brief and founder-review gate for WORLD-DISCOVERY-001.
+Complete implementation evidence and founder review for WORLD-DISCOVERY-001.
 
 ## District Registry
 
