@@ -18,13 +18,13 @@ Atmosphere
 
 ### Milestone
 
-Opt-In Citadel Soundscape — Active
+Opt-In Citadel Soundscape — Founder-approved for merge
 
 ## Operating Mode
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Move 2 of 3.
+Current review window: Move 2 of 3, with Move 3 Founder-approved pending merge.
 
 Auto-merge window: Closed. The Citadel Experience 003 disposition opens autonomous execution but does not separately open a three-ticket auto-merge window.
 
@@ -49,6 +49,12 @@ WORLD-ATMOSPHERE-002 — Opt-In Citadel Soundscape
 Move 3 implementation selected from fresh use of the merged Citadel.
 
 Change class: B — player-facing atmosphere and interface refinement. Founder approval is required before merge because the auto-merge window is closed.
+
+Founder disposition:
+
+- Founder-approved on 2026-09-01 for merge as Move 3 of the current autonomous window.
+- Founder-authorized the subsequent three-move autonomous window, to activate only after this move reaches exact `main`, the required seven-section Founder Review is filed, and the read-only World Steward challenge and governance reconciliation are complete.
+- The subsequent window does not independently open auto-merge authority.
 
 Observed weakness:
 
@@ -477,9 +483,9 @@ Validation evidence:
 
 ## Upcoming
 
-1. Validate opt-in activation, fade, mute, page-visibility suspension, cleanup, and graceful unavailability.
-2. Confirm the sound control remains subordinate across desktop, portrait, discovery, and reflection states.
-3. Present the bounded Class B result for Founder review before merge; if approved, close the three-move window and prepare the Founder Review.
+1. Merge the Founder-approved soundscape and verify the exact `main` result.
+2. Close the current three-move window and file the required seven-section Founder Review.
+3. Obtain the read-only World Steward challenge and reconcile governance before activating the Founder-authorized subsequent window at Move 0 of 3.
 
 ## District Registry
 
