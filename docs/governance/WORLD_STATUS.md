@@ -10,7 +10,7 @@ Phase 1 — Citadel Foundation was founder-approved and closed on 2026-07-19.
 
 ## Active Lane
 
-Atmosphere
+Autonomous Selection
 
 ## Repository Version
 
@@ -18,21 +18,21 @@ Atmosphere
 
 ### Milestone
 
-Opt-In Citadel Soundscape — Founder-approved for merge
+Citadel Experience Founder Review 004 — Complete
 
 ## Operating Mode
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Move 2 of 3, with Move 3 Founder-approved pending merge.
+Current review window: Move 0 of 3. The subsequent window is Founder-authorized and activates when this governance closeout reaches exact `main`.
 
-Auto-merge window: Closed. The Citadel Experience 003 disposition opens autonomous execution but does not separately open a three-ticket auto-merge window.
+Auto-merge window: Closed. The Founder authorized a subsequent autonomous window but did not separately open a three-ticket auto-merge window.
 
 Eligible pull requests may use native squash auto-merge under the gates in `AGENT_AUTONOMY.md`. The repository-level capability does not override ticket, canon, Class C, review, or validation boundaries.
 
-Founder disposition and previous review: [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_003.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_003.md).
+Founder disposition and current review: [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_004.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_004.md).
 
-The interface-light, environment-led discovery surface is the accepted Citadel baseline. The persistent numbered landmark HUD remains rejected. The current window is selected from fresh use of the merged experience and may improve the broader Citadel experience without adding explanatory lore, expanding canon, or making internal progression visible.
+The interface-light, environment-led discovery surface remains the accepted Citadel baseline. The persistent numbered landmark HUD remains rejected. The next move must be selected from fresh use of the reconciled exact-main experience without adding explanatory lore, visible progression, or canon.
 
 Operating roles:
 
@@ -44,50 +44,15 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-WORLD-ATMOSPHERE-002 — Opt-In Citadel Soundscape
+Unassigned — Move 1 selection from fresh use
 
-Move 3 implementation selected from fresh use of the merged Citadel.
+No experiential implementation is active.
 
-Change class: B — player-facing atmosphere and interface refinement. Founder approval is required before merge because the auto-merge window is closed.
-
-Founder disposition:
-
-- Founder-approved on 2026-09-01 for merge as Move 3 of the current autonomous window.
-- Founder-authorized the subsequent three-move autonomous window, to activate only after this move reaches exact `main`, the required seven-section Founder Review is filed, and the read-only World Steward challenge and governance reconciliation are complete.
-- The subsequent window does not independently open auto-merge authority.
-
-Observed weakness:
-
-- The visual experience now sustains restrained camera, water, material, and discovery motion, but the Citadel remains entirely silent.
-- After two material-focused moves, another visual adjustment would produce less experiential value than introducing a quiet auditory layer.
-
-Bounded intervention:
-
-- Add one opt-in ambient soundscape using the browser's native audio engine and no external audio asset or dependency.
-- Keep the sound low, continuous, abstract, and non-communicative so it reinforces atmosphere without implying a signal, event, character, or new world meaning.
-- Expose one subordinate `Listen` / `Silence` control because browsers require intentional audio activation and the player must retain mute control.
-- Fade sound in and out, suspend it while the page is hidden, and release the audio graph when the experience unmounts.
-- Add no lore, landmark, discovery state, progression, world object, new substance, or canon.
-
-Founder feedback — sonic direction:
-
-- The current opt-in drone is directionally strong: it adds scale and sonic identity without turning The Citadel into a music player, while `Listen` / `Silence` preserves player agency.
-- Preserve the principle: **Sound belongs to place before it belongs to playback.**
-- Future NIN9ONE locations may develop spatial soundscapes derived from musical material associated with the upcoming release. The intended direction is environmental reinterpretation of musical DNA—such as harmony, texture, processed stems, vocal fragments, motifs, rhythm, or field recordings—not a one-track-per-location mapping or a 3D playback interface.
-- This is a future experiential horizon, not authority for the current ticket to add release audio, stems, track mapping, content pipelines, or a broader music system.
-- `WORLD-ATMOSPHERE-002` remains limited to the basic sonic grammar already implemented: opt-in sound, spatial atmosphere, restraint, intentional silence, and a control subordinate to the place.
-- Future sonic work must be selected from fresh experiential review rather than speculative audio architecture.
-- This direction establishes no new canon and should be included in the completed-window Founder Review supplied to Hegel.
-
-Validation evidence:
-
-- TypeScript typecheck and production build pass locally.
-- Clean-session browser review confirms silence remains the default and the native audio graph is created only after intentional activation.
-- `Listen` activates the soundscape, `Silence` fades and suspends it, and a subsequent activation resumes the same graph without errors.
-- The control exposes stable pressed state, explicit accessible labels, and post-interaction live announcements without announcing on initial entry.
-- Desktop, portrait, active-discovery, reflection, dismissal, and focus-return surfaces retain the established interface hierarchy.
-- Source verification confirms page hiding suspends audio, visibility return resumes only when enabled, unmount stops sources and closes the context, and unsupported audio degrades to a disabled `Silent` state.
-- Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
+- Begin from fresh use after this governance closeout reaches exact `main`.
+- Observe the combined material, discovery, navigation, reflection, and sonic experience before choosing a lane.
+- Select the smallest meaningful intervention supported by the observed weakness.
+- Do not assume audio continuation or create release-audio infrastructure from the recorded sonic horizon.
+- Record the bounded ticket in this file before implementation.
 
 ## Completed
 
@@ -481,11 +446,57 @@ Validation evidence:
 - Source verification confirms the existing reduced-motion preference bypasses response damping and applies each established target immediately.
 - Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
 
+WORLD-ATMOSPHERE-002
+
+Opt-In Citadel Soundscape
+
+Founder-approved and merged on 2026-09-01 as Move 3 of the completed autonomous window.
+
+Observed weakness:
+
+- The visual experience sustained restrained camera, water, material, and discovery motion, but the Citadel remained entirely silent.
+- After two material-focused moves, another visual adjustment offered less experiential value than a quiet auditory layer.
+
+Implemented result:
+
+- Adds one opt-in native-browser soundscape using restrained drone voices and filtered air, with no external audio asset, package, or service.
+- Keeps sound off by default and exposes one subordinate `Listen` / `Silence` control for intentional activation and mute agency.
+- Fades sound in and out, suspends it while the page is hidden, reuses the graph after reactivation, degrades gracefully when unavailable, and releases all audio resources on unmount.
+- Adds no lore, landmark, discovery state, progression, world object, new substance, architecture, or canon.
+
+Founder sonic direction:
+
+- The soundscape is accepted as directionally strong because it adds scale and identity without turning the Citadel into a music player.
+- Preserve the principle: **Sound belongs to place before it belongs to playback.**
+- Future spatial reinterpretation of musical material associated with the upcoming release is an experiential horizon, not present authority for stems, track mapping, content pipelines, a broader music system, or a playback interface.
+- Future sonic work must be selected from fresh experiential review and establishes no new canon.
+
+Validation evidence:
+
+- TypeScript typecheck and production build passed locally, on the pull request head, and on exact merged `main` revision `ddd9848`.
+- Default silence, activation, mute, resume, visibility suspension, cleanup, and unsupported-audio handling passed.
+- The control exposes stable pressed state, explicit accessible labels, and post-interaction live announcements without announcing on initial entry.
+- Desktop, portrait, active-discovery, reflection, dismissal, and focus-return surfaces retain the established interface hierarchy.
+- Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
+
+WORLD-GOVERNANCE-004
+
+Citadel Experience Founder Review 004
+
+Founder disposition and World Steward review recorded on 2026-09-01. This Class A governance work does not consume an experiential move.
+
+- Files the complete seven-section Founder Review for WORLD-MATERIAL-001, WORLD-DISCOVERY-008, and WORLD-ATMOSPHERE-002.
+- Records the read-only World Steward verdict: `NO OBJECTION — continue autonomous execution.`
+- Accepts the faceted Obsidian response, eased material transition, and opt-in soundscape as the current experience baseline.
+- Preserves the Founder sonic principle that sound belongs to place before playback while withholding authority for release-audio integration or speculative music architecture.
+- Opens the Founder-authorized subsequent window at Move 0 of 3 after this closeout reaches exact `main`.
+- Leaves auto-merge closed, preserves `WORLD_CANON.md` as sole canon authority, and requires Move 1 to be selected from fresh use.
+
 ## Upcoming
 
-1. Merge the Founder-approved soundscape and verify the exact `main` result.
-2. Close the current three-move window and file the required seven-section Founder Review.
-3. Obtain the read-only World Steward challenge and reconcile governance before activating the Founder-authorized subsequent window at Move 0 of 3.
+1. Merge the Class A governance closeout and verify the exact `main` result.
+2. Experience fresh `main` with material, response, navigation, discovery, reflection, and sound considered together.
+3. Record and implement the smallest Move 1 intervention supported by the most important observed weakness; Class B merge remains Founder-gated while auto-merge is closed.
 
 ## District Registry
 
