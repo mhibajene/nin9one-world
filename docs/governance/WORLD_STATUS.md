@@ -10,7 +10,7 @@ Phase 1 — Citadel Foundation was founder-approved and closed on 2026-07-19.
 
 ## Active Lane
 
-Autonomous Selection
+Environmental Discovery
 
 ## Repository Version
 
@@ -18,7 +18,7 @@ Autonomous Selection
 
 ### Milestone
 
-Faceted Obsidian Response — Complete
+Material Response Transition — Active
 
 ## Operating Mode
 
@@ -44,7 +44,32 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-Unassigned — autonomous Move 2 selection from fresh use of the merged material response.
+WORLD-DISCOVERY-008 — Material Response Transition
+
+Move 2 implementation selected from fresh use of the merged Citadel.
+
+Change class: B — player-facing environmental response refinement. Founder approval is required before merge because the auto-merge window is closed.
+
+Observed weakness:
+
+- The faceted Obsidian Matter response strengthens the resting material read, but landmark illumination still appears and disappears as an abrupt state switch.
+- That instant change makes the discovery system more legible than the environment responding to attention.
+
+Bounded intervention:
+
+- Ease the existing landmark light, gold trace, and rupture-vein response into and out of their established intensity targets.
+- Let intentional discovery settle into the existing persistent material response without adding another cue or progression surface.
+- Preserve immediate state changes for reduced-motion players.
+- Add no lore, landmark, geometry, material, asset, dependency, architecture, or canon.
+
+Validation evidence:
+
+- TypeScript typecheck and production build pass locally.
+- Clean-session entry, Citadel attention, landmark-to-landmark focus handoff, Solar Obelisk activation, reflection dismissal, and focus return pass in the browser.
+- Citadel, Solar Obelisk, and Ruptured Obsidian responses were compared early and after settling; existing intensities are preserved while the transition removes the abrupt state switch.
+- Desktop and portrait compositions retain the accepted interface-light hierarchy.
+- Source verification confirms the existing reduced-motion preference bypasses response damping and applies each established target immediately.
+- Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
 
 ## Completed
 
@@ -413,9 +438,9 @@ Validation evidence:
 
 ## Upcoming
 
-1. Experience the merged faceted Obsidian Matter response rather than assuming a second material ticket.
-2. Select Move 2 from the most important remaining experiential weakness supported by fresh observation.
-3. Preserve current canon and the non-canonical reference boundary for any further archive consultation.
+1. Validate the material-response transition across pointer attention, keyboard focus, intentional discovery, dismissal, and return focus.
+2. Confirm reduced-motion preserves an immediate, stable response.
+3. Present the bounded Class B result for Founder review before merge.
 
 ## District Registry
 
