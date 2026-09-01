@@ -10,7 +10,7 @@ Phase 1 — Citadel Foundation was founder-approved and closed on 2026-07-19.
 
 ## Active Lane
 
-Environmental Discovery
+Autonomous Selection
 
 ## Repository Version
 
@@ -18,13 +18,13 @@ Environmental Discovery
 
 ### Milestone
 
-Material Response Transition — Active
+Material Response Transition — Complete
 
 ## Operating Mode
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Move 1 of 3.
+Current review window: Move 2 of 3.
 
 Auto-merge window: Closed. The Citadel Experience 003 disposition opens autonomous execution but does not separately open a three-ticket auto-merge window.
 
@@ -44,32 +44,7 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-WORLD-DISCOVERY-008 — Material Response Transition
-
-Move 2 implementation selected from fresh use of the merged Citadel.
-
-Change class: B — player-facing environmental response refinement. Founder approval is required before merge because the auto-merge window is closed.
-
-Observed weakness:
-
-- The faceted Obsidian Matter response strengthens the resting material read, but landmark illumination still appears and disappears as an abrupt state switch.
-- That instant change makes the discovery system more legible than the environment responding to attention.
-
-Bounded intervention:
-
-- Ease the existing landmark light, gold trace, and rupture-vein response into and out of their established intensity targets.
-- Let intentional discovery settle into the existing persistent material response without adding another cue or progression surface.
-- Preserve immediate state changes for reduced-motion players.
-- Add no lore, landmark, geometry, material, asset, dependency, architecture, or canon.
-
-Validation evidence:
-
-- TypeScript typecheck and production build pass locally.
-- Clean-session entry, Citadel attention, landmark-to-landmark focus handoff, Solar Obelisk activation, reflection dismissal, and focus return pass in the browser.
-- Citadel, Solar Obelisk, and Ruptured Obsidian responses were compared early and after settling; existing intensities are preserved while the transition removes the abrupt state switch.
-- Desktop and portrait compositions retain the accepted interface-light hierarchy.
-- Source verification confirms the existing reduced-motion preference bypasses response damping and applies each established target immediately.
-- Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
+Unassigned — autonomous Move 3 selection from fresh use of the merged material-response transition.
 
 ## Completed
 
@@ -436,11 +411,38 @@ Validation evidence:
 - No motion path changed; existing reduced-motion camera and water behavior remains intact.
 - Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
 
+WORLD-DISCOVERY-008
+
+Material Response Transition
+
+Founder-approved on 2026-09-01 for merge as Move 2 of the current autonomous window.
+
+Observed weakness:
+
+- The faceted Obsidian Matter response strengthened the resting material read, but landmark illumination still appeared and disappeared as an abrupt state switch.
+- That instant change made the discovery system more legible than the environment responding to attention.
+
+Implemented result:
+
+- Eases the existing landmark light, gold trace, and rupture-vein response into and out of their established intensity targets.
+- Lets intentional discovery settle into the existing persistent material response without adding another cue or progression surface.
+- Preserves immediate state changes for reduced-motion players.
+- Adds no lore, landmark, geometry, material, asset, dependency, architecture, or canon.
+
+Validation evidence:
+
+- TypeScript typecheck and production build passed locally and in required hosted validation.
+- Clean-session entry, Citadel attention, landmark-to-landmark focus handoff, Solar Obelisk activation, reflection dismissal, and focus return passed in the browser.
+- Citadel, Solar Obelisk, and Ruptured Obsidian responses were compared early and after settling; existing intensities are preserved while the transition removes the abrupt state switch.
+- Desktop and portrait compositions retain the accepted interface-light hierarchy.
+- Source verification confirms the existing reduced-motion preference bypasses response damping and applies each established target immediately.
+- Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
+
 ## Upcoming
 
-1. Validate the material-response transition across pointer attention, keyboard focus, intentional discovery, dismissal, and return focus.
-2. Confirm reduced-motion preserves an immediate, stable response.
-3. Present the bounded Class B result for Founder review before merge.
+1. Experience the merged material-response transition rather than assuming another discovery-response ticket.
+2. Select Move 3 from the most important remaining experiential weakness supported by fresh observation.
+3. Preserve the interface-light baseline, existing canon, and non-canonical reference boundary.
 
 ## District Registry
 
