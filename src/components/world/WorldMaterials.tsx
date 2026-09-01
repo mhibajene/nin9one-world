@@ -7,6 +7,7 @@ type MatterMaterialProps = {
   color?: string;
   roughness?: number;
   metalness?: number;
+  flatShading?: boolean;
   transparent?: boolean;
   opacity?: number;
   depthWrite?: boolean;
@@ -21,6 +22,7 @@ export function ObsidianMatterMaterial({
   color = materialLanguage.obsidianMatter.mid,
   roughness = materialLanguage.obsidianMatter.roughness,
   metalness = materialLanguage.obsidianMatter.metalness,
+  flatShading = true,
   transparent,
   opacity,
   depthWrite,
@@ -30,6 +32,7 @@ export function ObsidianMatterMaterial({
       color={color}
       roughness={roughness}
       metalness={metalness}
+      flatShading={flatShading}
       emissive={materialLanguage.obsidianMatter.warmEmissive}
       emissiveIntensity={0.03}
       transparent={transparent}
