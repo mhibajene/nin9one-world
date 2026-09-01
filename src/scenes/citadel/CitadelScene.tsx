@@ -38,16 +38,17 @@ function usePrefersReducedMotion() {
 function CitadelCameraControls({
   enabled,
   canDrift,
+  prefersReducedMotion,
 }: {
   enabled: boolean;
   canDrift: boolean;
+  prefersReducedMotion: boolean;
 }) {
   const size = useThree((state) => state.size);
   const isPortrait = size.height > size.width;
   const azimuthLimit = isPortrait
     ? portraitCameraAzimuthLimit
     : landscapeCameraAzimuthLimit;
-  const prefersReducedMotion = usePrefersReducedMotion();
   const [introDriftActive, setIntroDriftActive] = useState(true);
 
   useEffect(() => {
@@ -88,6 +89,7 @@ function CitadelCameraControls({
 }
 
 export function CitadelScene() {
+  const prefersReducedMotion = usePrefersReducedMotion();
   const {
     discoveryState,
     activeLandmarkId,
@@ -124,7 +126,9 @@ export function CitadelScene() {
         <CitadelFog />
         <CitadelLighting />
         <Stars radius={380} depth={180} count={1700} factor={3} saturation={0} fade speed={0.06} />
-        <CitadelEnvironment />
+        <CitadelEnvironment
+          reflectionMotionEnabled={!prefersReducedMotion}
+        />
         <LandmarkInteraction
           landmarks={citadelLandmarks}
           discoveryState={discoveryState}
@@ -136,6 +140,7 @@ export function CitadelScene() {
         <CitadelCameraControls
           enabled={!activeLandmark}
           canDrift={!activeLandmark && !attendedLandmarkId}
+          prefersReducedMotion={prefersReducedMotion}
         />
       </SceneCanvas>
 

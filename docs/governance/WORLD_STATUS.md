@@ -10,7 +10,7 @@ Phase 1 — Citadel Foundation was founder-approved and closed on 2026-07-19.
 
 ## Active Lane
 
-Autonomous Selection
+Governance / Founder Review
 
 ## Repository Version
 
@@ -18,13 +18,13 @@ Autonomous Selection
 
 ### Milestone
 
-Contextual Reflection Surface — Complete
+Autonomous Window 003 — Complete
 
 ## Operating Mode
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Move 2 of 3.
+Current review window: Closed at 3 of 3 moves.
 
 Auto-merge window: Closed. The Citadel Discovery 002 disposition opens autonomous execution but does not separately open a three-ticket auto-merge window.
 
@@ -44,7 +44,7 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-Unassigned — autonomous Move 3 selection.
+No implementation ticket active — Founder Review closeout required before another autonomous window.
 
 ## Completed
 
@@ -343,11 +343,39 @@ Validation evidence:
 - Player-facing DOM semantics and the interface-light discovery baseline remain unchanged.
 - Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
 
+WORLD-ATMOSPHERE-001
+
+Black Water Reflection Drift
+
+Founder-approved on 2026-09-01 for merge as Move 3 of the current autonomous window.
+
+Observed weakness:
+
+- After the introductory camera drift ended, the wide black-water foreground became visually static despite its established role as a reflective connective material.
+- The fixed gold reflection layers read as lighting laid over a plane rather than as light held by the water.
+
+Implemented result:
+
+- Adds a slow, low-amplitude drift to the existing broad gold reflection, deeper reflected light, and central trace.
+- Varies only position, scale, and opacity on existing reflection meshes; no new geometry or world object is introduced.
+- Keeps the motion asynchronous and restrained so it does not read as a pulse, beacon, signal, or interaction prompt.
+- Reuses the existing reduced-motion preference to freeze both camera drift and water reflection movement.
+- Preserves the established black-water material, lighting hierarchy, landmarks, discovery behavior, lore, dependencies, architecture, and canon.
+
+Validation evidence:
+
+- TypeScript typecheck and production build passed locally and in required hosted validation.
+- Fixed-camera comparisons confirm the existing reflection layers shift slowly without moving the Citadel composition.
+- Desktop and portrait views retain the established light hierarchy and contextual reflection surface.
+- Direct world attention, landmark activation, lore presentation, and dismissal remain functional over the moving water layer.
+- Source verification confirms reduced-motion preference freezes the animation at its baseline values.
+- Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
+
 ## Upcoming
 
-1. Experience the merged contextual reflection surface rather than assuming a follow-up presentation ticket.
-2. Select Move 3 from the most important remaining experiential weakness supported by fresh observation.
-3. Close the autonomous window after Move 3 with a seven-section Founder Review and read-only World Steward challenge.
+1. File the seven-section Founder Review for `WORLD-NAVIGATION-001`, `WORLD-DISCOVERY-007`, and `WORLD-ATMOSPHERE-001`.
+2. Obtain the read-only World Steward challenge against the completed review package.
+3. Present both to the Founder; do not begin another autonomous window before Founder disposition.
 
 ## District Registry
 
