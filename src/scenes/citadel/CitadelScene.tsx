@@ -133,6 +133,7 @@ export function CitadelScene() {
           landmarks={citadelLandmarks}
           discoveryState={discoveryState}
           attendedLandmarkId={attendedLandmarkId}
+          responseMotionEnabled={!prefersReducedMotion}
           onAttend={hoverLandmark}
           onLeave={unhoverLandmark}
           onActivate={activateLandmark}
