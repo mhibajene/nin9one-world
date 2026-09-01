@@ -62,22 +62,24 @@
 }
 
 .lore-reveal {
-  top: 50%;
   right: clamp(1rem, 5vw, 5rem);
-  width: min(28rem, calc(100vw - 2rem));
-  padding: clamp(1.4rem, 3vw, 2.5rem);
-  border: 1px solid rgba(226, 177, 88, 0.2);
-  background: linear-gradient(145deg, rgba(11, 10, 15, 0.92), rgba(15, 12, 13, 0.76));
-  box-shadow: 0 1.8rem 5rem rgba(0, 0, 0, 0.42);
-  backdrop-filter: blur(18px);
-  transform: translateY(-50%);
+  bottom: clamp(1.5rem, 5vh, 4rem);
+  width: min(23rem, calc(100vw - 2rem));
+  padding: 1.2rem 0 0;
+  background: linear-gradient(
+    90deg,
+    rgba(8, 8, 13, 0.76),
+    rgba(8, 8, 13, 0.34) 72%,
+    transparent
+  );
+  text-shadow: 0 0.12rem 1.2rem rgba(0, 0, 0, 0.88);
   animation: lore-reveal-enter 420ms ease-out both;
 }
 
 .lore-reveal__line {
-  width: 3.5rem;
+  width: 2.6rem;
   height: 1px;
-  margin-bottom: 1.3rem;
+  margin-bottom: 0.9rem;
   background: linear-gradient(90deg, #edbd69, transparent);
   box-shadow: 0 0 1rem rgba(237, 189, 105, 0.4);
 }
@@ -91,10 +93,10 @@
 }
 
 .lore-reveal h2 {
-  margin: 0 0 1.15rem;
+  margin: 0 0 0.8rem;
   color: #fff0d0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.55rem, 3.5vw, 2.25rem);
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
   font-weight: 400;
   line-height: 1.12;
   letter-spacing: -0.015em;
@@ -104,16 +106,16 @@
   margin: 0;
   color: rgba(244, 232, 209, 0.76);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(0.98rem, 1.45vw, 1.08rem);
-  line-height: 1.75;
+  font-size: clamp(0.92rem, 1.25vw, 1rem);
+  line-height: 1.6;
 }
 
 .lore-reveal__dismiss {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 2.2rem;
-  padding: 0.8rem 0;
+  margin-top: 1.25rem;
+  padding: 0.65rem 0;
   border: 0;
   border-top: 1px solid rgba(226, 177, 88, 0.22);
   border-radius: 0;
@@ -142,11 +144,11 @@
 @keyframes lore-reveal-enter {
   from {
     opacity: 0;
-    transform: translate(1.25rem, -50%);
+    transform: translateY(0.7rem);
   }
   to {
     opacity: 1;
-    transform: translate(0, -50%);
+    transform: translateY(0);
   }
 }
 
@@ -164,8 +166,14 @@
     left: 0.75rem;
     width: auto;
     max-height: calc(100vh - 1.5rem);
+    padding: 1rem 0 0;
     overflow-y: auto;
-    transform: none;
+    background: linear-gradient(
+      0deg,
+      rgba(8, 8, 13, 0.88),
+      rgba(8, 8, 13, 0.48) 76%,
+      transparent
+    );
     animation-name: lore-reveal-enter-mobile;
   }
 }

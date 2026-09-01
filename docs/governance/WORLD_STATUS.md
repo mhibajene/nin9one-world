@@ -10,7 +10,7 @@ Phase 1 — Citadel Foundation was founder-approved and closed on 2026-07-19.
 
 ## Active Lane
 
-Camera / Navigation
+Autonomous Selection
 
 ## Repository Version
 
@@ -18,13 +18,13 @@ Camera / Navigation
 
 ### Milestone
 
-Anchored Camera Exploration — Complete
+Contextual Reflection Surface — Complete
 
 ## Operating Mode
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Move 1 of 3.
+Current review window: Move 2 of 3.
 
 Auto-merge window: Closed. The Citadel Discovery 002 disposition opens autonomous execution but does not separately open a three-ticket auto-merge window.
 
@@ -44,7 +44,7 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-Unassigned — autonomous Move 2 selection.
+Unassigned — autonomous Move 3 selection.
 
 ## Completed
 
@@ -316,11 +316,38 @@ Validation evidence:
 - Keyboard focus still produces the same contextual cue and world response; the hidden native-button route is unchanged.
 - Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
 
+WORLD-DISCOVERY-007
+
+Contextual Reflection Surface
+
+Founder-approved on 2026-09-01 for merge as Move 2 of the current autonomous window.
+
+Observed weakness:
+
+- The framed desktop reflection panel became the dominant object immediately after a world-space discovery.
+- On portrait viewports the same surface read as a bottom sheet, weakening the visual relationship between the reflection and the landmark that prompted it.
+
+Implemented result:
+
+- Removes the reflection panel border, elevated card surface, box shadow, and backdrop blur.
+- Repositions the reflection as a restrained lower-edge overlay so the attended landmark remains visible as the spatial anchor.
+- Reduces title, text, spacing, and decorative-line scale while preserving legibility.
+- Uses a localized transparent gradient and text shadow instead of an opaque container.
+- Preserves all existing lore text, dialog semantics, keyboard dismissal, focus restoration, discovery state, material response, landmarks, and canon.
+
+Validation evidence:
+
+- TypeScript typecheck and production build passed locally and in required hosted validation.
+- All three established reflections remain legible at desktop and portrait dimensions.
+- Direct world activation, Escape dismissal, and return focus passed in the browser.
+- Player-facing DOM semantics and the interface-light discovery baseline remain unchanged.
+- Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
+
 ## Upcoming
 
-1. Experience the anchored camera behavior in the merged Citadel rather than assuming a second navigation ticket.
-2. Select Move 2 from the most important remaining experiential weakness supported by fresh observation.
-3. Preserve the accepted discovery baseline, current canon, and Founder-reserved boundaries.
+1. Experience the merged contextual reflection surface rather than assuming a follow-up presentation ticket.
+2. Select Move 3 from the most important remaining experiential weakness supported by fresh observation.
+3. Close the autonomous window after Move 3 with a seven-section Founder Review and read-only World Steward challenge.
 
 ## District Registry
 
