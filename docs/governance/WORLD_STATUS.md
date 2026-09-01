@@ -63,6 +63,16 @@ Bounded intervention:
 - Fade sound in and out, suspend it while the page is hidden, and release the audio graph when the experience unmounts.
 - Add no lore, landmark, discovery state, progression, world object, new substance, or canon.
 
+Founder feedback — sonic direction:
+
+- The current opt-in drone is directionally strong: it adds scale and sonic identity without turning The Citadel into a music player, while `Listen` / `Silence` preserves player agency.
+- Preserve the principle: **Sound belongs to place before it belongs to playback.**
+- Future NIN9ONE locations may develop spatial soundscapes derived from musical material associated with the upcoming release. The intended direction is environmental reinterpretation of musical DNA—such as harmony, texture, processed stems, vocal fragments, motifs, rhythm, or field recordings—not a one-track-per-location mapping or a 3D playback interface.
+- This is a future experiential horizon, not authority for the current ticket to add release audio, stems, track mapping, content pipelines, or a broader music system.
+- `WORLD-ATMOSPHERE-002` remains limited to the basic sonic grammar already implemented: opt-in sound, spatial atmosphere, restraint, intentional silence, and a control subordinate to the place.
+- Future sonic work must be selected from fresh experiential review rather than speculative audio architecture.
+- This direction establishes no new canon and should be included in the completed-window Founder Review supplied to Hegel.
+
 Validation evidence:
 
 - TypeScript typecheck and production build pass locally.
