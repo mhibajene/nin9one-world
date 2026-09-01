@@ -4,7 +4,7 @@
 
 Three-move autonomous window closed and reviewed.
 
-Awaiting Founder disposition.
+Founder disposition recorded on 2026-09-01.
 
 ## 1. What Changed
 
@@ -96,3 +96,31 @@ The read-only World Steward returned:
 > NO OBJECTION — continue autonomous execution.
 
 This advisory finding does not approve canon, approve a merge, open another autonomous or auto-merge window, or expand the three-move budget. Founder authority resolves those boundaries through the next disposition.
+
+## Founder Disposition — Citadel Experience 003
+
+### Accepted baseline
+
+- The anchored camera reveal, constrained exploration range, contextual reflection surface, and restrained black-water motion are accepted as the current Citadel experience baseline.
+- The Citadel should continue to read as a place before it reads as an interface or system.
+- Camera, material, environmental, and discovery responses should remain subtle, reversible, and subordinate to the established composition.
+- The persistent landmark HUD, visible progression language, elevated lore-card direction, and explanatory lore remain rejected.
+
+### Canon and reference boundary
+
+- [`WORLD_CANON.md`](WORLD_CANON.md) remains the sole authority for canonical world information.
+- The Founder-held `NEXUS IV (planet lore) IP` archive may be consulted during Citadel material investigation as reference material.
+- Reference consultation does not establish canon, authorize lore changes, or make archive content implementation-ready.
+- Any canonical conclusion or change must still be explicitly Founder-approved and recorded in `WORLD_CANON.md`.
+
+### Next autonomous window
+
+A new three-move autonomous window is open under the existing delegated authority and charter gates.
+
+This disposition does not separately open a three-ticket auto-merge window. Auto-merge remains subject to explicit Founder authorization and all existing eligibility gates.
+
+The first move must be selected from fresh use of the merged Citadel. Material investigation may use the approved reference archive when relevant, but the window is not pre-committed to a material pass.
+
+### Authority boundary
+
+Codex retains the existing delegated authority and three-move ceiling. Hegel remains the read-only World Steward and will challenge the next completed Founder Review. All Founder-reserved canon, creative, architectural, and financial boundaries remain unchanged.
