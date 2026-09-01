@@ -5,6 +5,7 @@ import { useThree } from "@react-three/fiber";
 import { useEffect, useState } from "react";
 import { CitadelFog } from "@/components/atmosphere/CitadelFog";
 import { CitadelLighting } from "@/components/atmosphere/CitadelLighting";
+import { CitadelSoundscape } from "@/components/atmosphere/CitadelSoundscape";
 import { DiscoveryPrompt } from "@/components/discovery/DiscoveryPrompt";
 import { LandmarkInteraction } from "@/components/discovery/LandmarkInteraction";
 import { LoreReveal } from "@/components/discovery/LoreReveal";
@@ -162,6 +163,8 @@ export function CitadelScene() {
           onDismiss={handleDismiss}
         />
       )}
+
+      <CitadelSoundscape />
 
       <p className="sr-only" aria-live="polite">
         {activeLandmark

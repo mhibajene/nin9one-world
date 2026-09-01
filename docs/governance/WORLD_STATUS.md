@@ -10,7 +10,7 @@ Phase 1 — Citadel Foundation was founder-approved and closed on 2026-07-19.
 
 ## Active Lane
 
-Autonomous Selection
+Atmosphere
 
 ## Repository Version
 
@@ -18,7 +18,7 @@ Autonomous Selection
 
 ### Milestone
 
-Material Response Transition — Complete
+Opt-In Citadel Soundscape — Active
 
 ## Operating Mode
 
@@ -44,7 +44,34 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-Unassigned — autonomous Move 3 selection from fresh use of the merged material-response transition.
+WORLD-ATMOSPHERE-002 — Opt-In Citadel Soundscape
+
+Move 3 implementation selected from fresh use of the merged Citadel.
+
+Change class: B — player-facing atmosphere and interface refinement. Founder approval is required before merge because the auto-merge window is closed.
+
+Observed weakness:
+
+- The visual experience now sustains restrained camera, water, material, and discovery motion, but the Citadel remains entirely silent.
+- After two material-focused moves, another visual adjustment would produce less experiential value than introducing a quiet auditory layer.
+
+Bounded intervention:
+
+- Add one opt-in ambient soundscape using the browser's native audio engine and no external audio asset or dependency.
+- Keep the sound low, continuous, abstract, and non-communicative so it reinforces atmosphere without implying a signal, event, character, or new world meaning.
+- Expose one subordinate `Listen` / `Silence` control because browsers require intentional audio activation and the player must retain mute control.
+- Fade sound in and out, suspend it while the page is hidden, and release the audio graph when the experience unmounts.
+- Add no lore, landmark, discovery state, progression, world object, new substance, or canon.
+
+Validation evidence:
+
+- TypeScript typecheck and production build pass locally.
+- Clean-session browser review confirms silence remains the default and the native audio graph is created only after intentional activation.
+- `Listen` activates the soundscape, `Silence` fades and suspends it, and a subsequent activation resumes the same graph without errors.
+- The control exposes stable pressed state, explicit accessible labels, and post-interaction live announcements without announcing on initial entry.
+- Desktop, portrait, active-discovery, reflection, dismissal, and focus-return surfaces retain the established interface hierarchy.
+- Source verification confirms page hiding suspends audio, visibility return resumes only when enabled, unmount stops sources and closes the context, and unsupported audio degrades to a disabled `Silent` state.
+- Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
 
 ## Completed
 
@@ -440,9 +467,9 @@ Validation evidence:
 
 ## Upcoming
 
-1. Experience the merged material-response transition rather than assuming another discovery-response ticket.
-2. Select Move 3 from the most important remaining experiential weakness supported by fresh observation.
-3. Preserve the interface-light baseline, existing canon, and non-canonical reference boundary.
+1. Validate opt-in activation, fade, mute, page-visibility suspension, cleanup, and graceful unavailability.
+2. Confirm the sound control remains subordinate across desktop, portrait, discovery, and reflection states.
+3. Present the bounded Class B result for Founder review before merge; if approved, close the three-move window and prepare the Founder Review.
 
 ## District Registry
 

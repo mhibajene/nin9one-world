@@ -17,10 +17,81 @@
 }
 
 .discovery-cue,
-.lore-reveal {
+.lore-reveal,
+.soundscape {
   position: absolute;
   z-index: 2;
   color: #f3d6a1;
+}
+
+.soundscape {
+  top: clamp(1rem, 3vw, 2.5rem);
+  right: clamp(1rem, 3vw, 3rem);
+}
+
+.soundscape__control {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 6.25rem;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.1rem;
+  border: 0;
+  border-top: 1px solid rgba(226, 177, 88, 0.2);
+  background: transparent;
+  color: rgba(244, 212, 156, 0.52);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 240ms ease, border-color 240ms ease;
+}
+
+.soundscape__control:hover,
+.soundscape__control:focus-visible,
+.soundscape__control[aria-pressed="true"] {
+  border-color: rgba(226, 177, 88, 0.48);
+  color: rgba(255, 238, 204, 0.86);
+}
+
+.soundscape__control:focus-visible {
+  outline: 1px solid rgba(226, 177, 88, 0.5);
+  outline-offset: 0.35rem;
+}
+
+.soundscape__control:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+
+.soundscape__signal {
+  display: flex;
+  align-items: center;
+  gap: 0.12rem;
+  height: 0.75rem;
+}
+
+.soundscape__signal span {
+  width: 1px;
+  height: 0.25rem;
+  background: currentColor;
+  transition: height 480ms ease;
+}
+
+.soundscape__signal span:nth-child(2) {
+  height: 0.5rem;
+}
+
+.soundscape__control[aria-pressed="true"] .soundscape__signal span:first-child {
+  height: 0.5rem;
+}
+
+.soundscape__control[aria-pressed="true"] .soundscape__signal span:nth-child(2) {
+  height: 0.75rem;
+}
+
+.soundscape__control[aria-pressed="true"] .soundscape__signal span:last-child {
+  height: 0.38rem;
 }
 
 .discovery-cue {
@@ -153,6 +224,11 @@
 }
 
 @media (max-width: 720px), (max-height: 660px) {
+  .soundscape {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+
   .discovery-cue {
     bottom: 0.75rem;
     left: 0.75rem;
@@ -191,7 +267,10 @@
 
 @media (prefers-reduced-motion: reduce) {
   .discovery-cue,
-  .lore-reveal {
+  .lore-reveal,
+  .soundscape__control,
+  .soundscape__signal span {
     animation: none;
+    transition: none;
   }
 }
