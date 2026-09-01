@@ -10,7 +10,7 @@ Phase 1 — Citadel Foundation was founder-approved and closed on 2026-07-19.
 
 ## Active Lane
 
-Materials / Lighting
+Autonomous Selection
 
 ## Repository Version
 
@@ -18,7 +18,7 @@ Materials / Lighting
 
 ### Milestone
 
-Faceted Obsidian Response — Founder Review
+Faceted Obsidian Response — Complete
 
 ## Operating Mode
 
@@ -44,32 +44,7 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-WORLD-MATERIAL-001
-
-Faceted Obsidian Response
-
-Implementation complete; awaiting Founder review before merge.
-
-Observed weakness:
-
-- At rest and at closer orbit distances, the Citadel's broad structural faces compressed into a largely uniform black mass despite the established material language describing Obsidian Matter as dense, ancient, and slightly metallic.
-- The Founder-approved Nexus IV reference archive repeatedly presents near-black matter through irregular planar relief and rare gold-catching edges; this was used as non-canonical visual evidence only.
-
-Implemented result:
-
-- Enables faceted normal response in the reusable Obsidian Matter material so existing low-segment architecture and monuments reveal their planar construction under light.
-- Adds two low-intensity, asymmetric raking lights from the existing atmospheric palette to make the facets legible without changing the dominant silhouette or gold hierarchy.
-- Reuses all existing geometry, material colors, lighting tokens, and dependencies.
-- Copies no reference asset and adds no texture, shader, surface object, lore, substance, or canon.
-
-Validation evidence:
-
-- TypeScript typecheck and production build passed locally.
-- Entry and lateral-orbit comparisons confirm planar variation is more legible while the Citadel remains predominantly near black.
-- Celestial Gold remains confined to established focal, trace, rim, and reflection uses.
-- Desktop and portrait compositions, direct attention, reflection activation, Escape dismissal, and focus return passed in the browser.
-- No motion path changed; existing reduced-motion camera and water behavior remains intact.
-- Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
+Unassigned — autonomous Move 2 selection from fresh use of the merged material response.
 
 ## Completed
 
@@ -409,11 +384,38 @@ Founder-reviewed and disposition recorded on 2026-09-01.
 - Opens a new three-move autonomous window without separately opening an auto-merge window.
 - Requires Move 1 to be selected from fresh use rather than pre-committing the window to material work.
 
+WORLD-MATERIAL-001
+
+Faceted Obsidian Response
+
+Founder-approved on 2026-09-01 for merge as Move 1 of the current autonomous window.
+
+Observed weakness:
+
+- At rest and at closer orbit distances, the Citadel's broad structural faces compressed into a largely uniform black mass despite the established material language describing Obsidian Matter as dense, ancient, and slightly metallic.
+- The Founder-approved Nexus IV reference archive repeatedly presents near-black matter through irregular planar relief and rare gold-catching edges; this was used as non-canonical visual evidence only.
+
+Implemented result:
+
+- Enables faceted normal response in the reusable Obsidian Matter material so existing low-segment architecture and monuments reveal their planar construction under light.
+- Adds two low-intensity, asymmetric raking lights from the existing atmospheric palette to make the facets legible without changing the dominant silhouette or gold hierarchy.
+- Reuses all existing geometry, material colors, lighting tokens, and dependencies.
+- Copies no reference asset and adds no texture, shader, surface object, lore, substance, or canon.
+
+Validation evidence:
+
+- TypeScript typecheck and production build passed locally and in required hosted validation.
+- Entry and lateral-orbit comparisons confirm planar variation is more legible while the Citadel remains predominantly near black.
+- Celestial Gold remains confined to established focal, trace, rim, and reflection uses.
+- Desktop and portrait compositions, direct attention, reflection activation, Escape dismissal, and focus return passed in the browser.
+- No motion path changed; existing reduced-motion camera and water behavior remains intact.
+- Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
+
 ## Upcoming
 
-1. Obtain Founder review for the Class B `WORLD-MATERIAL-001` implementation; the separate auto-merge window remains closed.
-2. After an approved merge, experience the integrated material response on current `main`.
-3. Select Move 2 from the most important remaining weakness rather than assuming a second material ticket.
+1. Experience the merged faceted Obsidian Matter response rather than assuming a second material ticket.
+2. Select Move 2 from the most important remaining experiential weakness supported by fresh observation.
+3. Preserve current canon and the non-canonical reference boundary for any further archive consultation.
 
 ## District Registry
 
