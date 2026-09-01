@@ -25,6 +25,8 @@ export function CitadelLighting() {
       <pointLight color={materialLanguage.celestialGold.reflection} intensity={92} distance={155} position={[0, 32, -92]} />
       <pointLight color={materialLanguage.atmosphericMatter.lowBounce} intensity={5.5} distance={70} position={[0, 4, 30]} />
       <pointLight color={materialLanguage.atmosphericMatter.deepBounce} intensity={9} distance={95} position={[0, 10, 62]} />
+      <pointLight color={materialLanguage.atmosphericMatter.lowBounce} intensity={18} distance={90} position={[-36, 18, 6]} />
+      <pointLight color={materialLanguage.atmosphericMatter.deepBounce} intensity={12} distance={96} position={[42, 14, -8]} />
     </>
   );
 }
