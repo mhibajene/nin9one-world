@@ -10,7 +10,7 @@ Phase 1 — Citadel Foundation was founder-approved and closed on 2026-07-19.
 
 ## Active Lane
 
-Autonomous Selection
+Atmosphere
 
 ## Repository Version
 
@@ -18,13 +18,13 @@ Autonomous Selection
 
 ### Milestone
 
-Material Response Transition — Complete
+Opt-In Citadel Soundscape — Founder-approved for merge
 
 ## Operating Mode
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Move 2 of 3.
+Current review window: Move 2 of 3, with Move 3 Founder-approved pending merge.
 
 Auto-merge window: Closed. The Citadel Experience 003 disposition opens autonomous execution but does not separately open a three-ticket auto-merge window.
 
@@ -44,7 +44,50 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-Unassigned — autonomous Move 3 selection from fresh use of the merged material-response transition.
+WORLD-ATMOSPHERE-002 — Opt-In Citadel Soundscape
+
+Move 3 implementation selected from fresh use of the merged Citadel.
+
+Change class: B — player-facing atmosphere and interface refinement. Founder approval is required before merge because the auto-merge window is closed.
+
+Founder disposition:
+
+- Founder-approved on 2026-09-01 for merge as Move 3 of the current autonomous window.
+- Founder-authorized the subsequent three-move autonomous window, to activate only after this move reaches exact `main`, the required seven-section Founder Review is filed, and the read-only World Steward challenge and governance reconciliation are complete.
+- The subsequent window does not independently open auto-merge authority.
+
+Observed weakness:
+
+- The visual experience now sustains restrained camera, water, material, and discovery motion, but the Citadel remains entirely silent.
+- After two material-focused moves, another visual adjustment would produce less experiential value than introducing a quiet auditory layer.
+
+Bounded intervention:
+
+- Add one opt-in ambient soundscape using the browser's native audio engine and no external audio asset or dependency.
+- Keep the sound low, continuous, abstract, and non-communicative so it reinforces atmosphere without implying a signal, event, character, or new world meaning.
+- Expose one subordinate `Listen` / `Silence` control because browsers require intentional audio activation and the player must retain mute control.
+- Fade sound in and out, suspend it while the page is hidden, and release the audio graph when the experience unmounts.
+- Add no lore, landmark, discovery state, progression, world object, new substance, or canon.
+
+Founder feedback — sonic direction:
+
+- The current opt-in drone is directionally strong: it adds scale and sonic identity without turning The Citadel into a music player, while `Listen` / `Silence` preserves player agency.
+- Preserve the principle: **Sound belongs to place before it belongs to playback.**
+- Future NIN9ONE locations may develop spatial soundscapes derived from musical material associated with the upcoming release. The intended direction is environmental reinterpretation of musical DNA—such as harmony, texture, processed stems, vocal fragments, motifs, rhythm, or field recordings—not a one-track-per-location mapping or a 3D playback interface.
+- This is a future experiential horizon, not authority for the current ticket to add release audio, stems, track mapping, content pipelines, or a broader music system.
+- `WORLD-ATMOSPHERE-002` remains limited to the basic sonic grammar already implemented: opt-in sound, spatial atmosphere, restraint, intentional silence, and a control subordinate to the place.
+- Future sonic work must be selected from fresh experiential review rather than speculative audio architecture.
+- This direction establishes no new canon and should be included in the completed-window Founder Review supplied to Hegel.
+
+Validation evidence:
+
+- TypeScript typecheck and production build pass locally.
+- Clean-session browser review confirms silence remains the default and the native audio graph is created only after intentional activation.
+- `Listen` activates the soundscape, `Silence` fades and suspends it, and a subsequent activation resumes the same graph without errors.
+- The control exposes stable pressed state, explicit accessible labels, and post-interaction live announcements without announcing on initial entry.
+- Desktop, portrait, active-discovery, reflection, dismissal, and focus-return surfaces retain the established interface hierarchy.
+- Source verification confirms page hiding suspends audio, visibility return resumes only when enabled, unmount stops sources and closes the context, and unsupported audio degrades to a disabled `Silent` state.
+- Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
 
 ## Completed
 
@@ -440,9 +483,9 @@ Validation evidence:
 
 ## Upcoming
 
-1. Experience the merged material-response transition rather than assuming another discovery-response ticket.
-2. Select Move 3 from the most important remaining experiential weakness supported by fresh observation.
-3. Preserve the interface-light baseline, existing canon, and non-canonical reference boundary.
+1. Merge the Founder-approved soundscape and verify the exact `main` result.
+2. Close the current three-move window and file the required seven-section Founder Review.
+3. Obtain the read-only World Steward challenge and reconcile governance before activating the Founder-authorized subsequent window at Move 0 of 3.
 
 ## District Registry
 
