@@ -18,7 +18,7 @@ Governance / Founder Review
 
 ### Milestone
 
-Autonomous Window 003 — Complete
+Founder Review 003 — Founder Disposition
 
 ## Operating Mode
 
@@ -32,6 +32,8 @@ Eligible pull requests may use native squash auto-merge under the gates in `AGEN
 
 Founder disposition and previous review: [`FOUNDER_REVIEW_CITADEL_DISCOVERY_002.md`](FOUNDER_REVIEW_CITADEL_DISCOVERY_002.md).
 
+Current Founder Review: [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_003.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_003.md).
+
 The interface-light, environment-led discovery surface is the accepted Citadel baseline. The persistent numbered landmark HUD remains rejected. The current window is selected from fresh use of the merged experience and may improve the broader Citadel experience without adding explanatory lore, expanding canon, or making internal progression visible.
 
 Operating roles:
@@ -44,7 +46,11 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-No implementation ticket active — Founder Review closeout required before another autonomous window.
+WORLD-GOVERNANCE-003
+
+Citadel Experience Founder Review 003
+
+Seven-section review and read-only World Steward verdict recorded. Founder disposition pending.
 
 ## Completed
 
@@ -373,9 +379,9 @@ Validation evidence:
 
 ## Upcoming
 
-1. File the seven-section Founder Review for `WORLD-NAVIGATION-001`, `WORLD-DISCOVERY-007`, and `WORLD-ATMOSPHERE-001`.
-2. Obtain the read-only World Steward challenge against the completed review package.
-3. Present both to the Founder; do not begin another autonomous window before Founder disposition.
+1. Present the completed review and World Steward verdict to the Founder.
+2. Record whether the Founder accepts, revises, or rejects the current experience baseline and whether another bounded window opens.
+3. Do not begin another autonomous window before that Founder disposition.
 
 ## District Registry
 
