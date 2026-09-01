@@ -10,7 +10,7 @@ Phase 1 — Citadel Foundation was founder-approved and closed on 2026-07-19.
 
 ## Active Lane
 
-Governance / Founder Review
+Autonomous Selection
 
 ## Repository Version
 
@@ -18,21 +18,19 @@ Governance / Founder Review
 
 ### Milestone
 
-Founder Review 003 — Founder Disposition
+Citadel Experience 004 — Move 1 Selection
 
 ## Operating Mode
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Closed at 3 of 3 moves.
+Current review window: Open — 0 of 3 moves.
 
-Auto-merge window: Closed. The Citadel Discovery 002 disposition opens autonomous execution but does not separately open a three-ticket auto-merge window.
+Auto-merge window: Closed. The Citadel Experience 003 disposition opens autonomous execution but does not separately open a three-ticket auto-merge window.
 
 Eligible pull requests may use native squash auto-merge under the gates in `AGENT_AUTONOMY.md`. The repository-level capability does not override ticket, canon, Class C, review, or validation boundaries.
 
-Founder disposition and previous review: [`FOUNDER_REVIEW_CITADEL_DISCOVERY_002.md`](FOUNDER_REVIEW_CITADEL_DISCOVERY_002.md).
-
-Current Founder Review: [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_003.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_003.md).
+Founder disposition and previous review: [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_003.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_003.md).
 
 The interface-light, environment-led discovery surface is the accepted Citadel baseline. The persistent numbered landmark HUD remains rejected. The current window is selected from fresh use of the merged experience and may improve the broader Citadel experience without adding explanatory lore, expanding canon, or making internal progression visible.
 
@@ -46,11 +44,7 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-WORLD-GOVERNANCE-003
-
-Citadel Experience Founder Review 003
-
-Seven-section review and read-only World Steward verdict recorded. Founder disposition pending.
+Unassigned — autonomous Move 1 selection from fresh use of the merged Citadel.
 
 ## Completed
 
@@ -377,11 +371,24 @@ Validation evidence:
 - Source verification confirms reduced-motion preference freezes the animation at its baseline values.
 - Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
 
+WORLD-GOVERNANCE-003
+
+Citadel Experience Founder Review 003
+
+Founder-reviewed and disposition recorded on 2026-09-01.
+
+- Files the complete seven-section Founder Review for WORLD-NAVIGATION-001, WORLD-DISCOVERY-007, and WORLD-ATMOSPHERE-001.
+- Records the read-only World Steward verdict: `NO OBJECTION — continue autonomous execution.`
+- Accepts anchored exploration, contextual reflections, and restrained black-water motion as the current experience baseline.
+- Confirms `WORLD_CANON.md` as the sole canon authority while allowing the Founder-held Nexus IV archive as non-canonical material-investigation reference.
+- Opens a new three-move autonomous window without separately opening an auto-merge window.
+- Requires Move 1 to be selected from fresh use rather than pre-committing the window to material work.
+
 ## Upcoming
 
-1. Present the completed review and World Steward verdict to the Founder.
-2. Record whether the Founder accepts, revises, or rejects the current experience baseline and whether another bounded window opens.
-3. Do not begin another autonomous window before that Founder disposition.
+1. Experience the accepted Citadel baseline on merged `main`.
+2. Select Move 1 from the most important player-facing weakness supported by fresh observation.
+3. Preserve current canon and treat the Nexus IV archive as reference material only when material investigation is relevant.
 
 ## District Registry
 
