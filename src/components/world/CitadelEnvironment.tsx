@@ -1,6 +1,13 @@
 "use client";
 
-import { AdditiveBlending, DoubleSide } from "three";
+import { useRef } from "react";
+import { useFrame } from "@react-three/fiber";
+import {
+  AdditiveBlending,
+  DoubleSide,
+  type Mesh,
+  type MeshBasicMaterial,
+} from "three";
 import { materialLanguage } from "@/data/materials/nin9oneMaterialLanguage";
 import {
   BlackWaterMaterial,
@@ -311,7 +318,48 @@ function distanceMood(position: Vec3): DistanceMood {
   };
 }
 
-function WaterPlane() {
+function WaterPlane({ motionEnabled }: { motionEnabled: boolean }) {
+  const broadReflectionRef = useRef<Mesh>(null);
+  const broadReflectionMaterialRef = useRef<MeshBasicMaterial>(null);
+  const deepReflectionRef = useRef<Mesh>(null);
+  const deepReflectionMaterialRef = useRef<MeshBasicMaterial>(null);
+  const traceMaterialRef = useRef<MeshBasicMaterial>(null);
+
+  useFrame(({ clock }) => {
+    const elapsed = clock.getElapsedTime();
+    const broadDrift = motionEnabled ? Math.sin(elapsed * 0.22) : 0;
+    const deepDrift = motionEnabled
+      ? Math.sin(elapsed * 0.16 + 1.4)
+      : 0;
+    const traceDrift = motionEnabled
+      ? Math.sin(elapsed * 0.19 + 2.1)
+      : 0;
+
+    if (broadReflectionRef.current) {
+      broadReflectionRef.current.position.z = -70 + broadDrift * 0.7;
+      broadReflectionRef.current.scale.x = 24 * (1 + broadDrift * 0.026);
+      broadReflectionRef.current.scale.y = 6.6 * (1 - broadDrift * 0.018);
+    }
+
+    if (broadReflectionMaterialRef.current) {
+      broadReflectionMaterialRef.current.opacity = 0.16 + broadDrift * 0.018;
+    }
+
+    if (deepReflectionRef.current) {
+      deepReflectionRef.current.position.z = -42 + deepDrift * 0.45;
+      deepReflectionRef.current.scale.x = 8.5 * (1 - deepDrift * 0.022);
+      deepReflectionRef.current.scale.y = 22 * (1 + deepDrift * 0.018);
+    }
+
+    if (deepReflectionMaterialRef.current) {
+      deepReflectionMaterialRef.current.opacity = 0.075 + deepDrift * 0.009;
+    }
+
+    if (traceMaterialRef.current) {
+      traceMaterialRef.current.opacity = 0.07 + traceDrift * 0.006;
+    }
+  });
+
   return (
     <group>
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.24, -116]} receiveShadow>
@@ -319,9 +367,16 @@ function WaterPlane() {
         <BlackWaterMaterial />
       </mesh>
 
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.17, -70]} scale={[24, 6.6, 1]} renderOrder={-1}>
+      <mesh
+        ref={broadReflectionRef}
+        rotation={[-Math.PI / 2, 0, 0]}
+        position={[0, -0.17, -70]}
+        scale={[24, 6.6, 1]}
+        renderOrder={-1}
+      >
         <circleGeometry args={[1, 96]} />
         <meshBasicMaterial
+          ref={broadReflectionMaterialRef}
           color={materialLanguage.celestialGold.reflection}
           transparent
           opacity={0.16}
@@ -331,9 +386,16 @@ function WaterPlane() {
         />
       </mesh>
 
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.16, -42]} scale={[8.5, 22, 1]} renderOrder={-1}>
+      <mesh
+        ref={deepReflectionRef}
+        rotation={[-Math.PI / 2, 0, 0]}
+        position={[0, -0.16, -42]}
+        scale={[8.5, 22, 1]}
+        renderOrder={-1}
+      >
         <circleGeometry args={[1, 96]} />
         <meshBasicMaterial
+          ref={deepReflectionMaterialRef}
           color={materialLanguage.celestialGold.reflectedDeep}
           transparent
           opacity={0.075}
@@ -378,6 +440,7 @@ function WaterPlane() {
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.15, -16]}>
         <planeGeometry args={[2.6, 120, 1, 1]} />
         <meshBasicMaterial
+          ref={traceMaterialRef}
           color={materialLanguage.celestialGold.trace}
           transparent
           opacity={0.07}
@@ -939,11 +1002,15 @@ function RockFormation({ position, scale, rotation }: RockBlockout) {
   );
 }
 
-export function CitadelEnvironment() {
+export function CitadelEnvironment({
+  reflectionMotionEnabled,
+}: {
+  reflectionMotionEnabled: boolean;
+}) {
   return (
     <group>
       <CelestialBody />
-      <WaterPlane />
+      <WaterPlane motionEnabled={reflectionMotionEnabled} />
       <HorizonInterestLayer />
       <OuterRealmStructureLayer />
       <RealmLightSignals />
