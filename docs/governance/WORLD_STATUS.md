@@ -10,7 +10,7 @@ Phase 1 — Citadel Foundation was founder-approved and closed on 2026-07-19.
 
 ## Active Lane
 
-Autonomous Selection
+Atmosphere
 
 ## Repository Version
 
@@ -18,7 +18,7 @@ Autonomous Selection
 
 ### Milestone
 
-Citadel Experience Founder Review 004 — Complete
+Citadel Soundscape Drift — Ready for Founder Review
 
 ## Operating Mode
 
@@ -44,15 +44,46 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-Unassigned — Move 1 selection from fresh use
+WORLD-ATMOSPHERE-003 — Citadel Soundscape Drift
 
-No experiential implementation is active.
+Move 1 implementation selected from fresh use of the reconciled exact-main Citadel.
 
-- Begin from fresh use after this governance closeout reaches exact `main`.
-- Observe the combined material, discovery, navigation, reflection, and sonic experience before choosing a lane.
-- Select the smallest meaningful intervention supported by the observed weakness.
-- Do not assume audio continuation or create release-audio infrastructure from the recorded sonic horizon.
-- Record the bounded ticket in this file before implementation.
+Change class: B — player-facing atmospheric refinement. Founder approval is required before merge because the auto-merge window is closed.
+
+Observed weakness:
+
+- The soundscape has a strong restrained arrival, but once its fade completes the drone filters, noise color, and stereo field remain fixed over sustained exploration.
+- The surrounding Citadel continues to move through camera, water, and material response, so an entirely static sonic bed risks resolving into generic ambience rather than atmosphere held by the place.
+
+Bounded intervention:
+
+- Add very slow, asynchronous modulation to the existing drone filter, filtered-air layer, and stereo field inside the current native audio graph.
+- Keep the movement below the threshold of a pulse, cue, event, melody, or landmark response.
+- Preserve the established pitches, sound level, default silence, fade behavior, visibility suspension, graph reuse, cleanup, accessibility state, and subordinate `Listen` / `Silence` control.
+- Add no voice, track, stem, audio asset, package, service, content pipeline, world reaction, lore, or canon.
+
+Selection evidence:
+
+- Fresh desktop and portrait use of exact `main` confirmed the sound control remains visually subordinate at rest and across camera exploration.
+- Activation, active state, and the established environmental scene remained stable.
+- Source inspection confirmed the current graph uses fixed filter frequencies, fixed source gains, and direct mono output after activation.
+
+Implemented result:
+
+- Routes the existing master output through a restrained stereo field and adds three very slow control oscillators.
+- Lets the drone-filter cutoff, filtered-air cutoff, and stereo position drift on different minute-scale cycles while preserving the established voices, pitches, noise source, and overall level.
+- Tracks the control oscillators alongside the existing sources so the established unmount path stops them and closes the same audio context.
+- Adds no audible voice, track, stem, asset, dependency, service, pipeline, interaction, landmark response, lore, or canon.
+
+Validation evidence:
+
+- TypeScript typecheck and production build pass locally.
+- Clean-session browser review confirms silence remains the default and activation reaches the enabled state without a runtime error.
+- `Silence` fades and suspends the graph; subsequent activation resumes it with the existing pressed state and live announcement behavior intact.
+- Moving the active tab into and out of the background preserves the enabled intent without new browser errors.
+- Reloading an active soundscape tears down the old experience and returns to default silence.
+- Desktop and portrait compositions retain the established subordinate control hierarchy.
+- Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
 
 ## Completed
 
@@ -494,9 +525,9 @@ Founder disposition and World Steward review recorded on 2026-09-01. This Class 
 
 ## Upcoming
 
-1. Merge the Class A governance closeout and verify the exact `main` result.
-2. Experience fresh `main` with material, response, navigation, discovery, reflection, and sound considered together.
-3. Record and implement the smallest Move 1 intervention supported by the most important observed weakness; Class B merge remains Founder-gated while auto-merge is closed.
+1. Open the bounded Class B pull request and obtain required hosted validation.
+2. Present the sonic result for Founder review before merge because auto-merge remains closed.
+3. If approved, merge and verify exact `main` before counting WORLD-ATMOSPHERE-003 as Move 1 of 3.
 
 ## District Registry
 

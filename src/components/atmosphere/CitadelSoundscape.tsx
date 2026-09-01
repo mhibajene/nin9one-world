@@ -38,13 +38,33 @@ function createBrownNoiseBuffer(context: AudioContext) {
 function createCitadelSoundscape(): CitadelSoundscapeGraph {
   const context = new AudioContext({ latencyHint: "playback" });
   const master = context.createGain();
+  const spatialField = context.createStereoPanner();
   const droneFilter = context.createBiquadFilter();
   const noiseFilter = context.createBiquadFilter();
   const noiseGain = context.createGain();
   const sources: SoundscapeSource[] = [];
 
   master.gain.value = 0;
-  master.connect(context.destination);
+  master.connect(spatialField);
+  spatialField.connect(context.destination);
+
+  const addSlowMovement = (
+    parameter: AudioParam,
+    frequency: number,
+    depth: number,
+  ) => {
+    const oscillator = context.createOscillator();
+    const movementDepth = context.createGain();
+
+    oscillator.type = "sine";
+    oscillator.frequency.value = frequency;
+    movementDepth.gain.value = depth;
+
+    oscillator.connect(movementDepth);
+    movementDepth.connect(parameter);
+    oscillator.start();
+    sources.push(oscillator);
+  };
 
   droneFilter.type = "lowpass";
   droneFilter.frequency.value = 240;
@@ -87,6 +107,10 @@ function createCitadelSoundscape(): CitadelSoundscapeGraph {
   noiseGain.connect(master);
   noise.start();
   sources.push(noise);
+
+  addSlowMovement(droneFilter.frequency, 0.017, 28);
+  addSlowMovement(noiseFilter.frequency, 0.029, 20);
+  addSlowMovement(spatialField.pan, 0.011, 0.12);
 
   return { context, master, sources };
 }
