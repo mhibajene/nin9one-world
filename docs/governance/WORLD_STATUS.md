@@ -10,7 +10,7 @@ Phase 1 — Citadel Foundation was founder-approved and closed on 2026-07-19.
 
 ## Active Lane
 
-Atmosphere
+Discovery
 
 ## Repository Version
 
@@ -18,13 +18,13 @@ Atmosphere
 
 ### Milestone
 
-Citadel Soundscape Drift — Founder-approved for merge
+Keyboard Discovery Activation — Founder-approved for merge
 
 ## Operating Mode
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Move 0 of 3, with Move 1 Founder-approved pending merge.
+Current review window: Move 1 of 3, with Move 2 Founder-approved pending merge.
 
 Auto-merge window: Closed. The Founder authorized a subsequent autonomous window but did not separately open a three-ticket auto-merge window.
 
@@ -44,51 +44,53 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-WORLD-ATMOSPHERE-003 — Citadel Soundscape Drift
+WORLD-DISCOVERY-009 — Keyboard Discovery Activation
 
-Move 1 implementation selected from fresh use of the reconciled exact-main Citadel.
+Move 2 implementation selected from fresh use of exact `main` after WORLD-ATMOSPHERE-003.
 
-Change class: B — player-facing atmospheric refinement. Founder approval is required before merge because the auto-merge window is closed.
+Change class: B — player-facing interaction and accessibility repair. Founder approval is required before merge because the auto-merge window is closed.
 
 Founder disposition:
 
-- Founder-approved on 2026-09-02 for merge as Move 1 of the current autonomous window.
-- This approval does not open auto-merge, expand the ticket, authorize release-audio integration, or establish canon.
+- Founder-approved on 2026-09-02 for merge as Move 2 of the current autonomous window.
+- This approval does not open auto-merge, expand the ticket, expose the hidden route visually, or establish canon.
 
 Observed weakness:
 
-- The soundscape has a strong restrained arrival, but once its fade completes the drone filters, noise color, and stereo field remain fixed over sustained exploration.
-- The surrounding Citadel continues to move through camera, water, and material response, so an entirely static sonic bed risks resolving into generic ambience rather than atmosphere held by the place.
+- On the hidden native keyboard route, focusing an undiscovered landmark correctly reveals its name and environmental attention response.
+- The resulting state update re-renders the button during the same keyboard gesture, so the first Enter press is lost before native click activation and no reflection opens.
+- A pointer can attend and activate in one intentional gesture; the keyboard route currently requires an unexplained second action after the name becomes known.
 
 Bounded intervention:
 
-- Add very slow, asynchronous modulation to the existing drone filter, filtered-air layer, and stereo field inside the current native audio graph.
-- Keep the movement below the threshold of a pulse, cue, event, melody, or landmark response.
-- Preserve the established pitches, sound level, default silence, fade behavior, visibility suspension, graph reuse, cleanup, accessibility state, and subordinate `Listen` / `Silence` control.
-- Add no voice, track, stem, audio asset, package, service, content pipeline, world reaction, lore, or canon.
+- Handle Enter and Space explicitly on the existing hidden landmark buttons so the initiating key opens the reflection even when focus changes discovery state.
+- Prevent the corresponding native synthetic click to avoid duplicate activation.
+- Preserve Tab focus, temporary attention cue, world-space material response, dialog semantics, Escape dismissal, focus restoration, session state, pointer behavior, and existing labels.
+- Add no visible interface, hint, list, progression, lore, dependency, architecture, or canon.
 
 Selection evidence:
 
-- Fresh desktop and portrait use of exact `main` confirmed the sound control remains visually subordinate at rest and across camera exploration.
-- Activation, active state, and the established environmental scene remained stable.
-- Source inspection confirmed the current graph uses fixed filter frequencies, fixed source gains, and direct mono output after activation.
+- Fresh exact-main desktop use reproduced the failure on an undiscovered Solar Obelisk: Enter focused and named it, but the reflection did not open.
+- The same session confirmed pointer activation, reflection presentation, dismissal, desktop composition, portrait composition, and the sound control remained stable.
+- Source inspection shows the buttons rely only on native `onClick` while `onFocus` synchronously updates discovery state.
 
 Implemented result:
 
-- Routes the existing master output through a restrained stereo field and adds three very slow control oscillators.
-- Lets the drone-filter cutoff, filtered-air cutoff, and stereo position drift on different minute-scale cycles while preserving the established voices, pitches, noise source, and overall level.
-- Tracks the control oscillators alongside the existing sources so the established unmount path stops them and closes the same audio context.
-- Adds no audible voice, track, stem, asset, dependency, service, pipeline, interaction, landmark response, lore, or canon.
+- Activates the focused landmark explicitly on Enter keydown and Space keyup using the existing hidden native buttons.
+- Prevents the matching native default activation so each keyboard gesture opens exactly one reflection.
+- Preserves the existing focus-driven naming and material response before intentional activation.
+- Changes no visible interface, label, landmark, reflection, lore, discovery state, pointer target, dependency, architecture, or canon.
 
 Validation evidence:
 
 - TypeScript typecheck and production build pass locally.
-- Clean-session browser review confirms silence remains the default and activation reaches the enabled state without a runtime error.
-- `Silence` fades and suspends the graph; subsequent activation resumes it with the existing pressed state and live announcement behavior intact.
-- Moving the active tab into and out of the background preserves the enabled intent without new browser errors.
-- Reloading an active soundscape tears down the old experience and returns to default silence.
-- Desktop and portrait compositions retain the established subordinate control hierarchy.
-- Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
+- A first Enter press on the previously undiscovered Ruptured Obsidian opens `Within the Fracture` in the same gesture that focuses and names it.
+- Repeat Enter on a known landmark and Space on the known Solar Obelisk each open exactly one correct reflection.
+- Escape dismissal restores focus and the temporary attention cue to the originating landmark.
+- Direct pointer activation still opens the Citadel reflection.
+- Desktop and portrait keyboard activation retain the established interface-light composition and subordinate sound control.
+- The local `/citadel` and `/` routes load without a framework error overlay or console error.
+- Reduced-motion behavior is unchanged because no camera, material, water, response, or animation path changed.
 
 ## Completed
 
@@ -528,11 +530,35 @@ Founder disposition and World Steward review recorded on 2026-09-01. This Class 
 - Opens the Founder-authorized subsequent window at Move 0 of 3 after this closeout reaches exact `main`.
 - Leaves auto-merge closed, preserves `WORLD_CANON.md` as sole canon authority, and requires Move 1 to be selected from fresh use.
 
+WORLD-ATMOSPHERE-003
+
+Citadel Soundscape Drift
+
+Founder-approved and merged on 2026-09-02 as Move 1 of the current autonomous window.
+
+Observed weakness:
+
+- The soundscape had a strong restrained arrival, but its filters, noise color, and stereo field remained fixed over sustained exploration.
+- The surrounding Citadel continued to move, so an entirely static sonic bed risked resolving into generic ambience rather than atmosphere held by the place.
+
+Implemented result:
+
+- Routes the existing master output through a restrained stereo field and adds three very slow control oscillators.
+- Lets the drone-filter cutoff, filtered-air cutoff, and stereo position drift on different minute-scale cycles while preserving the established voices, pitches, noise source, and overall level.
+- Tracks the control oscillators alongside the existing sources so the established unmount path stops them and closes the same audio context.
+- Adds no audible voice, track, stem, asset, dependency, service, pipeline, interaction, landmark response, lore, or canon.
+
+Validation evidence:
+
+- TypeScript typecheck and production build passed locally, on the pull request head, and on exact merged `main` revision `042f016`.
+- Default silence, activation, fade, mute, resume, visibility suspension, graph reuse, reload teardown, accessibility state, desktop, and portrait paths passed.
+- Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
+
 ## Upcoming
 
 1. Merge the Founder-approved Class B pull request and verify exact `main`.
-2. Record WORLD-ATMOSPHERE-003 as Move 1 of 3 only after that verification passes.
-3. Experience fresh `main` and select Move 2 from the most important observed weakness rather than assuming another audio pass.
+2. Record WORLD-DISCOVERY-009 as Move 2 of 3 only after that verification passes.
+3. Experience fresh `main` and select the final move from the most important observed weakness.
 
 ## District Registry
 

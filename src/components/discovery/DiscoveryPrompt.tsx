@@ -51,6 +51,22 @@ export function DiscoveryPrompt({
               onFocus={() => onFocus(landmark.id)}
               onBlur={() => onBlur(landmark.id)}
               onClick={() => onActivate(landmark.id)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter") {
+                  event.preventDefault();
+                  onActivate(landmark.id);
+                }
+
+                if (event.key === " ") {
+                  event.preventDefault();
+                }
+              }}
+              onKeyUp={(event) => {
+                if (event.key === " ") {
+                  event.preventDefault();
+                  onActivate(landmark.id);
+                }
+              }}
               aria-label={
                 isKnown
                   ? `${landmark.displayName}. Open reflection.`
