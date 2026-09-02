@@ -10,7 +10,7 @@ Phase 1 — Citadel Foundation was founder-approved and closed on 2026-07-19.
 
 ## Active Lane
 
-Discovery
+Awaiting Founder Direction
 
 ## Repository Version
 
@@ -18,21 +18,21 @@ Discovery
 
 ### Milestone
 
-Black Water Discovery Echo — Ready for Founder Review
+Citadel Experience Founder Review 005 — Complete
 
 ## Operating Mode
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Move 2 of 3, with Move 3 awaiting Founder review.
+Current review window: Closed at Move 3 of 3.
 
-Auto-merge window: Closed. The Founder authorized a subsequent autonomous window but did not separately open a three-ticket auto-merge window.
+Auto-merge window: Closed. The completed autonomous window did not separately include a three-ticket auto-merge window.
 
 Eligible pull requests may use native squash auto-merge under the gates in `AGENT_AUTONOMY.md`. The repository-level capability does not override ticket, canon, Class C, review, or validation boundaries.
 
-Founder disposition and current review: [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_004.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_004.md).
+Founder disposition and current review: [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_005.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_005.md).
 
-The interface-light, environment-led discovery surface remains the accepted Citadel baseline. The persistent numbered landmark HUD remains rejected. Move 3 was selected from fresh use of the reconciled exact-main experience and adds no explanatory lore, visible progression, or canon.
+The interface-light, environment-led discovery surface remains the accepted Citadel baseline. The persistent numbered landmark HUD remains rejected. The completed window added no explanatory lore, visible progression, or canon.
 
 Operating roles:
 
@@ -44,51 +44,15 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-WORLD-DISCOVERY-010 — Black Water Discovery Echo
+None — Autonomous Window Closed
 
-Move 3 implementation selected from fresh use of exact `main` after WORLD-DISCOVERY-009.
+No experiential implementation or governance closeout is active.
 
-Change class: B — player-facing environmental response. Founder approval is required before merge because the auto-merge window is closed.
-
-Founder disposition:
-
-- Founder-approved on 2026-09-03 for merge and autonomous-window closure as Move 3 of 3.
-- This approval does not open a new autonomous or auto-merge window, establish canon, or expand the implemented ticket.
-
-Observed weakness:
-
-- Fresh exact-main use confirmed that attention and discovery now produce a legible local response on the Solar Obelisk and Ruptured Obsidian.
-- Once the contextual reflection is dismissed, that consequence remains confined to the landmark material and light while the surrounding Black Water stays visually unchanged.
-- The world therefore acknowledges discovery only at the interaction target rather than through its established reflective connective layer.
-
-Bounded intervention:
-
-- Let the existing western Solar Obelisk reflection and a restrained Ruptured Obsidian water trace strengthen under attention and remain subtly present after discovery.
-- Ease the response through the existing motion preference and material-response transition rather than adding a pulse, beacon, marker, or repeated animation.
-- Keep the effect local and below the Citadel's established central reflection hierarchy.
-- Preserve every landmark, interaction, reflection surface, discovery state, sound behavior, label, lore fragment, dependency, architecture, and canon decision.
-
-Selection evidence:
-
-- Exact-main desktop review exercised the first-press keyboard route for both side landmarks, reflection dismissal, focus restoration, and durable material response.
-- Both discoveries remained legible on the landmark itself, but their surrounding water read the same as the pre-attention baseline.
-- The Citadel already owns a broad central Black Water reflection, so the smallest intervention is limited to the two side landmarks rather than altering the central composition.
-
-Implemented result:
-
-- Adds a low-opacity Black Water response for the two established side landmarks only.
-- Strengthens the western Solar Obelisk's existing reflected field and gives Ruptured Obsidian a narrower trace using the established Celestial Gold palette.
-- Eases both responses under attention and leaves them subtly present after discovery through the existing discovery state and motion preference.
-- Keeps the Citadel's broad central reflection visually dominant and introduces no pulse, beacon, marker, visible progression, lore, dependency, architecture, or canon.
-
-Validation evidence:
-
-- TypeScript typecheck, production build, and diff-integrity checks pass locally.
-- Settled desktop baseline, first-press keyboard activation, both side-landmark reflections, Escape dismissal, focus restoration, and durable post-discovery response pass in the browser.
-- Clean-session comparison confirms neither side response is present before attention and both remain subordinate to the Citadel's central reflection after discovery.
-- A 390 × 844 portrait pass preserves the monumental composition, contextual cue, subordinate sound control, and reflection surface.
-- Reduced-motion uses the existing immediate response transition and adds no repeated or ambient animation.
-- Local runtime diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
+- The Founder approved PR #38 for merge and window closure on 2026-09-03.
+- WORLD-DISCOVERY-010 merged as Move 3 of 3 and passed exact-main hosted validation at `6dc7e78`.
+- The autonomous window is closed and no subsequent autonomous or auto-merge window is authorized.
+- The seven-section Founder Review is complete and records Hegel's read-only `NO OBJECTION — continue autonomous execution.` verdict.
+- The advisory verdict does not activate work, approve canon, authorize another merge, or reset the three-move budget.
 
 ## Completed
 
@@ -577,11 +541,49 @@ Validation evidence:
 - The local `/citadel` and `/` routes loaded without a framework error overlay or console error.
 - Reduced-motion behavior remains unchanged because no motion or response path changed.
 
+WORLD-DISCOVERY-010
+
+Black Water Discovery Echo
+
+Founder-approved and merged on 2026-09-03 as Move 3 of the completed autonomous window.
+
+Observed weakness:
+
+- Attention and discovery produced a legible response on the Solar Obelisk and Ruptured Obsidian, but the surrounding Black Water remained visually unchanged.
+- Environmental consequence therefore remained confined to the interaction target rather than extending through the established reflective connective layer.
+
+Implemented result:
+
+- Adds low-opacity Black Water responses for the two existing side landmarks only.
+- Strengthens the western Solar Obelisk's existing reflected field and gives Ruptured Obsidian a narrower trace using the established Celestial Gold palette.
+- Eases both responses under attention and leaves them subtly present after discovery through the existing discovery state and motion preference.
+- Keeps the Citadel's central reflection dominant and adds no pulse, beacon, marker, visible progression, lore, dependency, architecture, or canon.
+
+Validation evidence:
+
+- TypeScript typecheck, production build, and diff-integrity checks passed locally and on the pull-request head.
+- Settled desktop, clean-session, first-press keyboard activation, both side-landmark reflections, Escape dismissal, focus restoration, durable response, and portrait paths passed in the browser.
+- Required hosted validation passed on exact merged `main` revision `6dc7e78` in run `33654320635`.
+- Runtime diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
+
+WORLD-GOVERNANCE-005
+
+Citadel Experience Founder Review 005
+
+Founder closure and World Steward review recorded on 2026-09-03. This Class A governance work does not consume an experiential move.
+
+- Files the complete seven-section Founder Review for WORLD-ATMOSPHERE-003, WORLD-DISCOVERY-009, and WORLD-DISCOVERY-010.
+- Records the read-only World Steward verdict: `NO OBJECTION — continue autonomous execution.`
+- Closes the autonomous window at 3 of 3 after exact-main validation at `6dc7e78`.
+- Leaves experiential implementation inactive with no subsequent autonomous or auto-merge window authorized.
+- Preserves `WORLD_CANON.md` as sole canon authority, the interface-light discovery baseline, and sound as opt-in and subordinate to place.
+- Adds no implementation, lore, dependency, architecture, or canon.
+
 ## Upcoming
 
-1. Open the WORLD-DISCOVERY-010 Class B pull request and hold merge for explicit Founder approval.
-2. After an approved exact-main merge, record WORLD-DISCOVERY-010 as Move 3 of 3 and close the autonomous window.
-3. File the seven-section Founder Review and obtain the read-only World Steward challenge before any further experiential work.
+1. Keep experiential implementation closed until the Founder separately authorizes another window or directs specific work.
+2. If a new autonomous window is later opened, begin from fresh use of exact `main` rather than pre-committing a lane.
+3. Preserve the rejected persistent HUD, visible progression, explanatory lore, release-audio pipeline, and media-player directions unless the Founder explicitly revises them.
 
 ## District Registry
 
