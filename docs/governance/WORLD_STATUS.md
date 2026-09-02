@@ -50,6 +50,11 @@ Move 3 implementation selected from fresh use of exact `main` after WORLD-DISCOV
 
 Change class: B — player-facing environmental response. Founder approval is required before merge because the auto-merge window is closed.
 
+Founder disposition:
+
+- Founder-approved on 2026-09-03 for merge and autonomous-window closure as Move 3 of 3.
+- This approval does not open a new autonomous or auto-merge window, establish canon, or expand the implemented ticket.
+
 Observed weakness:
 
 - Fresh exact-main use confirmed that attention and discovery now produce a legible local response on the Solar Obelisk and Ruptured Obsidian.
