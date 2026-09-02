@@ -18,13 +18,13 @@ Discovery
 
 ### Milestone
 
-Keyboard Discovery Activation — Ready for Founder Review
+Keyboard Discovery Activation — Founder-approved for merge
 
 ## Operating Mode
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Move 1 of 3.
+Current review window: Move 1 of 3, with Move 2 Founder-approved pending merge.
 
 Auto-merge window: Closed. The Founder authorized a subsequent autonomous window but did not separately open a three-ticket auto-merge window.
 
@@ -49,6 +49,11 @@ WORLD-DISCOVERY-009 — Keyboard Discovery Activation
 Move 2 implementation selected from fresh use of exact `main` after WORLD-ATMOSPHERE-003.
 
 Change class: B — player-facing interaction and accessibility repair. Founder approval is required before merge because the auto-merge window is closed.
+
+Founder disposition:
+
+- Founder-approved on 2026-09-02 for merge as Move 2 of the current autonomous window.
+- This approval does not open auto-merge, expand the ticket, expose the hidden route visually, or establish canon.
 
 Observed weakness:
 
@@ -551,9 +556,9 @@ Validation evidence:
 
 ## Upcoming
 
-1. Open the bounded Class B pull request and obtain required hosted validation.
-2. Present the keyboard repair for Founder review before merge because auto-merge remains closed.
-3. If approved, merge and verify exact `main` before counting WORLD-DISCOVERY-009 as Move 2 of 3.
+1. Merge the Founder-approved Class B pull request and verify exact `main`.
+2. Record WORLD-DISCOVERY-009 as Move 2 of 3 only after that verification passes.
+3. Experience fresh `main` and select the final move from the most important observed weakness.
 
 ## District Registry
 
