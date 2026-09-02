@@ -55,6 +55,34 @@ const responseProfiles: Record<
   },
 };
 
+const waterEchoProfiles: Partial<
+  Record<
+    LandmarkVisualResponse,
+    {
+      position: [number, number, number];
+      scale: [number, number, number];
+      attendedOpacity: number;
+      discoveredOpacity: number;
+      color: string;
+    }
+  >
+> = {
+  "solar-illumination": {
+    position: [-18, -0.145, -24],
+    scale: [2.3, 15, 1],
+    attendedOpacity: 0.045,
+    discoveredOpacity: 0.075,
+    color: materialLanguage.celestialGold.signalMuted,
+  },
+  "rupture-revelation": {
+    position: [30.5, -0.145, 28],
+    scale: [4.8, 12, 1],
+    attendedOpacity: 0.05,
+    discoveredOpacity: 0.075,
+    color: materialLanguage.celestialGold.signalMuted,
+  },
+};
+
 function transitionResponse(
   current: number,
   target: number,
@@ -67,6 +95,88 @@ function transitionResponse(
 
   const damping = target > current ? 4.6 : 2.2;
   return MathUtils.damp(current, target, damping, delta);
+}
+
+function BlackWaterDiscoveryEcho({
+  landmark,
+  discoveryState,
+  isAttended,
+  responseMotionEnabled,
+}: {
+  landmark: CitadelLandmark;
+  discoveryState: LandmarkDiscoveryState;
+  isAttended: boolean;
+  responseMotionEnabled: boolean;
+}) {
+  const haloMaterial = useRef<MeshBasicMaterial | null>(null);
+  const coreMaterial = useRef<MeshBasicMaterial | null>(null);
+  const profile = waterEchoProfiles[landmark.visualResponse];
+  const hasResponded =
+    discoveryState === "discovered" || discoveryState === "revisited";
+  const targetOpacity = profile
+    ? hasResponded
+      ? profile.discoveredOpacity
+      : isAttended
+        ? profile.attendedOpacity
+        : 0
+    : 0;
+
+  useFrame((_, delta) => {
+    if (haloMaterial.current) {
+      haloMaterial.current.opacity = transitionResponse(
+        haloMaterial.current.opacity,
+        targetOpacity * 0.46,
+        delta,
+        responseMotionEnabled,
+      );
+    }
+
+    if (coreMaterial.current) {
+      coreMaterial.current.opacity = transitionResponse(
+        coreMaterial.current.opacity,
+        targetOpacity,
+        delta,
+        responseMotionEnabled,
+      );
+    }
+  });
+
+  if (!profile) {
+    return null;
+  }
+
+  return (
+    <group position={profile.position} rotation={[-Math.PI / 2, 0, 0]}>
+      <mesh
+        position={[0, 0, -0.006]}
+        scale={[profile.scale[0] * 1.75, profile.scale[1] * 1.08, 1]}
+        renderOrder={-1}
+      >
+        <circleGeometry args={[1, 64]} />
+        <meshBasicMaterial
+          ref={haloMaterial}
+          color={profile.color}
+          transparent
+          opacity={0}
+          depthWrite={false}
+          blending={AdditiveBlending}
+          fog={false}
+        />
+      </mesh>
+      <mesh position={[0, 0, 0.006]} scale={profile.scale} renderOrder={0}>
+        <circleGeometry args={[1, 64]} />
+        <meshBasicMaterial
+          ref={coreMaterial}
+          color={profile.color}
+          transparent
+          opacity={0}
+          depthWrite={false}
+          blending={AdditiveBlending}
+          fog={false}
+        />
+      </mesh>
+    </group>
+  );
 }
 
 function AttentiveMaterialTrace({
@@ -260,6 +370,15 @@ function LandmarkTarget({
 
   return (
     <group>
+      {landmark.visualResponse !== "citadel-resonance" && (
+        <BlackWaterDiscoveryEcho
+          landmark={landmark}
+          discoveryState={currentState}
+          isAttended={isAttended}
+          responseMotionEnabled={responseMotionEnabled}
+        />
+      )}
+
       {landmark.visualResponse === "rupture-revelation" && (
         <RuptureVeins
           landmark={landmark}

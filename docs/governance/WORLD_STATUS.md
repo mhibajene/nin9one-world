@@ -18,13 +18,13 @@ Discovery
 
 ### Milestone
 
-Keyboard Discovery Activation — Founder-approved for merge
+Black Water Discovery Echo — Ready for Founder Review
 
 ## Operating Mode
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Move 1 of 3, with Move 2 Founder-approved pending merge.
+Current review window: Move 2 of 3, with Move 3 awaiting Founder review.
 
 Auto-merge window: Closed. The Founder authorized a subsequent autonomous window but did not separately open a three-ticket auto-merge window.
 
@@ -32,7 +32,7 @@ Eligible pull requests may use native squash auto-merge under the gates in `AGEN
 
 Founder disposition and current review: [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_004.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_004.md).
 
-The interface-light, environment-led discovery surface remains the accepted Citadel baseline. The persistent numbered landmark HUD remains rejected. The next move must be selected from fresh use of the reconciled exact-main experience without adding explanatory lore, visible progression, or canon.
+The interface-light, environment-led discovery surface remains the accepted Citadel baseline. The persistent numbered landmark HUD remains rejected. Move 3 was selected from fresh use of the reconciled exact-main experience and adds no explanatory lore, visible progression, or canon.
 
 Operating roles:
 
@@ -44,53 +44,46 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-WORLD-DISCOVERY-009 — Keyboard Discovery Activation
+WORLD-DISCOVERY-010 — Black Water Discovery Echo
 
-Move 2 implementation selected from fresh use of exact `main` after WORLD-ATMOSPHERE-003.
+Move 3 implementation selected from fresh use of exact `main` after WORLD-DISCOVERY-009.
 
-Change class: B — player-facing interaction and accessibility repair. Founder approval is required before merge because the auto-merge window is closed.
-
-Founder disposition:
-
-- Founder-approved on 2026-09-02 for merge as Move 2 of the current autonomous window.
-- This approval does not open auto-merge, expand the ticket, expose the hidden route visually, or establish canon.
+Change class: B — player-facing environmental response. Founder approval is required before merge because the auto-merge window is closed.
 
 Observed weakness:
 
-- On the hidden native keyboard route, focusing an undiscovered landmark correctly reveals its name and environmental attention response.
-- The resulting state update re-renders the button during the same keyboard gesture, so the first Enter press is lost before native click activation and no reflection opens.
-- A pointer can attend and activate in one intentional gesture; the keyboard route currently requires an unexplained second action after the name becomes known.
+- Fresh exact-main use confirmed that attention and discovery now produce a legible local response on the Solar Obelisk and Ruptured Obsidian.
+- Once the contextual reflection is dismissed, that consequence remains confined to the landmark material and light while the surrounding Black Water stays visually unchanged.
+- The world therefore acknowledges discovery only at the interaction target rather than through its established reflective connective layer.
 
 Bounded intervention:
 
-- Handle Enter and Space explicitly on the existing hidden landmark buttons so the initiating key opens the reflection even when focus changes discovery state.
-- Prevent the corresponding native synthetic click to avoid duplicate activation.
-- Preserve Tab focus, temporary attention cue, world-space material response, dialog semantics, Escape dismissal, focus restoration, session state, pointer behavior, and existing labels.
-- Add no visible interface, hint, list, progression, lore, dependency, architecture, or canon.
+- Let the existing western Solar Obelisk reflection and a restrained Ruptured Obsidian water trace strengthen under attention and remain subtly present after discovery.
+- Ease the response through the existing motion preference and material-response transition rather than adding a pulse, beacon, marker, or repeated animation.
+- Keep the effect local and below the Citadel's established central reflection hierarchy.
+- Preserve every landmark, interaction, reflection surface, discovery state, sound behavior, label, lore fragment, dependency, architecture, and canon decision.
 
 Selection evidence:
 
-- Fresh exact-main desktop use reproduced the failure on an undiscovered Solar Obelisk: Enter focused and named it, but the reflection did not open.
-- The same session confirmed pointer activation, reflection presentation, dismissal, desktop composition, portrait composition, and the sound control remained stable.
-- Source inspection shows the buttons rely only on native `onClick` while `onFocus` synchronously updates discovery state.
+- Exact-main desktop review exercised the first-press keyboard route for both side landmarks, reflection dismissal, focus restoration, and durable material response.
+- Both discoveries remained legible on the landmark itself, but their surrounding water read the same as the pre-attention baseline.
+- The Citadel already owns a broad central Black Water reflection, so the smallest intervention is limited to the two side landmarks rather than altering the central composition.
 
 Implemented result:
 
-- Activates the focused landmark explicitly on Enter keydown and Space keyup using the existing hidden native buttons.
-- Prevents the matching native default activation so each keyboard gesture opens exactly one reflection.
-- Preserves the existing focus-driven naming and material response before intentional activation.
-- Changes no visible interface, label, landmark, reflection, lore, discovery state, pointer target, dependency, architecture, or canon.
+- Adds a low-opacity Black Water response for the two established side landmarks only.
+- Strengthens the western Solar Obelisk's existing reflected field and gives Ruptured Obsidian a narrower trace using the established Celestial Gold palette.
+- Eases both responses under attention and leaves them subtly present after discovery through the existing discovery state and motion preference.
+- Keeps the Citadel's broad central reflection visually dominant and introduces no pulse, beacon, marker, visible progression, lore, dependency, architecture, or canon.
 
 Validation evidence:
 
-- TypeScript typecheck and production build pass locally.
-- A first Enter press on the previously undiscovered Ruptured Obsidian opens `Within the Fracture` in the same gesture that focuses and names it.
-- Repeat Enter on a known landmark and Space on the known Solar Obelisk each open exactly one correct reflection.
-- Escape dismissal restores focus and the temporary attention cue to the originating landmark.
-- Direct pointer activation still opens the Citadel reflection.
-- Desktop and portrait keyboard activation retain the established interface-light composition and subordinate sound control.
-- The local `/citadel` and `/` routes load without a framework error overlay or console error.
-- Reduced-motion behavior is unchanged because no camera, material, water, response, or animation path changed.
+- TypeScript typecheck, production build, and diff-integrity checks pass locally.
+- Settled desktop baseline, first-press keyboard activation, both side-landmark reflections, Escape dismissal, focus restoration, and durable post-discovery response pass in the browser.
+- Clean-session comparison confirms neither side response is present before attention and both remain subordinate to the Citadel's central reflection after discovery.
+- A 390 × 844 portrait pass preserves the monumental composition, contextual cue, subordinate sound control, and reflection surface.
+- Reduced-motion uses the existing immediate response transition and adds no repeated or ambient animation.
+- Local runtime diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
 
 ## Completed
 
@@ -554,11 +547,36 @@ Validation evidence:
 - Default silence, activation, fade, mute, resume, visibility suspension, graph reuse, reload teardown, accessibility state, desktop, and portrait paths passed.
 - Browser diagnostics contain only the existing non-blocking Three.js deprecation warnings for `Clock` and `PCFSoftShadowMap`.
 
+WORLD-DISCOVERY-009
+
+Keyboard Discovery Activation
+
+Founder-approved and merged on 2026-09-02 as Move 2 of the current autonomous window.
+
+Observed weakness:
+
+- Focusing an undiscovered landmark correctly revealed its name and environmental response, but the same Enter gesture was lost during that state update before native click activation.
+- Pointer users could attend and activate in one intentional gesture while keyboard users required an unexplained second action.
+
+Implemented result:
+
+- Activates the focused landmark explicitly on Enter keydown and Space keyup using the existing hidden native buttons.
+- Prevents the matching native default activation so each keyboard gesture opens exactly one reflection.
+- Preserves focus-driven naming, environmental response, labels, dialog behavior, focus restoration, session state, and pointer activation.
+- Adds no visible interface, hint, list, progression, lore, dependency, architecture, or canon.
+
+Validation evidence:
+
+- TypeScript typecheck and production build passed locally, on the pull request head, and on exact merged `main` revision `dbfcb54`.
+- First-press Enter on an undiscovered landmark, repeat Enter, Space, Escape dismissal, focus restoration, pointer parity, desktop, and portrait paths passed.
+- The local `/citadel` and `/` routes loaded without a framework error overlay or console error.
+- Reduced-motion behavior remains unchanged because no motion or response path changed.
+
 ## Upcoming
 
-1. Merge the Founder-approved Class B pull request and verify exact `main`.
-2. Record WORLD-DISCOVERY-009 as Move 2 of 3 only after that verification passes.
-3. Experience fresh `main` and select the final move from the most important observed weakness.
+1. Open the WORLD-DISCOVERY-010 Class B pull request and hold merge for explicit Founder approval.
+2. After an approved exact-main merge, record WORLD-DISCOVERY-010 as Move 3 of 3 and close the autonomous window.
+3. File the seven-section Founder Review and obtain the read-only World Steward challenge before any further experiential work.
 
 ## District Registry
 
