@@ -18,13 +18,13 @@ Navigation
 
 ### Milestone
 
-Citadel Vertical Orbit Integrity — Ready for Founder Review
+Citadel Vertical Orbit Integrity — Founder-approved for merge
 
 ## Operating Mode
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Open at Move 0 of 3.
+Current review window: Open at Move 0 of 3, with Move 1 Founder-approved pending merge.
 
 The Founder authorized a post-005 three-move pass on 2026-09-03 based on the current exact-main Citadel state. WORLD-GOVERNANCE-006 recorded that authority on exact `main` revision `159f3a2` before this ticket was re-selected from fresh experience.
 
@@ -50,7 +50,13 @@ WORLD-NAVIGATION-002 — Citadel Vertical Orbit Integrity
 
 Move 1 implementation selected from fresh use of exact `main` after Citadel Experience Founder Review 005.
 
-Change class: B — player-facing navigation refinement. Founder approval is required before merge because the auto-merge window is closed. The move is counted only after merge.
+Change class: B — player-facing navigation refinement. Founder approval is recorded below; the move is counted only after merge.
+
+Founder disposition:
+
+- Founder-approved on 2026-09-03 for merge as Move 1 of the current autonomous window.
+- The Founder required window authority to be recorded separately on `main`; WORLD-GOVERNANCE-006 satisfied that condition at exact revision `159f3a2` before this ticket was re-selected.
+- This approval does not open auto-merge, expand the ticket, alter canon, or authorize any Founder-reserved or Class C direction.
 
 Observed weakness:
 
@@ -625,9 +631,9 @@ Founder-directed authority recorded on 2026-09-03. This Class A governance-only 
 
 ## Upcoming
 
-1. Experience the exact-main Citadel and select Move 1 from the most important observed weakness.
-2. Record the resulting active ticket, classification, boundary, and evidence before implementation proceeds.
-3. Preserve the rejected persistent HUD, visible progression, explanatory lore, release-audio pipeline, and media-player directions unless the Founder explicitly revises them.
+1. Merge the Founder-approved Class B pull request and verify exact `main`.
+2. Record WORLD-NAVIGATION-002 as Move 1 of 3 only after exact-main validation passes.
+3. Experience fresh `main` and select Move 2 from the most important observed weakness rather than assuming another navigation pass.
 
 ## District Registry
 
