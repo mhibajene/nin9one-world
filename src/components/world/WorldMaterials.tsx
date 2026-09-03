@@ -1,6 +1,11 @@
 "use client";
 
-import { AdditiveBlending, BackSide } from "three";
+import type { Ref } from "react";
+import {
+  AdditiveBlending,
+  BackSide,
+  type MeshStandardMaterial,
+} from "three";
 import { materialLanguage } from "@/data/materials/nin9oneMaterialLanguage";
 
 type MatterMaterialProps = {
@@ -16,6 +21,10 @@ type MatterMaterialProps = {
 type GlowMaterialProps = {
   color?: string;
   opacity?: number;
+};
+
+type BlackWaterMaterialProps = {
+  materialRef?: Ref<MeshStandardMaterial>;
 };
 
 export function ObsidianMatterMaterial({
@@ -62,12 +71,17 @@ export function WeatheredRemnantMaterial({
   );
 }
 
-export function BlackWaterMaterial() {
+export function BlackWaterMaterial({
+  materialRef,
+}: BlackWaterMaterialProps = {}) {
   return (
     <meshStandardMaterial
+      ref={materialRef}
       color={materialLanguage.blackWater.surface}
       roughness={materialLanguage.blackWater.roughness}
       metalness={materialLanguage.blackWater.metalness}
+      transparent
+      opacity={1}
     />
   );
 }

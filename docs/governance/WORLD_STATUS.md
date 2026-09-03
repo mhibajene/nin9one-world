@@ -10,7 +10,7 @@ Phase 1 — Citadel Foundation was founder-approved and closed on 2026-07-19.
 
 ## Active Lane
 
-Autonomous Observation
+Material
 
 ## Repository Version
 
@@ -18,7 +18,7 @@ Autonomous Observation
 
 ### Milestone
 
-Citadel Experience Founder Review 006 — Move 1 Complete
+Gold Reflection Angle Integrity — Ready for Founder Review
 
 ## Operating Mode
 
@@ -34,7 +34,7 @@ Eligible pull requests may use native squash auto-merge under the gates in `AGEN
 
 Previous Founder disposition and accepted baseline: [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_005.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_005.md).
 
-The interface-light, environment-led discovery surface remains the accepted Citadel baseline. The persistent numbered landmark HUD remains rejected. Move 1 must be selected from fresh use of exact `main` without adding explanatory lore, visible progression, or canon.
+The interface-light, environment-led discovery surface remains the accepted Citadel baseline. The persistent numbered landmark HUD remains rejected. Each subsequent move must be selected from fresh use of exact `main` without adding explanatory lore, visible progression, or canon.
 
 Operating roles:
 
@@ -46,15 +46,52 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-None — Fresh Exact-Main Observation Required
+WORLD-MATERIAL-002 — Gold Reflection Angle Integrity
 
-WORLD-NAVIGATION-002 is merged and verified as Move 1 of 3. No subsequent experiential ticket is active.
+Move 2 selected from fresh use of exact `main` after WORLD-NAVIGATION-002.
 
-- Experience exact `main` revision `2f76773` before activating Move 2.
-- Select the smallest meaningful intervention from the most important observed weakness rather than continuing navigation by default.
-- Record any active ticket and its evidence in `WORLD_STATUS.md` before implementation proceeds.
-- The auto-merge window remains closed; Class B work requires explicit Founder approval before merge.
-- The window changes no canon and grants no Founder-reserved, Class C, publication, or external-release authority.
+Change class: B — player-facing material and atmosphere refinement. Founder approval is required before merge because the auto-merge window is closed. The move is counted only after merge.
+
+Observed weakness:
+
+- WORLD-NAVIGATION-002 makes restrained upper views of the Black Water approach usable without breaking the Citadel silhouette or horizon.
+- At those elevations, the physically lit Black Water surface compresses its specular response into one near-white hotspot while the authored gold layers recede beneath it.
+- The desaturated hotspot weakens the established Celestial Gold material language and makes the reflection construction more visible than the place.
+
+Bounded intervention:
+
+- Smoothly recede only the existing physically lit Black Water surface as camera elevation increases, while proportionally reinforcing the three existing authored gold reflection layers.
+- Shift the central trace only between its existing Celestial Gold `trace` and `reflection` tokens as elevation increases.
+- Preserve the exact entry-view opacity, gain, color, drift, geometry, position, scale, blend mode, and reduced-motion behavior.
+- Preserve the side-landmark Black Water echoes, discovery behavior, camera bounds, sound, interface, and lore.
+- Add no reflection layer, material token, shader, texture, world object, dependency, architecture, or canon.
+
+Selection evidence:
+
+- Fresh desktop and portrait use of exact `main` revision `8454740` confirmed the calibrated orbit limits preserve the Citadel and solar-field hierarchy.
+- Repeated upper-bound views showed the central gold reflection compressing into a bright near-white wedge on landscape and ellipse on portrait.
+- The same use confirmed Solar Obelisk attention, first-gesture reflection opening, dismissal, focus return, and the interface-light composition remain stable.
+
+Investigation evidence:
+
+- Attenuating the additive gold layers did not remove the hotspot, and increasing surface roughness only spread it across more of the Black Water.
+- Isolating the existing physically lit surface removed the hotspot, identifying its specular response rather than the authored gold layers as the cause.
+
+Implemented result:
+
+- Uses camera elevation from 6 to 24 world units as a smooth response envelope, below the entry camera and within the approved upper orbit.
+- Holds the existing entry composition exactly at surface opacity 1, reflection gain 1, and the existing trace color.
+- At the upper response bound, eases the physical surface toward opacity 0.05, the existing authored layers toward gain 2.2, and the central trace toward the existing Celestial Gold reflection token.
+- Uses refs for per-frame transient material response without React state or re-renders.
+- Adds no mesh, geometry, material token, shader, texture, world object, dependency, architecture, or canon.
+
+Validation evidence:
+
+- Final desktop and portrait entry checks preserve the accepted composition and Black Water response.
+- Desktop, portrait, and combined upper-orbit checks remove the near-white flare while retaining a restrained gold trace, the Citadel silhouette, solar-field hierarchy, and horizon relationship.
+- Solar Obelisk and Ruptured Obsidian side echoes remain visible after discovery at the upper orbit.
+- Keyboard attention, reflection opening, Escape dismissal, trigger focus return, and reduced-motion behavior pass.
+- The home route and Citadel route render without runtime errors; diagnostics remain limited to the known non-blocking Three.js `Clock` and `PCFSoftShadowMap` deprecation warnings.
 
 ## Completed
 
@@ -621,9 +658,9 @@ Authority and validation evidence:
 
 ## Upcoming
 
-1. Experience exact `main` and select Move 2 from the most important observed weakness.
-2. Record the resulting active ticket, classification, boundary, and evidence before implementation proceeds.
-3. Preserve the rejected persistent HUD, visible progression, explanatory lore, release-audio pipeline, and media-player directions unless the Founder explicitly revises them.
+1. Present the Class B result, together with any independent read-only World Steward challenge, for Founder approval before merge because auto-merge remains closed.
+2. If approved and merged, verify exact `main` and record Move 2 of 3.
+3. Make a fresh exact-main observation before selecting Move 3; reserve the complete Founder Review and World Steward review for the window closeout unless an earlier review trigger arises.
 
 ## District Registry
 
