@@ -19,6 +19,10 @@ import { useLandmarkDiscovery } from "@/systems/discovery/useLandmarkDiscovery";
 
 const landscapeCameraAzimuthLimit = Math.PI * 0.16;
 const portraitCameraAzimuthLimit = Math.PI * 0.085;
+const landscapeCameraMinPolarAngle = Math.PI * 0.49;
+const landscapeCameraMaxPolarAngle = Math.PI * 0.565;
+const portraitCameraMinPolarAngle = Math.PI * 0.5;
+const portraitCameraMaxPolarAngle = Math.PI * 0.545;
 
 function usePrefersReducedMotion() {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
@@ -72,8 +76,16 @@ function CitadelCameraControls({
       maxDistance={isPortrait ? 178 : 132}
       minAzimuthAngle={-azimuthLimit}
       maxAzimuthAngle={azimuthLimit}
-      maxPolarAngle={Math.PI * 0.6}
-      minPolarAngle={Math.PI * 0.24}
+      minPolarAngle={
+        isPortrait
+          ? portraitCameraMinPolarAngle
+          : landscapeCameraMinPolarAngle
+      }
+      maxPolarAngle={
+        isPortrait
+          ? portraitCameraMaxPolarAngle
+          : landscapeCameraMaxPolarAngle
+      }
       enablePan={false}
       rotateSpeed={0.48}
       zoomSpeed={0.62}

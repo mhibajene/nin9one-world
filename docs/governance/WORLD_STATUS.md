@@ -10,7 +10,7 @@ Phase 1 — Citadel Foundation was founder-approved and closed on 2026-07-19.
 
 ## Active Lane
 
-Autonomous Observation
+Navigation
 
 ## Repository Version
 
@@ -18,7 +18,7 @@ Autonomous Observation
 
 ### Milestone
 
-Citadel Experience Founder Review 006 — Window Active
+Citadel Vertical Orbit Integrity — Ready for Founder Review
 
 ## Operating Mode
 
@@ -26,7 +26,7 @@ Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
 Current review window: Open at Move 0 of 3.
 
-The Founder authorized a post-005 three-move pass on 2026-09-03 based on the current exact-main Citadel state. This governance record opens that window without activating an implementation ticket or pre-selecting a lane.
+The Founder authorized a post-005 three-move pass on 2026-09-03 based on the current exact-main Citadel state. WORLD-GOVERNANCE-006 recorded that authority on exact `main` revision `159f3a2` before this ticket was re-selected from fresh experience.
 
 Auto-merge window: Closed. The Founder opened an autonomous review window, not a separate three-ticket auto-merge window.
 
@@ -46,15 +46,46 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-None — Fresh Exact-Main Observation Required
+WORLD-NAVIGATION-002 — Citadel Vertical Orbit Integrity
 
-The post-005 autonomous window is open, but this authority record does not activate or approve an experiential ticket.
+Move 1 implementation selected from fresh use of exact `main` after Citadel Experience Founder Review 005.
 
-- Experience the newly authoritative exact-main Citadel before activating Move 1.
-- Select the smallest meaningful intervention from the most important observed weakness rather than continuing the previous lane by default.
-- Record any active ticket and its evidence in `WORLD_STATUS.md` before implementation proceeds.
-- The auto-merge window remains closed; Class B work requires explicit Founder approval before merge.
-- The window changes no canon and grants no Founder-reserved, Class C, publication, or external-release authority.
+Change class: B — player-facing navigation refinement. Founder approval is required before merge because the auto-merge window is closed. The move is counted only after merge.
+
+Observed weakness:
+
+- The existing 43–108 degree vertical orbit envelope can turn the Citadel into a near-top-down diagram or detach it from the horizon.
+- At those extremes, the celestial body reads as a flat disc and the Citadel loses its established monumental silhouette.
+- Lateral exploration and zoom remain useful; the failure is isolated to the polar range.
+
+Bounded intervention:
+
+- Calibrate only the existing desktop and portrait vertical orbit bounds.
+- Preserve the initial composition, lateral orbit, zoom, damping, introductory drift, interaction pause, and reduced-motion behavior.
+- Add no interface, world object, lore, dependency, architecture, or canon.
+
+Selection evidence:
+
+- Fresh desktop and portrait use of exact `main` verified the accepted entry composition, first-gesture keyboard discovery, reflection presentation, Escape dismissal, focus restoration, and default silence.
+- Horizontal orbit retained the Citadel and solar field as intended.
+- Repeated full-range vertical drags reproduced the broken top-down and detached-horizon views at both ends of the existing range.
+
+Implemented result:
+
+- Narrows landscape vertical exploration to a restrained 88.2–101.7 degree envelope.
+- Uses a tighter 90–98.1 degree portrait envelope to preserve the Citadel and solar field in the taller composition.
+- Keeps the upper views useful for revealing the Black Water approach and foreground scale without exposing the scene as a diagram.
+- Preserves the existing initial camera, lateral orbit, zoom range, damping, drift, landmark interactions, reflections, sound control, and motion preference.
+
+Validation evidence:
+
+- TypeScript typecheck and production build pass locally; diff-integrity checks pass.
+- Desktop and portrait entry compositions remain unchanged.
+- Repeated drags to both vertical limits preserve the Citadel silhouette, solar-body relationship, and world horizon.
+- A combined lateral and upper-bound orbit retains the established place hierarchy.
+- First-gesture keyboard activation opens the correct reflection at the calibrated limit; Escape restores focus to the originating landmark.
+- Reduced-motion entry and first-gesture discovery remain functional without an error overlay.
+- The `/` and `/citadel` routes load successfully; runtime diagnostics contain only the known non-blocking Three.js `Clock` and `PCFSoftShadowMap` deprecation warnings.
 
 ## Completed
 
