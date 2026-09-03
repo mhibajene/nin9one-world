@@ -17,8 +17,10 @@ import {
 } from "@/data/landmarks/citadelLandmarks";
 import { useLandmarkDiscovery } from "@/systems/discovery/useLandmarkDiscovery";
 
-const landscapeCameraAzimuthLimit = Math.PI * 0.16;
-const portraitCameraAzimuthLimit = Math.PI * 0.085;
+const landscapeCameraAzimuthLimit = Math.PI * 0.05;
+const portraitCameraAzimuthLimit = Math.PI * 0.035;
+const landscapeCameraAutoRotateSpeed = 0.09;
+const portraitCameraAutoRotateSpeed = 0.06;
 const landscapeCameraMinPolarAngle = Math.PI * 0.49;
 const landscapeCameraMaxPolarAngle = Math.PI * 0.565;
 const portraitCameraMinPolarAngle = Math.PI * 0.5;
@@ -94,7 +96,11 @@ function CitadelCameraControls({
       autoRotate={
         enabled && canDrift && introDriftActive && !prefersReducedMotion
       }
-      autoRotateSpeed={0.18}
+      autoRotateSpeed={
+        isPortrait
+          ? portraitCameraAutoRotateSpeed
+          : landscapeCameraAutoRotateSpeed
+      }
       onStart={() => setIntroDriftActive(false)}
       enabled={enabled}
     />
