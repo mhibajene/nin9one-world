@@ -10,7 +10,7 @@ Phase 1 — Citadel Foundation was founder-approved and closed on 2026-07-19.
 
 ## Active Lane
 
-Autonomous Observation
+Navigation
 
 ## Repository Version
 
@@ -18,7 +18,7 @@ Autonomous Observation
 
 ### Milestone
 
-Citadel Experience Founder Review 006 — Move 2 Complete
+Lateral World-Axis Integrity — Ready for Founder Review
 
 ## Operating Mode
 
@@ -46,15 +46,54 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-None — Fresh Exact-Main Observation Required
+WORLD-NAVIGATION-003 — Lateral World-Axis Integrity
 
-WORLD-MATERIAL-002 is merged and verified as Move 2 of 3. No subsequent experiential ticket is active.
+Move 3 selected from fresh use of exact `main` after WORLD-MATERIAL-002.
 
-- Experience exact `main` revision `7b6103d` before activating Move 3.
-- Select the smallest meaningful intervention from the most important observed weakness rather than continuing material work by default.
-- Record any active ticket and its evidence in `WORLD_STATUS.md` before implementation proceeds.
-- The auto-merge window remains closed; Class B work requires explicit Founder approval before merge.
-- The window changes no canon and grants no Founder-reserved, Class C, publication, or external-release authority.
+Change class: B — player-facing navigation and world-presentation refinement. Founder approval is required before merge because the auto-merge window is closed. The move is counted only after merge.
+
+Observed weakness:
+
+- WORLD-NAVIGATION-002 and WORLD-MATERIAL-002 preserve the Citadel and Celestial Gold reflection through the approved vertical orbit.
+- At the existing lateral extremes, the Citadel shifts away from the solar field, the central Black Water reflection separates from the architecture, and the scene reads as a displaced set rather than one monumental axis.
+- The landscape limit of approximately 28.8 degrees produces the strongest break, but the approximately 15.3-degree portrait limit also dislocates the Citadel within the narrow frame.
+
+Bounded intervention:
+
+- Calibrate only the existing landscape and portrait azimuth limits to preserve the Citadel, solar field, and central Black Water reflection as one world axis at both lateral extremes.
+- Scale the existing intro-drift speed to each responsive azimuth envelope so its ten-second environmental cue remains continuous instead of reaching a boundary early.
+- Retain enough lateral movement to reveal parallax, foreground scale, and side-landmark relationships rather than locking the camera to a fixed view.
+- Preserve the initial camera, vertical orbit, distance limits, zoom, damping, manual rotation speed, ten-second introductory-drift duration, discovery behavior, reflection response, sound, interface, and reduced-motion behavior.
+- Add no camera mode, interface, world object, material, dependency, architecture, lore, or canon.
+
+Selection evidence:
+
+- Fresh desktop and portrait use of exact `main` revision `6dfb3e9` verified the merged Move 2 reflection result first.
+- Repeated full-left and full-right lateral gestures then displaced the Citadel from the solar field and split the central reflection across the frame.
+- The weakness is visible without inspecting implementation and affects the core place relationship more than any remaining local polish issue.
+
+Calibration evidence:
+
+- A first reduction to approximately 15.3 degrees on landscape still separated the Citadel and solar field too strongly; approximately 8.1 degrees on portrait improved but did not fully protect the narrower composition.
+- The first reduced envelopes also exposed the old intro-drift speed reaching the new boundary around halfway through its ten-second cue and visibly stalling.
+- Final responsive envelopes of approximately 9 degrees on landscape and 6.3 degrees on portrait retain visible foreground and landmark parallax while keeping the Citadel inside the solar field at both lateral extremes.
+
+Implemented result:
+
+- Narrows the existing landscape azimuth envelope from approximately plus or minus 28.8 degrees to plus or minus 9 degrees.
+- Narrows the existing portrait azimuth envelope from approximately plus or minus 15.3 degrees to plus or minus 6.3 degrees.
+- Scales the existing auto-rotate speed from 0.18 to 0.09 on landscape and 0.06 on portrait so the full ten-second intro drift remains continuous inside each envelope.
+- Preserves the initial camera, vertical orbit, distance limits, zoom, damping, manual rotation speed, user interruption, discovery behavior, reflection response, sound, interface, and reduced-motion behavior.
+- Adds no camera mode, interface, world object, material, dependency, architecture, lore, or canon.
+
+Validation evidence:
+
+- Desktop and portrait entry, full-left, full-right, and combined lateral-plus-vertical views preserve the Citadel, solar field, central Black Water path, and horizon as one composition.
+- Minimum- and maximum-distance zoom checks retain the central axis and interaction response.
+- One-, six-, and eleven-second desktop and portrait observations confirm a continuous introductory drift without an early boundary stall.
+- Pointer interruption, keyboard discovery, reflection opening, Escape dismissal, trigger focus return, and discovered side echoes pass at the calibrated lateral limits.
+- Reduced motion remains stationary through the intro interval while manual combined orbit remains available.
+- The home route and Citadel route render without runtime errors; diagnostics remain limited to the known non-blocking Three.js `Clock` and `PCFSoftShadowMap` deprecation warnings.
 
 ## Completed
 
@@ -650,9 +689,9 @@ Authority and validation evidence:
 
 ## Upcoming
 
-1. Experience exact `main` revision `7b6103d` and select Move 3 from the most important observed weakness.
-2. Record the resulting active ticket, classification, boundary, and evidence before implementation proceeds.
-3. Preserve the rejected persistent HUD, visible progression, explanatory lore, release-audio pipeline, and media-player directions; after Move 3, close the window and prepare the complete Founder Review and independent World Steward review.
+1. Present the bounded Class B Move 3 result for Founder approval because the auto-merge window remains closed.
+2. If approved and merged, verify exact `main`, record Move 3 of 3, and close the autonomous window before further experiential work.
+3. Prepare the complete seven-section Founder Review and obtain the independent read-only World Steward challenge for presentation together to the Founder.
 
 ## District Registry
 
