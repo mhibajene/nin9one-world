@@ -10,7 +10,7 @@ Phase 1 — Citadel Foundation was founder-approved and closed on 2026-07-19.
 
 ## Active Lane
 
-Navigation
+Autonomous Observation
 
 ## Repository Version
 
@@ -18,13 +18,13 @@ Navigation
 
 ### Milestone
 
-Citadel Vertical Orbit Integrity — Founder-approved for merge
+Citadel Experience Founder Review 006 — Move 1 Complete
 
 ## Operating Mode
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Open at Move 0 of 3, with Move 1 Founder-approved pending merge.
+Current review window: Open at Move 1 of 3.
 
 The Founder authorized a post-005 three-move pass on 2026-09-03 based on the current exact-main Citadel state. WORLD-GOVERNANCE-006 recorded that authority on exact `main` revision `159f3a2` before this ticket was re-selected from fresh experience.
 
@@ -46,52 +46,15 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-WORLD-NAVIGATION-002 — Citadel Vertical Orbit Integrity
+None — Fresh Exact-Main Observation Required
 
-Move 1 implementation selected from fresh use of exact `main` after Citadel Experience Founder Review 005.
+WORLD-NAVIGATION-002 is merged and verified as Move 1 of 3. No subsequent experiential ticket is active.
 
-Change class: B — player-facing navigation refinement. Founder approval is recorded below; the move is counted only after merge.
-
-Founder disposition:
-
-- Founder-approved on 2026-09-03 for merge as Move 1 of the current autonomous window.
-- The Founder required window authority to be recorded separately on `main`; WORLD-GOVERNANCE-006 satisfied that condition at exact revision `159f3a2` before this ticket was re-selected.
-- This approval does not open auto-merge, expand the ticket, alter canon, or authorize any Founder-reserved or Class C direction.
-
-Observed weakness:
-
-- The existing 43–108 degree vertical orbit envelope can turn the Citadel into a near-top-down diagram or detach it from the horizon.
-- At those extremes, the celestial body reads as a flat disc and the Citadel loses its established monumental silhouette.
-- Lateral exploration and zoom remain useful; the failure is isolated to the polar range.
-
-Bounded intervention:
-
-- Calibrate only the existing desktop and portrait vertical orbit bounds.
-- Preserve the initial composition, lateral orbit, zoom, damping, introductory drift, interaction pause, and reduced-motion behavior.
-- Add no interface, world object, lore, dependency, architecture, or canon.
-
-Selection evidence:
-
-- Fresh desktop and portrait use of exact `main` verified the accepted entry composition, first-gesture keyboard discovery, reflection presentation, Escape dismissal, focus restoration, and default silence.
-- Horizontal orbit retained the Citadel and solar field as intended.
-- Repeated full-range vertical drags reproduced the broken top-down and detached-horizon views at both ends of the existing range.
-
-Implemented result:
-
-- Narrows landscape vertical exploration to a restrained 88.2–101.7 degree envelope.
-- Uses a tighter 90–98.1 degree portrait envelope to preserve the Citadel and solar field in the taller composition.
-- Keeps the upper views useful for revealing the Black Water approach and foreground scale without exposing the scene as a diagram.
-- Preserves the existing initial camera, lateral orbit, zoom range, damping, drift, landmark interactions, reflections, sound control, and motion preference.
-
-Validation evidence:
-
-- TypeScript typecheck and production build pass locally; diff-integrity checks pass.
-- Desktop and portrait entry compositions remain unchanged.
-- Repeated drags to both vertical limits preserve the Citadel silhouette, solar-body relationship, and world horizon.
-- A combined lateral and upper-bound orbit retains the established place hierarchy.
-- First-gesture keyboard activation opens the correct reflection at the calibrated limit; Escape restores focus to the originating landmark.
-- Reduced-motion entry and first-gesture discovery remain functional without an error overlay.
-- The `/` and `/citadel` routes load successfully; runtime diagnostics contain only the known non-blocking Three.js `Clock` and `PCFSoftShadowMap` deprecation warnings.
+- Experience exact `main` revision `2f76773` before activating Move 2.
+- Select the smallest meaningful intervention from the most important observed weakness rather than continuing navigation by default.
+- Record any active ticket and its evidence in `WORLD_STATUS.md` before implementation proceeds.
+- The auto-merge window remains closed; Class B work requires explicit Founder approval before merge.
+- The window changes no canon and grants no Founder-reserved, Class C, publication, or external-release authority.
 
 ## Completed
 
@@ -629,11 +592,38 @@ Founder-directed authority recorded on 2026-09-03. This Class A governance-only 
 - Leaves the auto-merge window closed and preserves explicit Founder approval before any Class B merge.
 - Activates no implementation ticket and changes no canon, lore, world object, dependency, architecture, or Founder-reserved authority.
 
+WORLD-NAVIGATION-002
+
+Citadel Vertical Orbit Integrity
+
+Founder-approved and merged on 2026-09-03 as Move 1 of the current autonomous window.
+
+Observed weakness:
+
+- The prior 43–108 degree vertical orbit envelope could turn the Citadel into a near-top-down diagram or detach it from the horizon.
+- At those extremes, the celestial body read as a flat disc and the Citadel lost its established monumental silhouette.
+
+Implemented result:
+
+- Narrows landscape vertical exploration to a restrained 88.2–101.7 degree envelope.
+- Uses a tighter 90–98.1 degree portrait envelope to preserve the Citadel and solar field in the taller composition.
+- Keeps upper views useful for revealing the Black Water approach and foreground scale without exposing the scene as a diagram.
+- Preserves the initial camera, lateral orbit, zoom, damping, introductory drift, landmark interactions, reflections, sound control, and reduced-motion behavior.
+- Adds no interface, world object, lore, dependency, architecture, or canon.
+
+Authority and validation evidence:
+
+- WORLD-GOVERNANCE-006 recorded the Founder-opened window separately on exact `main` revision `159f3a2` before the ticket was re-selected from fresh use.
+- The Founder approved the bounded Class B result before merge; the separate auto-merge window remained closed.
+- Local TypeScript typecheck, production build, diff-integrity, desktop, portrait, extreme-orbit, combined-orbit, keyboard discovery, reflection, dismissal, focus-return, and reduced-motion checks passed.
+- PR #40 merged at exact `main` revision `2f76773`; hosted validation passed in run `33709847317`.
+- Runtime diagnostics remain limited to the known non-blocking Three.js `Clock` and `PCFSoftShadowMap` deprecation warnings.
+
 ## Upcoming
 
-1. Merge the Founder-approved Class B pull request and verify exact `main`.
-2. Record WORLD-NAVIGATION-002 as Move 1 of 3 only after exact-main validation passes.
-3. Experience fresh `main` and select Move 2 from the most important observed weakness rather than assuming another navigation pass.
+1. Experience exact `main` and select Move 2 from the most important observed weakness.
+2. Record the resulting active ticket, classification, boundary, and evidence before implementation proceeds.
+3. Preserve the rejected persistent HUD, visible progression, explanatory lore, release-audio pipeline, and media-player directions unless the Founder explicitly revises them.
 
 ## District Registry
 
