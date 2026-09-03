@@ -10,7 +10,7 @@ Phase 1 — Citadel Foundation was founder-approved and closed on 2026-07-19.
 
 ## Active Lane
 
-Awaiting Founder Direction
+Autonomous Observation
 
 ## Repository Version
 
@@ -18,21 +18,23 @@ Awaiting Founder Direction
 
 ### Milestone
 
-Citadel Experience Founder Review 005 — Complete
+Citadel Experience Founder Review 006 — Window Active
 
 ## Operating Mode
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Closed at Move 3 of 3.
+Current review window: Open at Move 0 of 3.
 
-Auto-merge window: Closed. The completed autonomous window did not separately include a three-ticket auto-merge window.
+The Founder authorized a post-005 three-move pass on 2026-09-03 based on the current exact-main Citadel state. This governance record opens that window without activating an implementation ticket or pre-selecting a lane.
+
+Auto-merge window: Closed. The Founder opened an autonomous review window, not a separate three-ticket auto-merge window.
 
 Eligible pull requests may use native squash auto-merge under the gates in `AGENT_AUTONOMY.md`. The repository-level capability does not override ticket, canon, Class C, review, or validation boundaries.
 
-Founder disposition and current review: [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_005.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_005.md).
+Previous Founder disposition and accepted baseline: [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_005.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_005.md).
 
-The interface-light, environment-led discovery surface remains the accepted Citadel baseline. The persistent numbered landmark HUD remains rejected. The completed window added no explanatory lore, visible progression, or canon.
+The interface-light, environment-led discovery surface remains the accepted Citadel baseline. The persistent numbered landmark HUD remains rejected. Move 1 must be selected from fresh use of exact `main` without adding explanatory lore, visible progression, or canon.
 
 Operating roles:
 
@@ -44,15 +46,15 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-None — Autonomous Window Closed
+None — Fresh Exact-Main Observation Required
 
-No experiential implementation or governance closeout is active.
+The post-005 autonomous window is open, but this authority record does not activate or approve an experiential ticket.
 
-- The Founder approved PR #38 for merge and window closure on 2026-09-03.
-- WORLD-DISCOVERY-010 merged as Move 3 of 3 and passed exact-main hosted validation at `6dc7e78`.
-- The autonomous window is closed and no subsequent autonomous or auto-merge window is authorized.
-- The seven-section Founder Review is complete and records Hegel's read-only `NO OBJECTION — continue autonomous execution.` verdict.
-- The advisory verdict does not activate work, approve canon, authorize another merge, or reset the three-move budget.
+- Experience the newly authoritative exact-main Citadel before activating Move 1.
+- Select the smallest meaningful intervention from the most important observed weakness rather than continuing the previous lane by default.
+- Record any active ticket and its evidence in `WORLD_STATUS.md` before implementation proceeds.
+- The auto-merge window remains closed; Class B work requires explicit Founder approval before merge.
+- The window changes no canon and grants no Founder-reserved, Class C, publication, or external-release authority.
 
 ## Completed
 
@@ -579,10 +581,21 @@ Founder closure and World Steward review recorded on 2026-09-03. This Class A go
 - Preserves `WORLD_CANON.md` as sole canon authority, the interface-light discovery baseline, and sound as opt-in and subordinate to place.
 - Adds no implementation, lore, dependency, architecture, or canon.
 
+WORLD-GOVERNANCE-006
+
+Citadel Experience Window 006 Activation
+
+Founder-directed authority recorded on 2026-09-03. This Class A governance-only change does not consume an experiential move.
+
+- Opens one post-005 autonomous review window at Move 0 of 3.
+- Requires Move 1 to be selected from fresh use of exact `main` rather than pre-committing the window to a lane.
+- Leaves the auto-merge window closed and preserves explicit Founder approval before any Class B merge.
+- Activates no implementation ticket and changes no canon, lore, world object, dependency, architecture, or Founder-reserved authority.
+
 ## Upcoming
 
-1. Keep experiential implementation closed until the Founder separately authorizes another window or directs specific work.
-2. If a new autonomous window is later opened, begin from fresh use of exact `main` rather than pre-committing a lane.
+1. Experience the exact-main Citadel and select Move 1 from the most important observed weakness.
+2. Record the resulting active ticket, classification, boundary, and evidence before implementation proceeds.
 3. Preserve the rejected persistent HUD, visible progression, explanatory lore, release-audio pipeline, and media-player directions unless the Founder explicitly revises them.
 
 ## District Registry
