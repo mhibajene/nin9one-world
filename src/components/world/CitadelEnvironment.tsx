@@ -4,9 +4,12 @@ import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import {
   AdditiveBlending,
+  Color,
   DoubleSide,
+  MathUtils,
   type Mesh,
   type MeshBasicMaterial,
+  type MeshStandardMaterial,
 } from "three";
 import { materialLanguage } from "@/data/materials/nin9oneMaterialLanguage";
 import {
@@ -113,6 +116,15 @@ type DistanceMood = {
   roughness: number;
   emissiveIntensity: number;
 };
+
+const waterResponseElevationStart = 6;
+const waterResponseElevationEnd = 24;
+const elevatedWaterOpacity = 0.05;
+const elevatedReflectionGain = 2.2;
+const restingWaterTraceColor = new Color(materialLanguage.celestialGold.trace);
+const elevatedWaterTraceColor = new Color(
+  materialLanguage.celestialGold.reflection,
+);
 
 const supportingSpires: SpireBlockout[] = [
   { position: [-38, 0, -16], radius: 2.5, height: 23, tiers: 4 },
@@ -319,13 +331,14 @@ function distanceMood(position: Vec3): DistanceMood {
 }
 
 function WaterPlane({ motionEnabled }: { motionEnabled: boolean }) {
+  const waterSurfaceMaterialRef = useRef<MeshStandardMaterial>(null);
   const broadReflectionRef = useRef<Mesh>(null);
   const broadReflectionMaterialRef = useRef<MeshBasicMaterial>(null);
   const deepReflectionRef = useRef<Mesh>(null);
   const deepReflectionMaterialRef = useRef<MeshBasicMaterial>(null);
   const traceMaterialRef = useRef<MeshBasicMaterial>(null);
 
-  useFrame(({ clock }) => {
+  useFrame(({ camera, clock }) => {
     const elapsed = clock.getElapsedTime();
     const broadDrift = motionEnabled ? Math.sin(elapsed * 0.22) : 0;
     const deepDrift = motionEnabled
@@ -334,6 +347,24 @@ function WaterPlane({ motionEnabled }: { motionEnabled: boolean }) {
     const traceDrift = motionEnabled
       ? Math.sin(elapsed * 0.19 + 2.1)
       : 0;
+    const elevationProgress = MathUtils.smoothstep(
+      camera.position.y,
+      waterResponseElevationStart,
+      waterResponseElevationEnd,
+    );
+    const reflectionGain = MathUtils.lerp(
+      1,
+      elevatedReflectionGain,
+      elevationProgress,
+    );
+
+    if (waterSurfaceMaterialRef.current) {
+      waterSurfaceMaterialRef.current.opacity = MathUtils.lerp(
+        1,
+        elevatedWaterOpacity,
+        elevationProgress,
+      );
+    }
 
     if (broadReflectionRef.current) {
       broadReflectionRef.current.position.z = -70 + broadDrift * 0.7;
@@ -342,7 +373,8 @@ function WaterPlane({ motionEnabled }: { motionEnabled: boolean }) {
     }
 
     if (broadReflectionMaterialRef.current) {
-      broadReflectionMaterialRef.current.opacity = 0.16 + broadDrift * 0.018;
+      broadReflectionMaterialRef.current.opacity =
+        (0.16 + broadDrift * 0.018) * reflectionGain;
     }
 
     if (deepReflectionRef.current) {
@@ -352,19 +384,28 @@ function WaterPlane({ motionEnabled }: { motionEnabled: boolean }) {
     }
 
     if (deepReflectionMaterialRef.current) {
-      deepReflectionMaterialRef.current.opacity = 0.075 + deepDrift * 0.009;
+      deepReflectionMaterialRef.current.opacity =
+        (0.075 + deepDrift * 0.009) * reflectionGain;
     }
 
     if (traceMaterialRef.current) {
-      traceMaterialRef.current.opacity = 0.07 + traceDrift * 0.006;
+      traceMaterialRef.current.opacity =
+        (0.07 + traceDrift * 0.006) * reflectionGain;
+      traceMaterialRef.current.color
+        .copy(restingWaterTraceColor)
+        .lerp(elevatedWaterTraceColor, elevationProgress);
     }
   });
 
   return (
     <group>
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.24, -116]} receiveShadow>
+      <mesh
+        rotation={[-Math.PI / 2, 0, 0]}
+        position={[0, -0.24, -116]}
+        receiveShadow
+      >
         <planeGeometry args={[620, 780, 1, 1]} />
-        <BlackWaterMaterial />
+        <BlackWaterMaterial materialRef={waterSurfaceMaterialRef} />
       </mesh>
 
       <mesh
