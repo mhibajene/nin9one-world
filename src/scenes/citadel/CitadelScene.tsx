@@ -1,8 +1,14 @@
 "use client";
 
 import { OrbitControls, Stars } from "@react-three/drei";
-import { useThree } from "@react-three/fiber";
-import { useEffect, useState } from "react";
+import { useFrame, useThree } from "@react-three/fiber";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type ComponentRef,
+} from "react";
+import { MathUtils } from "three";
 import { CitadelFog } from "@/components/atmosphere/CitadelFog";
 import { CitadelLighting } from "@/components/atmosphere/CitadelLighting";
 import { CitadelSoundscape } from "@/components/atmosphere/CitadelSoundscape";
@@ -19,12 +25,17 @@ import { useLandmarkDiscovery } from "@/systems/discovery/useLandmarkDiscovery";
 
 const landscapeCameraAzimuthLimit = Math.PI * 0.05;
 const portraitCameraAzimuthLimit = Math.PI * 0.035;
-const landscapeCameraAutoRotateSpeed = 0.09;
-const portraitCameraAutoRotateSpeed = 0.06;
 const landscapeCameraMinPolarAngle = Math.PI * 0.49;
 const landscapeCameraMaxPolarAngle = Math.PI * 0.565;
 const portraitCameraMinPolarAngle = Math.PI * 0.5;
 const portraitCameraMaxPolarAngle = Math.PI * 0.545;
+const citadelCameraTarget = [0, 21, -18] as const;
+const introDriftDurationSeconds = 10;
+const introDriftAzimuthRatio = 0.6;
+const landscapeCameraRest = { y: 0.85, z: 92 } as const;
+const portraitCameraRest = { y: 1.1, z: 150 } as const;
+const landscapeCameraApproachStartZ = 112;
+const portraitCameraApproachStartZ = 158;
 
 function usePrefersReducedMotion() {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
@@ -52,10 +63,20 @@ function CitadelCameraControls({
   prefersReducedMotion: boolean;
 }) {
   const size = useThree((state) => state.size);
+  const camera = useThree((state) => state.camera);
   const isPortrait = size.height > size.width;
   const azimuthLimit = isPortrait
     ? portraitCameraAzimuthLimit
     : landscapeCameraAzimuthLimit;
+  const cameraRest = isPortrait
+    ? portraitCameraRest
+    : landscapeCameraRest;
+  const approachStartZ = isPortrait
+    ? portraitCameraApproachStartZ
+    : landscapeCameraApproachStartZ;
+  const controlsRef = useRef<ComponentRef<typeof OrbitControls>>(null);
+  const introStartedAt = useRef<number | null>(null);
+  const introInitialized = useRef(false);
   const [introDriftActive, setIntroDriftActive] = useState(true);
 
   useEffect(() => {
@@ -64,16 +85,65 @@ function CitadelCameraControls({
       return;
     }
 
-    const timeoutId = window.setTimeout(() => {
-      setIntroDriftActive(false);
-    }, 10_000);
+    if (introInitialized.current) {
+      return;
+    }
 
-    return () => window.clearTimeout(timeoutId);
-  }, [prefersReducedMotion]);
+    introInitialized.current = true;
+
+    camera.position.set(0, cameraRest.y, approachStartZ);
+    camera.lookAt(...citadelCameraTarget);
+    controlsRef.current?.update();
+  }, [approachStartZ, camera, cameraRest, prefersReducedMotion]);
+
+  useEffect(() => {
+    if (introDriftActive && (!enabled || !canDrift)) {
+      setIntroDriftActive(false);
+    }
+  }, [canDrift, enabled, introDriftActive]);
+
+  useFrame(({ clock }) => {
+    if (
+      !enabled ||
+      !canDrift ||
+      !introDriftActive ||
+      prefersReducedMotion
+    ) {
+      return;
+    }
+
+    introStartedAt.current ??= clock.elapsedTime;
+
+    const elapsed = clock.elapsedTime - introStartedAt.current;
+    const progress = MathUtils.clamp(
+      elapsed / introDriftDurationSeconds,
+      0,
+      1,
+    );
+    const easedProgress = MathUtils.smoothstep(progress, 0, 1);
+    const azimuth =
+      azimuthLimit * introDriftAzimuthRatio * easedProgress;
+    const forwardOffset =
+      MathUtils.lerp(approachStartZ, cameraRest.z, easedProgress) -
+      citadelCameraTarget[2];
+
+    camera.position.set(
+      Math.sin(azimuth) * forwardOffset,
+      cameraRest.y,
+      citadelCameraTarget[2] + Math.cos(azimuth) * forwardOffset,
+    );
+    camera.lookAt(...citadelCameraTarget);
+    controlsRef.current?.update();
+
+    if (progress === 1) {
+      setIntroDriftActive(false);
+    }
+  });
 
   return (
     <OrbitControls
-      target={[0, 21, -18]}
+      ref={controlsRef}
+      target={citadelCameraTarget}
       minDistance={isPortrait ? 118 : 58}
       maxDistance={isPortrait ? 178 : 132}
       minAzimuthAngle={-azimuthLimit}
@@ -93,14 +163,6 @@ function CitadelCameraControls({
       zoomSpeed={0.62}
       dampingFactor={0.08}
       enableDamping
-      autoRotate={
-        enabled && canDrift && introDriftActive && !prefersReducedMotion
-      }
-      autoRotateSpeed={
-        isPortrait
-          ? portraitCameraAutoRotateSpeed
-          : landscapeCameraAutoRotateSpeed
-      }
       onStart={() => setIntroDriftActive(false)}
       enabled={enabled}
     />

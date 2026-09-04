@@ -50,16 +50,35 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-None — Window Open; Fresh Experience Required
+WORLD-NAVIGATION-004 — Introductory Citadel Approach
 
-Citadel Experience Window 007 is open at Move 0 of 3. No implementation ticket is active until Move 1 is selected from fresh use of exact `main` revision `d917098`.
+Selected as the proposed Move 1 of Citadel Experience Window 007 from fresh use of exact `main` revision `8ed201f`. The move is not consumed until a validated Class B result is Founder-approved and merged.
 
 - The separate auto-merge window remains closed; each Class B result requires explicit Founder approval before merge.
-- The landscape completion gate remains a product gate to define and validate, not an achieved implementation state.
-- The Trophy Room remains a preferred product hypothesis rather than confirmed canon or an active implementation ticket.
-- The Throne Room's meaning remains unresolved and outside autonomous authority.
-- [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_006.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_006.md) remains the completed prior-window closeout and accepted implementation baseline.
-- This activation changes no canon and grants no Founder-reserved, Class C, publication, asset-production, or external-release authority.
+
+Observed weakness:
+
+- The accepted ten-second entry drift established restrained lateral life but did not advance through the landscape.
+- The opening therefore retained the feel of a powerful composed tableau more than an approach toward a place.
+- Manual zoom could change scale, but it did not give the initial arrival a grounded sense of distance closing toward the Citadel.
+
+Intended result:
+
+- Begin slightly farther along the existing central world axis, then ease forward during the established ten-second introductory drift toward the accepted resting composition.
+- Keep the camera at the established low viewpoint so Black Water remains the approach plane rather than turning the arrival into an elevated diagram.
+- Preserve immediate visitor control: pointer, wheel, touch, attention, reflection, or reduced-motion preference stops or bypasses the automatic approach.
+- Preserve the existing lateral and vertical control envelopes, zoom bounds, discovery behavior, sound, interface, landmarks, geometry, materials, and final composition.
+- Add no threshold claim, world object, asset, dependency, architecture, lore, or canon.
+
+Validation evidence:
+
+- Local TypeScript typecheck and production build pass.
+- Rendered desktop checks cover the distant opening, mid-approach depth, accepted resting composition, pointer interruption, wheel interruption, direct landmark activation, and sustained stopped state.
+- Rendered portrait checks preserve the Citadel, solar field, Black Water path, utility controls, and responsive composition through the approach.
+- Reduced-motion checks begin and remain at the accepted resting composition with the automatic approach bypassed.
+- Keyboard focus reveals the existing landmark name, Enter opens its reflection, Escape dismisses it, and focus returns to the originating control.
+- The opt-in sound control still reaches its active mute state after an intentional gesture.
+- Runtime diagnostics remain limited to the known non-blocking Three.js `Clock` and `PCFSoftShadowMap` deprecation warnings.
 
 ## Completed
 
@@ -709,8 +728,8 @@ Authority and validation evidence:
 
 ## Upcoming
 
-1. Experience exact `main` against the adopted vision and select the smallest meaningful Move 1 from the most important observed weakness.
-2. Activate only that bounded ticket, validate it technically and experientially, and preserve explicit Founder approval before any Class B merge.
+1. Validate WORLD-NAVIGATION-004 technically and experientially across settled desktop, portrait, interruption, reduced-motion, discovery, and sound-control paths.
+2. Hold the Class B merge for explicit Founder approval; if approved and merged, reconcile exact `main` as Move 1 of 3 before selecting Move 2 from fresh use.
 
 ## District Registry
 
