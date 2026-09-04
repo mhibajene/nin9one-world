@@ -121,6 +121,10 @@ const waterResponseElevationStart = 6;
 const waterResponseElevationEnd = 24;
 const elevatedWaterOpacity = 0.05;
 const elevatedReflectionGain = 2.2;
+const landscapeApproachResponseStart = 112;
+const landscapeApproachResponseEnd = 58;
+const portraitApproachResponseStart = 170;
+const portraitApproachResponseEnd = 118;
 const restingWaterTraceColor = new Color(materialLanguage.celestialGold.trace);
 const elevatedWaterTraceColor = new Color(
   materialLanguage.celestialGold.reflection,
@@ -336,9 +340,10 @@ function WaterPlane({ motionEnabled }: { motionEnabled: boolean }) {
   const broadReflectionMaterialRef = useRef<MeshBasicMaterial>(null);
   const deepReflectionRef = useRef<Mesh>(null);
   const deepReflectionMaterialRef = useRef<MeshBasicMaterial>(null);
+  const traceRef = useRef<Mesh>(null);
   const traceMaterialRef = useRef<MeshBasicMaterial>(null);
 
-  useFrame(({ camera, clock }) => {
+  useFrame(({ camera, clock, size }) => {
     const elapsed = clock.getElapsedTime();
     const broadDrift = motionEnabled ? Math.sin(elapsed * 0.22) : 0;
     const deepDrift = motionEnabled
@@ -357,6 +362,26 @@ function WaterPlane({ motionEnabled }: { motionEnabled: boolean }) {
       elevatedReflectionGain,
       elevationProgress,
     );
+    const cameraDistance = Math.hypot(
+      camera.position.x,
+      camera.position.y - 21,
+      camera.position.z + 18,
+    );
+    const isPortrait = size.height > size.width;
+    const approachProgress =
+      1 -
+      MathUtils.smoothstep(
+        cameraDistance,
+        isPortrait
+          ? portraitApproachResponseEnd
+          : landscapeApproachResponseEnd,
+        isPortrait
+          ? portraitApproachResponseStart
+          : landscapeApproachResponseStart,
+      );
+    const broadApproachGain = MathUtils.lerp(1, 1.18, approachProgress);
+    const deepApproachGain = MathUtils.lerp(1, 1.32, approachProgress);
+    const traceApproachGain = MathUtils.lerp(1, 1.55, approachProgress);
 
     if (waterSurfaceMaterialRef.current) {
       waterSurfaceMaterialRef.current.opacity = MathUtils.lerp(
@@ -368,32 +393,55 @@ function WaterPlane({ motionEnabled }: { motionEnabled: boolean }) {
 
     if (broadReflectionRef.current) {
       broadReflectionRef.current.position.z = -70 + broadDrift * 0.7;
-      broadReflectionRef.current.scale.x = 24 * (1 + broadDrift * 0.026);
+      broadReflectionRef.current.scale.x =
+        24 *
+        (1 + broadDrift * 0.026) *
+        MathUtils.lerp(1, 0.84, approachProgress);
       broadReflectionRef.current.scale.y = 6.6 * (1 - broadDrift * 0.018);
     }
 
     if (broadReflectionMaterialRef.current) {
       broadReflectionMaterialRef.current.opacity =
-        (0.16 + broadDrift * 0.018) * reflectionGain;
+        (0.16 + broadDrift * 0.018) *
+        reflectionGain *
+        broadApproachGain;
     }
 
     if (deepReflectionRef.current) {
       deepReflectionRef.current.position.z = -42 + deepDrift * 0.45;
-      deepReflectionRef.current.scale.x = 8.5 * (1 - deepDrift * 0.022);
+      deepReflectionRef.current.scale.x =
+        8.5 *
+        (1 - deepDrift * 0.022) *
+        MathUtils.lerp(1, 0.76, approachProgress);
       deepReflectionRef.current.scale.y = 22 * (1 + deepDrift * 0.018);
     }
 
     if (deepReflectionMaterialRef.current) {
       deepReflectionMaterialRef.current.opacity =
-        (0.075 + deepDrift * 0.009) * reflectionGain;
+        (0.075 + deepDrift * 0.009) *
+        reflectionGain *
+        deepApproachGain;
+    }
+
+    if (traceRef.current) {
+      traceRef.current.scale.x = MathUtils.lerp(
+        1,
+        0.72,
+        approachProgress,
+      );
     }
 
     if (traceMaterialRef.current) {
       traceMaterialRef.current.opacity =
-        (0.07 + traceDrift * 0.006) * reflectionGain;
+        (0.07 + traceDrift * 0.006) *
+        reflectionGain *
+        traceApproachGain;
       traceMaterialRef.current.color
         .copy(restingWaterTraceColor)
-        .lerp(elevatedWaterTraceColor, elevationProgress);
+        .lerp(
+          elevatedWaterTraceColor,
+          Math.max(elevationProgress, approachProgress * 0.48),
+        );
     }
   });
 
@@ -478,7 +526,11 @@ function WaterPlane({ motionEnabled }: { motionEnabled: boolean }) {
         />
       </mesh>
 
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.15, -16]}>
+      <mesh
+        ref={traceRef}
+        rotation={[-Math.PI / 2, 0, 0]}
+        position={[0, -0.15, -16]}
+      >
         <planeGeometry args={[2.6, 120, 1, 1]} />
         <meshBasicMaterial
           ref={traceMaterialRef}

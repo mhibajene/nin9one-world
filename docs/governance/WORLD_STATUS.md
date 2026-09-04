@@ -28,7 +28,7 @@ Current review window: Open at Move 2 of 3.
 
 The Founder approved the repo-native Citadel experience vision and authorized a new three-move pass on 2026-09-04. WORLD-GOVERNANCE-008 records that authority against exact `main` revision `d917098`, where [`CITADEL_EXPERIENCE_VISION.md`](../vision/CITADEL_EXPERIENCE_VISION.md) became permanent repository history.
 
-WORLD-NAVIGATION-004 and WORLD-NAVIGATION-005 were each selected from fresh exact-main use and merged after explicit Founder approval. Move 3 must be selected from fresh use after this reconciliation reaches permanent `main`. The vision guides product and experience integrity but does not preselect an implementation lane or independently authorize canon, publication, assets, or Founder-reserved decisions.
+WORLD-NAVIGATION-004 and WORLD-NAVIGATION-005 were each selected from fresh exact-main use and merged after explicit Founder approval. WORLD-MATERIAL-003 is the proposed Move 3, selected from fresh use after Move 2 was reconciled at exact `main` revision `2e82670`. The vision guides product and experience integrity but does not preselect an implementation lane or independently authorize canon, publication, assets, or Founder-reserved decisions.
 
 Auto-merge window: Closed. The Founder opened an autonomous review window, not a separate three-ticket auto-merge window.
 
@@ -50,15 +50,35 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-None — Move 2 Reconciled; Fresh Experience Required
+WORLD-MATERIAL-003 — Approach-Responsive Black Water
 
-WORLD-NAVIGATION-005 is merged and verified as Move 2 of 3. No subsequent implementation ticket is active until Move 3 is selected from fresh use of exact `main` after this reconciliation.
+Selected as the proposed Move 3 of Citadel Experience Window 007 from fresh use after WORLD-NAVIGATION-005 was reconciled at exact `main` revision `2e82670`. The move is not consumed until a validated Class B result is Founder-approved and merged.
 
-- PR #52 merged at exact `main` revision `cdb9f96`; hosted validation passed in run `33896059025`.
-- Post-merge home entry, rendered Citadel entry, movement cue, wheel interruption, discovery routes, and runtime-error checks passed on exact `main`.
-- The separate auto-merge window remains closed; Move 3 requires fresh exact-main selection and explicit Founder approval before any Class B merge.
-- The landscape completion gate remains open and must not be inferred from this navigation move.
-- This merge changes no canon and grants no Founder-reserved, Class C, publication, asset-production, or external-release authority.
+- The separate auto-merge window remains closed; this Class B result requires explicit Founder approval before merge.
+
+Observed weakness:
+
+- The introductory approach and movement cue now make forward movement perceptible and discoverable, but manually closing the remaining distance mostly magnifies the same composition.
+- Black Water preserves its established luminous path without visibly answering proximity, so the visitor's approach can still read as camera zoom rather than movement through an active place.
+- The gap is strongest between the accepted resting composition and the nearest bounded view, where the environment should deepen without implying or resolving the Citadel threshold.
+
+Intended result:
+
+- Let the existing central Black Water reflection quietly narrow and strengthen as the visitor approaches beyond the accepted resting composition.
+- Derive the response only from camera distance and reverse it continuously when the visitor retreats.
+- Preserve the existing elevation response, ambient reflection drift, reduced-motion behavior, Citadel dominance, solar field, discovery states, sound, and interface.
+- Reuse only the existing Black Water reflection geometry and established material language.
+- Add no threshold claim, route, world object, asset, dependency, architecture, lore, canon, or persistent state.
+
+Validation evidence:
+
+- Local TypeScript typecheck and production build pass.
+- Rendered development and production desktop checks compare rest, mid-approach, nearest approach, retreat, and lateral or elevated approach without losing the Citadel/solar/Black Water axis.
+- Rendered portrait and coarse-pointer pinch checks preserve the Citadel's dominance and show the proximity response at the bounded near view.
+- The accepted introductory start-to-rest composition remains unchanged because the proximity response begins only beyond the resting distance.
+- Reduced-motion preserves a static surface while still allowing a direct, input-driven proximity response.
+- Movement orientation, keyboard discovery, reflection, dismissal, focus return, sound control, home entry, and Citadel entry remain intact.
+- Runtime diagnostics introduce no page errors and remain limited to the known non-blocking Three.js `Clock` and `PCFSoftShadowMap` deprecation warnings.
 
 ## Completed
 
@@ -767,8 +787,8 @@ Authority and validation evidence:
 
 ## Upcoming
 
-1. Experience exact `main` after this reconciliation against the adopted vision and select the smallest meaningful Move 3 from the most important observed weakness.
-2. Activate only that bounded ticket, validate it technically and experientially, and preserve explicit Founder approval before any Class B merge.
+1. Validate WORLD-MATERIAL-003 technically and experientially against exact `main` revision `2e82670`.
+2. Hold the Class B result for explicit Founder approval before merge; the window remains at Move 2 of 3 until that approval and merge occur.
 
 ## District Registry
 
