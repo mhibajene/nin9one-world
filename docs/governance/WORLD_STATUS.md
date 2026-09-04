@@ -24,11 +24,11 @@ Citadel Experience Founder Review 007
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Open at Move 0 of 3.
+Current review window: Open at Move 1 of 3.
 
 The Founder approved the repo-native Citadel experience vision and authorized a new three-move pass on 2026-09-04. WORLD-GOVERNANCE-008 records that authority against exact `main` revision `d917098`, where [`CITADEL_EXPERIENCE_VISION.md`](../vision/CITADEL_EXPERIENCE_VISION.md) became permanent repository history.
 
-Move 1 must be selected from fresh use of that exact-main experience. The vision guides product and experience integrity but does not preselect an implementation lane or independently authorize canon, publication, assets, or Founder-reserved decisions.
+WORLD-NAVIGATION-004 was selected from fresh use of that exact-main experience and merged after explicit Founder approval. Move 2 must be selected from fresh use of exact `main` revision `d3a7df4`. The vision guides product and experience integrity but does not preselect an implementation lane or independently authorize canon, publication, assets, or Founder-reserved decisions.
 
 Auto-merge window: Closed. The Founder opened an autonomous review window, not a separate three-ticket auto-merge window.
 
@@ -50,35 +50,15 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-WORLD-NAVIGATION-004 — Introductory Citadel Approach
+None — Move 1 Reconciled; Fresh Experience Required
 
-Selected as the proposed Move 1 of Citadel Experience Window 007 from fresh use of exact `main` revision `8ed201f`. The move is not consumed until a validated Class B result is Founder-approved and merged.
+WORLD-NAVIGATION-004 is merged and verified as Move 1 of 3. No subsequent implementation ticket is active until Move 2 is selected from fresh use of exact `main` revision `d3a7df4`.
 
-- The separate auto-merge window remains closed; each Class B result requires explicit Founder approval before merge.
-
-Observed weakness:
-
-- The accepted ten-second entry drift established restrained lateral life but did not advance through the landscape.
-- The opening therefore retained the feel of a powerful composed tableau more than an approach toward a place.
-- Manual zoom could change scale, but it did not give the initial arrival a grounded sense of distance closing toward the Citadel.
-
-Intended result:
-
-- Begin slightly farther along the existing central world axis, then ease forward during the established ten-second introductory drift toward the accepted resting composition.
-- Keep the camera at the established low viewpoint so Black Water remains the approach plane rather than turning the arrival into an elevated diagram.
-- Preserve immediate visitor control: pointer, wheel, touch, attention, reflection, or reduced-motion preference stops or bypasses the automatic approach.
-- Preserve the existing lateral and vertical control envelopes, zoom bounds, discovery behavior, sound, interface, landmarks, geometry, materials, and final composition.
-- Add no threshold claim, world object, asset, dependency, architecture, lore, or canon.
-
-Validation evidence:
-
-- Local TypeScript typecheck and production build pass.
-- Rendered desktop checks cover the distant opening, mid-approach depth, accepted resting composition, pointer interruption, wheel interruption, direct landmark activation, and sustained stopped state.
-- Rendered portrait checks preserve the Citadel, solar field, Black Water path, utility controls, and responsive composition through the approach.
-- Reduced-motion checks begin and remain at the accepted resting composition with the automatic approach bypassed.
-- Keyboard focus reveals the existing landmark name, Enter opens its reflection, Escape dismisses it, and focus returns to the originating control.
-- The opt-in sound control still reaches its active mute state after an intentional gesture.
-- Runtime diagnostics remain limited to the known non-blocking Three.js `Clock` and `PCFSoftShadowMap` deprecation warnings.
+- PR #50 merged at exact `main` revision `d3a7df4`; hosted validation passed in run `33871937132`.
+- Post-merge desktop entry checks confirm the distant opening, forward approach, accepted resting composition, utility controls, and hidden discovery routes without a browser error overlay or page error.
+- The separate auto-merge window remains closed; each subsequent Class B result requires explicit Founder approval before merge.
+- The landscape completion gate remains open and must not be inferred from this one navigation move.
+- This merge changes no canon and grants no Founder-reserved, Class C, publication, asset-production, or external-release authority.
 
 ## Completed
 
@@ -726,10 +706,39 @@ Authority and validation evidence:
 - Post-merge desktop and portrait checks on exact `main` preserved the accepted entry composition and the complete world axis without runtime errors.
 - Runtime diagnostics remain limited to the known non-blocking Three.js `Clock` and `PCFSoftShadowMap` deprecation warnings.
 
+WORLD-NAVIGATION-004
+
+Introductory Citadel Approach
+
+Founder-approved and merged on 2026-09-04 as Move 1 of the current autonomous window.
+
+Observed weakness:
+
+- The accepted ten-second entry drift established restrained lateral life but did not advance through the landscape.
+- The opening therefore retained the feel of a powerful composed tableau more than an approach toward a place.
+- Manual zoom could change scale, but it did not give the initial arrival a grounded sense of distance closing toward the Citadel.
+
+Implemented result:
+
+- Begins slightly farther along the existing central world axis, then eases forward during the established ten-second introductory drift toward the accepted resting composition.
+- Keeps the camera at the established low viewpoint so Black Water remains the approach plane rather than turning the arrival into an elevated diagram.
+- Preserves immediate visitor control: pointer, wheel, touch, attention, reflection, or reduced-motion preference stops or bypasses the automatic approach.
+- Preserves the existing lateral and vertical control envelopes, zoom bounds, discovery behavior, sound, interface, landmarks, geometry, materials, and final composition.
+- Adds no threshold claim, world object, asset, dependency, architecture, lore, or canon.
+
+Authority and validation evidence:
+
+- WORLD-GOVERNANCE-008 recorded the Founder-opened window separately on exact `main` revision `d917098` before this ticket was selected from fresh use of exact `main` revision `8ed201f`.
+- The Founder explicitly approved this bounded Class B result before PR #50 merged; the separate auto-merge window remained closed.
+- Local TypeScript typecheck, production build, diff-integrity, desktop, portrait, pointer-interruption, wheel-interruption, reduced-motion, keyboard discovery, reflection, dismissal, focus-return, and sound-control checks passed.
+- PR #50 merged at exact `main` revision `d3a7df4`; hosted validation passed in run `33871937132`.
+- Post-merge home entry and desktop start-to-rest checks passed on exact `main` without an error overlay or page error.
+- Runtime diagnostics remain limited to the known non-blocking Three.js `Clock` and `PCFSoftShadowMap` deprecation warnings.
+
 ## Upcoming
 
-1. Validate WORLD-NAVIGATION-004 technically and experientially across settled desktop, portrait, interruption, reduced-motion, discovery, and sound-control paths.
-2. Hold the Class B merge for explicit Founder approval; if approved and merged, reconcile exact `main` as Move 1 of 3 before selecting Move 2 from fresh use.
+1. Experience exact `main` revision `d3a7df4` against the adopted vision and select the smallest meaningful Move 2 from the most important observed weakness.
+2. Activate only that bounded ticket, validate it technically and experientially, and preserve explicit Founder approval before any Class B merge.
 
 ## District Registry
 
