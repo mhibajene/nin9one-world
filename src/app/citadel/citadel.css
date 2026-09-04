@@ -18,10 +18,42 @@
 
 .discovery-cue,
 .lore-reveal,
+.movement-cue,
 .soundscape {
   position: absolute;
   z-index: 2;
   color: #f3d6a1;
+}
+
+.movement-cue {
+  top: clamp(1rem, 3vw, 2.5rem);
+  left: clamp(1rem, 3vw, 3rem);
+  margin: 0;
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(226, 177, 88, 0.2);
+  color: rgba(244, 212, 156, 0.48);
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  pointer-events: none;
+  animation: movement-cue-life 8s ease both;
+}
+
+.movement-cue__touch {
+  display: none;
+}
+
+@keyframes movement-cue-life {
+  0% {
+    opacity: 0;
+  }
+  8%,
+  72% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .soundscape {
@@ -224,6 +256,11 @@
 }
 
 @media (max-width: 720px), (max-height: 660px) {
+  .movement-cue {
+    top: 0.75rem;
+    left: 0.75rem;
+  }
+
   .soundscape {
     top: 0.75rem;
     right: 0.75rem;
@@ -254,6 +291,16 @@
   }
 }
 
+@media (pointer: coarse) {
+  .movement-cue__desktop {
+    display: none;
+  }
+
+  .movement-cue__touch {
+    display: inline;
+  }
+}
+
 @keyframes lore-reveal-enter-mobile {
   from {
     opacity: 0;
@@ -268,6 +315,7 @@
 @media (prefers-reduced-motion: reduce) {
   .discovery-cue,
   .lore-reveal,
+  .movement-cue,
   .soundscape__control,
   .soundscape__signal span {
     animation: none;

@@ -36,6 +36,7 @@ const landscapeCameraRest = { y: 0.85, z: 92 } as const;
 const portraitCameraRest = { y: 1.1, z: 150 } as const;
 const landscapeCameraApproachStartZ = 112;
 const portraitCameraApproachStartZ = 158;
+const movementCueDurationMilliseconds = 8000;
 
 function usePrefersReducedMotion() {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
@@ -57,10 +58,12 @@ function CitadelCameraControls({
   enabled,
   canDrift,
   prefersReducedMotion,
+  onInteractionStart,
 }: {
   enabled: boolean;
   canDrift: boolean;
   prefersReducedMotion: boolean;
+  onInteractionStart: () => void;
 }) {
   const size = useThree((state) => state.size);
   const camera = useThree((state) => state.camera);
@@ -163,7 +166,10 @@ function CitadelCameraControls({
       zoomSpeed={0.62}
       dampingFactor={0.08}
       enableDamping
-      onStart={() => setIntroDriftActive(false)}
+      onStart={() => {
+        setIntroDriftActive(false);
+        onInteractionStart();
+      }}
       enabled={enabled}
     />
   );
@@ -171,6 +177,7 @@ function CitadelCameraControls({
 
 export function CitadelScene() {
   const prefersReducedMotion = usePrefersReducedMotion();
+  const [movementCueVisible, setMovementCueVisible] = useState(true);
   const {
     discoveryState,
     activeLandmarkId,
@@ -185,6 +192,15 @@ export function CitadelScene() {
   const activeLandmark = activeLandmarkId
     ? findCitadelLandmark(activeLandmarkId)
     : undefined;
+
+  useEffect(() => {
+    const timeoutId = window.setTimeout(
+      () => setMovementCueVisible(false),
+      movementCueDurationMilliseconds,
+    );
+
+    return () => window.clearTimeout(timeoutId);
+  }, []);
 
   const handleDismiss = () => {
     const dismissedLandmarkId = activeLandmarkId;
@@ -223,8 +239,20 @@ export function CitadelScene() {
           enabled={!activeLandmark}
           canDrift={!activeLandmark && !attendedLandmarkId}
           prefersReducedMotion={prefersReducedMotion}
+          onInteractionStart={() => setMovementCueVisible(false)}
         />
       </SceneCanvas>
+
+      {movementCueVisible && !activeLandmark && (
+        <p className="movement-cue" aria-hidden="true">
+          <span className="movement-cue__desktop">
+            Drag to look · Scroll to approach
+          </span>
+          <span className="movement-cue__touch">
+            Drag to look · Pinch to approach
+          </span>
+        </p>
+      )}
 
       {!activeLandmark && (
         <DiscoveryPrompt

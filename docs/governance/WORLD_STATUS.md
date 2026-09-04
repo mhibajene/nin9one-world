@@ -28,7 +28,7 @@ Current review window: Open at Move 1 of 3.
 
 The Founder approved the repo-native Citadel experience vision and authorized a new three-move pass on 2026-09-04. WORLD-GOVERNANCE-008 records that authority against exact `main` revision `d917098`, where [`CITADEL_EXPERIENCE_VISION.md`](../vision/CITADEL_EXPERIENCE_VISION.md) became permanent repository history.
 
-WORLD-NAVIGATION-004 was selected from fresh use of that exact-main experience and merged after explicit Founder approval. Move 2 must be selected from fresh use of exact `main` revision `d3a7df4`. The vision guides product and experience integrity but does not preselect an implementation lane or independently authorize canon, publication, assets, or Founder-reserved decisions.
+WORLD-NAVIGATION-004 was selected from fresh use of that exact-main experience and merged after explicit Founder approval. WORLD-NAVIGATION-005 is the proposed Move 2, selected from fresh use after Move 1 was reconciled at exact `main` revision `d9e93f8`. The vision guides product and experience integrity but does not preselect an implementation lane or independently authorize canon, publication, assets, or Founder-reserved decisions.
 
 Auto-merge window: Closed. The Founder opened an autonomous review window, not a separate three-ticket auto-merge window.
 
@@ -50,15 +50,35 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-None — Move 1 Reconciled; Fresh Experience Required
+WORLD-NAVIGATION-005 — Quiet Movement Orientation
 
-WORLD-NAVIGATION-004 is merged and verified as Move 1 of 3. No subsequent implementation ticket is active until Move 2 is selected from fresh use of exact `main` revision `d3a7df4`.
+Selected as the proposed Move 2 of Citadel Experience Window 007 from fresh use after WORLD-NAVIGATION-004 was reconciled at exact `main` revision `d9e93f8`. The move is not consumed until a validated Class B result is Founder-approved and merged.
 
-- PR #50 merged at exact `main` revision `d3a7df4`; hosted validation passed in run `33871937132`.
-- Post-merge desktop entry checks confirm the distant opening, forward approach, accepted resting composition, utility controls, and hidden discovery routes without a browser error overlay or page error.
-- The separate auto-merge window remains closed; each subsequent Class B result requires explicit Founder approval before merge.
-- The landscape completion gate remains open and must not be inferred from this one navigation move.
-- This merge changes no canon and grants no Founder-reserved, Class C, publication, asset-production, or external-release authority.
+- The separate auto-merge window remains closed; this Class B result requires explicit Founder approval before merge.
+
+Observed weakness:
+
+- The introductory approach now creates a readable arrival, but the interface gives a first-time visitor no quiet indication that the camera can be controlled.
+- Discoverable landmarks provide semantic access once found, while the foundational movement grammar remains implicit.
+- The absence risks making an intentionally interface-light place read as a fixed scene rather than an explorable world.
+
+Intended result:
+
+- Present one quiet movement cue during the first eight seconds of each fresh Citadel entry.
+- Name only the available input grammar: drag to look and scroll or pinch to approach.
+- Remove the cue on the visitor's first camera action or when its brief entry interval ends.
+- Keep the cue non-interactive, non-tracking, visually subordinate, and absent from assistive navigation because the corresponding pointer or touch gestures are not its keyboard-accessible route.
+- Preserve the accepted approach, world composition, discovery behavior, sound, landmarks, geometry, materials, and landscape completion gate.
+- Add no persistent HUD, checklist, progression state, analytics, asset, dependency, architecture, lore, canon, or world claim.
+
+Validation evidence:
+
+- Local TypeScript typecheck and production build pass.
+- Rendered production desktop entry shows the desktop cue without competing with the Citadel, Black Water, sound control, or discovery routes; wheel and drag input remove it immediately.
+- Rendered coarse-pointer touch emulation substitutes the pinch wording, preserves the portrait composition, and removes the cue on touch movement.
+- An untouched entry removes the cue after eight seconds without writing persistent state, and the cue is absent from the accessibility tree.
+- Reduced-motion presents the cue without animation and continues to bypass the automatic approach; keyboard discovery, reflection, dismissal, focus return, sound control, home entry, and Citadel entry remain intact.
+- Runtime diagnostics introduce no page errors and remain limited to the known non-blocking Three.js `Clock` and `PCFSoftShadowMap` deprecation warnings.
 
 ## Completed
 
@@ -737,8 +757,8 @@ Authority and validation evidence:
 
 ## Upcoming
 
-1. Experience exact `main` revision `d3a7df4` against the adopted vision and select the smallest meaningful Move 2 from the most important observed weakness.
-2. Activate only that bounded ticket, validate it technically and experientially, and preserve explicit Founder approval before any Class B merge.
+1. Validate WORLD-NAVIGATION-005 technically and experientially against exact `main` revision `d9e93f8`.
+2. Hold the Class B result for explicit Founder approval before merge; the window remains at Move 1 of 3 until that approval and merge occur.
 
 ## District Registry
 
