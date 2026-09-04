@@ -32,7 +32,7 @@ Auto-merge window: Closed. The Founder opened an autonomous review window, not a
 
 Eligible pull requests may use native squash auto-merge under the gates in `AGENT_AUTONOMY.md`. The repository-level capability does not override ticket, canon, Class C, review, or validation boundaries.
 
-Previous Founder disposition and accepted baseline: [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_005.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_005.md).
+Current completed Founder Review and accepted baseline: [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_006.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_006.md).
 
 The interface-light, environment-led discovery surface remains the accepted Citadel baseline. The persistent numbered landmark HUD remains rejected. No subsequent experiential work is authorized until the Founder gives separate direction.
 
@@ -54,7 +54,8 @@ WORLD-NAVIGATION-003 is merged and verified as Move 3 of 3. The authorized post-
 - PR #45 merged at exact `main` revision `b62e800`; hosted validation passed in run `33763523014`.
 - Post-merge desktop and portrait entry and combined-orbit checks passed on exact `main` without runtime errors.
 - No experiential implementation ticket or subsequent autonomous or auto-merge window is active.
-- [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_006.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_006.md) is the complete closeout package awaiting independent World Steward review and Founder disposition.
+- [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_006.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_006.md) is the complete closeout package. Hegel returned the read-only World Steward verdict `NO OBJECTION — continue autonomous execution.` on 2026-09-03.
+- The World Steward confirmed that WORLD-GOVERNANCE-006 cured the earlier PR #40 authority challenge before Move 1 landed.
 - This closure changes no canon and grants no Founder-reserved, Class C, publication, or external-release authority.
 
 ## Completed
@@ -593,6 +594,19 @@ Founder-directed authority recorded on 2026-09-03. This Class A governance-only 
 - Leaves the auto-merge window closed and preserves explicit Founder approval before any Class B merge.
 - Activates no implementation ticket and changes no canon, lore, world object, dependency, architecture, or Founder-reserved authority.
 
+WORLD-GOVERNANCE-007
+
+Citadel Experience Founder Review 006
+
+Founder closure and World Steward review recorded on 2026-09-04. This Class A governance work does not consume an experiential move.
+
+- Files the complete seven-section Founder Review for WORLD-NAVIGATION-002, WORLD-MATERIAL-002, and WORLD-NAVIGATION-003.
+- Records Hegel's read-only World Steward verdict: `NO OBJECTION — continue autonomous execution.`
+- Records the World Steward's confirmation that WORLD-GOVERNANCE-006 cured the earlier PR #40 authority challenge before Move 1 landed.
+- Closes the autonomous window at 3 of 3 after exact-main validation at `b62e800` and governance closeout at `1c728ee`.
+- Leaves experiential implementation inactive with no subsequent autonomous or auto-merge window authorized.
+- Preserves `WORLD_CANON.md` as sole canon authority and adds no implementation, lore, dependency, architecture, or canon.
+
 WORLD-NAVIGATION-002
 
 Citadel Vertical Orbit Integrity
@@ -679,9 +693,8 @@ Authority and validation evidence:
 
 ## Upcoming
 
-1. Submit [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_006.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_006.md) and the smallest useful evidence set for independent read-only World Steward review.
-2. Present the complete Founder Review and World Steward response together for Founder disposition.
-3. Keep experiential implementation closed unless the Founder separately opens another bounded window or directs a specific ticket.
+1. Keep experiential implementation closed unless the Founder separately opens another bounded window or directs a specific ticket.
+2. Begin any later pass from fresh use of exact `main`; do not infer a lane from Window 006 or Hegel's advisory verdict.
 
 ## District Registry
 
