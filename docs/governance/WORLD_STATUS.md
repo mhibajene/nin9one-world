@@ -10,7 +10,7 @@ Phase 1 — Citadel Foundation was founder-approved and closed on 2026-07-19.
 
 ## Active Lane
 
-Citadel Experience Window 007
+Awaiting Founder Direction
 
 ## Repository Version
 
@@ -24,21 +24,23 @@ Citadel Experience Founder Review 007
 
 Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
 
-Current review window: Open at Move 2 of 3.
+Current review window: Closed at Move 3 of 3.
 
 The Founder approved the repo-native Citadel experience vision and authorized a new three-move pass on 2026-09-04. WORLD-GOVERNANCE-008 records that authority against exact `main` revision `d917098`, where [`CITADEL_EXPERIENCE_VISION.md`](../vision/CITADEL_EXPERIENCE_VISION.md) became permanent repository history.
 
-WORLD-NAVIGATION-004 and WORLD-NAVIGATION-005 were each selected from fresh exact-main use and merged after explicit Founder approval. WORLD-MATERIAL-003 is the proposed Move 3, selected from fresh use after Move 2 was reconciled at exact `main` revision `2e82670`. The vision guides product and experience integrity but does not preselect an implementation lane or independently authorize canon, publication, assets, or Founder-reserved decisions.
+WORLD-NAVIGATION-004, WORLD-NAVIGATION-005, and WORLD-MATERIAL-003 were each selected from fresh exact-main use and merged after explicit Founder approval. The three-move ceiling is exhausted. The vision guides product and experience integrity but does not preselect an implementation lane or independently authorize canon, publication, assets, or Founder-reserved decisions.
 
 Auto-merge window: Closed. The Founder opened an autonomous review window, not a separate three-ticket auto-merge window.
 
 Eligible pull requests may use native squash auto-merge under the gates in `AGENT_AUTONOMY.md`. The repository-level capability does not override ticket, canon, Class C, review, or validation boundaries.
 
-Current completed Founder Review and accepted baseline: [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_006.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_006.md).
+Current accepted baseline: [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_006.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_006.md).
+
+Current closeout package: [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_007.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_007.md). Independent World Steward review remains pending.
 
 Current product and experience vision: [`CITADEL_EXPERIENCE_VISION.md`](../vision/CITADEL_EXPERIENCE_VISION.md).
 
-The interface-light, environment-led discovery surface remains the accepted Citadel baseline. The persistent numbered landmark HUD remains rejected. The new window permits up to three bounded experiential moves selected through fresh use; it does not require all three moves or authorize work outside the adopted vision, confirmed canon, or the charter.
+The interface-light, environment-led discovery surface remains the accepted Citadel baseline. The persistent numbered landmark HUD remains rejected. No subsequent experiential work is authorized until the Founder gives separate direction.
 
 Operating roles:
 
@@ -50,35 +52,17 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-WORLD-MATERIAL-003 — Approach-Responsive Black Water
+None — Autonomous Window Closed
 
-Selected as the proposed Move 3 of Citadel Experience Window 007 from fresh use after WORLD-NAVIGATION-005 was reconciled at exact `main` revision `2e82670`. The move is not consumed until a validated Class B result is Founder-approved and merged.
+WORLD-MATERIAL-003 is merged and verified as Move 3 of 3. Citadel Experience Window 007 is closed.
 
-- The separate auto-merge window remains closed; this Class B result requires explicit Founder approval before merge.
-
-Observed weakness:
-
-- The introductory approach and movement cue now make forward movement perceptible and discoverable, but manually closing the remaining distance mostly magnifies the same composition.
-- Black Water preserves its established luminous path without visibly answering proximity, so the visitor's approach can still read as camera zoom rather than movement through an active place.
-- The gap is strongest between the accepted resting composition and the nearest bounded view, where the environment should deepen without implying or resolving the Citadel threshold.
-
-Intended result:
-
-- Let the existing central Black Water reflection quietly narrow and strengthen as the visitor approaches beyond the accepted resting composition.
-- Derive the response only from camera distance and reverse it continuously when the visitor retreats.
-- Preserve the existing elevation response, ambient reflection drift, reduced-motion behavior, Citadel dominance, solar field, discovery states, sound, and interface.
-- Reuse only the existing Black Water reflection geometry and established material language.
-- Add no threshold claim, route, world object, asset, dependency, architecture, lore, canon, or persistent state.
-
-Validation evidence:
-
-- Local TypeScript typecheck and production build pass.
-- Rendered development and production desktop checks compare rest, mid-approach, nearest approach, retreat, and lateral or elevated approach without losing the Citadel/solar/Black Water axis.
-- Rendered portrait and coarse-pointer pinch checks preserve the Citadel's dominance and show the proximity response at the bounded near view.
-- The accepted introductory start-to-rest composition remains unchanged because the proximity response begins only beyond the resting distance.
-- Reduced-motion preserves a static surface while still allowing a direct, input-driven proximity response.
-- Movement orientation, keyboard discovery, reflection, dismissal, focus return, sound control, home entry, and Citadel entry remain intact.
-- Runtime diagnostics introduce no page errors and remain limited to the known non-blocking Three.js `Clock` and `PCFSoftShadowMap` deprecation warnings.
+- Founder approval was recorded before the Class B PR #54 merge; the auto-merge window remained closed.
+- PR #54 merged at exact `main` revision `69a5480`; hosted validation passed in run `33936173428`.
+- Post-merge home entry, Citadel entry, resting composition, bounded near approach, discovery access, sound control, and runtime-error checks passed on exact `main`.
+- No experiential implementation ticket or subsequent autonomous or auto-merge window is active.
+- [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_007.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_007.md) is the complete closeout package awaiting independent World Steward review and Founder disposition.
+- The proposed next-three map is non-authorizing. The landscape completion gate remains unmet and undeclared pending uninvolved-visitor observation.
+- This closure changes no canon and grants no interior, threshold, Founder-reserved, Class C, publication, or external-release authority.
 
 ## Completed
 
@@ -785,10 +769,60 @@ Authority and validation evidence:
 - Post-merge home entry, desktop Citadel entry, cue presentation, wheel interruption, discovery routes, and runtime-error checks passed on exact `main`.
 - Runtime diagnostics remain limited to the known non-blocking Three.js `Clock` and `PCFSoftShadowMap` deprecation warnings.
 
+WORLD-MATERIAL-003
+
+Approach-Responsive Black Water
+
+Founder-approved and merged on 2026-09-05 as Move 3 of the now-closed autonomous window.
+
+Observed weakness:
+
+- The introductory approach and movement cue made forward movement perceptible and discoverable, but manually closing the remaining distance mostly magnified the same composition.
+- Black Water preserved its established luminous path without visibly answering proximity, so the visitor's approach could still read as camera zoom rather than movement through an active place.
+- The gap was strongest between the accepted resting composition and the nearest bounded view, where the environment needed to deepen without implying or resolving the Citadel threshold.
+
+Implemented result:
+
+- Lets the existing central Black Water reflection quietly narrow and strengthen as the visitor approaches beyond the accepted resting composition.
+- Derives the response only from camera distance and reverses it continuously when the visitor retreats.
+- Combines proximity with the existing elevation response while preserving ambient reflection drift, reduced-motion behavior, Citadel dominance, solar field, discovery states, sound, and interface.
+- Reuses only the existing Black Water reflection geometry and established material language.
+- Adds no threshold claim, route, world object, asset, dependency, architecture, lore, canon, or persistent state.
+
+Authority and validation evidence:
+
+- WORLD-GOVERNANCE-008 recorded the Founder-opened window separately on exact `main` revision `d917098`; WORLD-NAVIGATION-004 and WORLD-NAVIGATION-005 were reconciled as Moves 1 and 2 before this ticket was selected from fresh use of exact `main` revision `2e82670`.
+- The Founder explicitly approved the bounded Class B result before PR #54 merged; the separate auto-merge window remained closed.
+- Local TypeScript typecheck, production build, diff-integrity, desktop rest/mid/near/retreat, lateral and elevated approach, portrait, coarse-pointer pinch, reduced-motion, movement orientation, keyboard discovery, reflection, dismissal, focus-return, sound-control, home-route, and Citadel-route checks passed.
+- PR #54 merged at exact `main` revision `69a5480`; hosted validation passed in run `33936173428`.
+- Post-merge home entry, desktop resting and near-approach states, discovery access, sound control, meaningful-content, framework-overlay, and runtime-error checks passed on exact `main`.
+- Runtime diagnostics remain limited to the known non-blocking Three.js `Clock` and `PCFSoftShadowMap` deprecation warnings.
+
+WORLD-GOVERNANCE-009
+
+Citadel Experience Founder Review 007
+
+Window closure and next-direction map recorded on 2026-09-05. This Class A governance work does not consume an experiential move.
+
+- Files the complete seven-section Founder Review for WORLD-NAVIGATION-004, WORLD-NAVIGATION-005, and WORLD-MATERIAL-003.
+- Closes Citadel Experience Window 007 at 3 of 3 after exact-main validation at `69a5480`.
+- Records the next three candidate work packages as a non-authorizing map rather than active implementation tickets.
+- Leaves the landscape completion gate unmet and undeclared pending observation with people uninvolved in building the experience.
+- Leaves experiential implementation inactive with no subsequent autonomous or auto-merge window authorized.
+- Preserves `WORLD_CANON.md` as sole canon authority, the Citadel experience vision as non-authorizing product direction, and `WORLD_STATUS.md` as implemented-state authority.
+- Leaves Trophy Room as a preferred product hypothesis only and Throne Room meaning unresolved.
+- Adds no implementation, lore, asset, dependency, architecture, or canon.
+- Independent World Steward review remains pending and must be recorded separately if received.
+
 ## Upcoming
 
-1. Validate WORLD-MATERIAL-003 technically and experientially against exact `main` revision `2e82670`.
-2. Hold the Class B result for explicit Founder approval before merge; the window remains at Move 2 of 3 until that approval and merge occur.
+The following map is proposed only. It activates no ticket and opens no autonomous or auto-merge window.
+
+1. Define an observable Landscape Completion Gate Protocol against the unchanged exact-main exterior; do not declare the gate met or invent unsupported success thresholds.
+2. Run a small, bounded Uninvolved Visitor Landscape Observation that tests place, journey, control, environment distinction, threshold legibility, atmosphere, and standalone value without teaching the intended answers.
+3. Prepare an Evidence-Led Exterior or Threshold Disposition: if the gate is not met, propose the smallest exterior correction supported by observation; if it is met, prepare materially aligned threshold and first-chamber hypotheses for Founder disposition without implementing them. Any chamber hypothesis must use place, artifact, state, ritual, and residue as its experience grammar, preserve separate music and world cadences, and retain standalone value beyond music.
+
+Threshold plus one chamber remains the recommended first interior proof only after the gate is met and separate authority is granted. Trophy Room remains a preferred product hypothesis rather than canon; Throne Room meaning remains unresolved.
 
 ## District Registry
 
