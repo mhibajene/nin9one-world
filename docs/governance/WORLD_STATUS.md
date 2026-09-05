@@ -10,7 +10,7 @@ Phase 1 — Citadel Foundation was founder-approved and closed on 2026-07-19.
 
 ## Active Lane
 
-Awaiting Founder Direction
+Citadel Exterior Readiness — First-Contact Evidence
 
 ## Repository Version
 
@@ -18,29 +18,29 @@ Awaiting Founder Direction
 
 ### Milestone
 
-Citadel Experience Founder Review 007
+Founder Exterior Disposition after First-Contact Observation
 
 ## Operating Mode
 
-Bounded agent autonomy is active under [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md).
+Bounded agent authority remains governed by [`AGENT_AUTONOMY.md`](AGENT_AUTONOMY.md) and the current Founder disposition.
 
-Current review window: Closed at Move 3 of 3.
+Citadel Experience Window 007: Closed at Move 3 of 3.
 
-The Founder approved the repo-native Citadel experience vision and authorized a new three-move pass on 2026-09-04. WORLD-GOVERNANCE-008 records that authority against exact `main` revision `d917098`, where [`CITADEL_EXPERIENCE_VISION.md`](../vision/CITADEL_EXPERIENCE_VISION.md) became permanent repository history.
+Current authority: [`FOUNDER_DISPOSITION_CITADEL_EXTERIOR_READINESS_001.md`](FOUNDER_DISPOSITION_CITADEL_EXTERIOR_READINESS_001.md), supplied on 2026-09-05 against repository `main` revision `5e54427`. It accepts the completed exterior as a strong foundation and Hegel's challenge to the proposed gate, and authorizes only protocol → uninvolved observation → Founder exterior disposition, plus deferred spatial-skill preparation.
 
-WORLD-NAVIGATION-004, WORLD-NAVIGATION-005, and WORLD-MATERIAL-003 were each selected from fresh exact-main use and merged after explicit Founder approval. The three-move ceiling is exhausted. The vision guides product and experience integrity but does not preselect an implementation lane or independently authorize canon, publication, assets, or Founder-reserved decisions.
+Evidence sequence: Move 1 defined; Move 2 awaiting participants and verified session access; Move 3 awaiting collected evidence. No participant sessions or exterior verdict are recorded. The Landscape Completion Gate is not yet met.
 
-Auto-merge window: Closed. The Founder opened an autonomous review window, not a separate three-ticket auto-merge window.
+Autonomous implementation and auto-merge windows: Closed. The three authorized evidence moves do not reopen Window 007 or authorize exterior corrections, interiors, assets, or runtime changes.
 
 Eligible pull requests may use native squash auto-merge under the gates in `AGENT_AUTONOMY.md`. The repository-level capability does not override ticket, canon, Class C, review, or validation boundaries.
 
-Current accepted baseline: [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_006.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_006.md).
+Current accepted exterior foundation: the completed Window 007 implementation at `69a5480`, closed through PR #55 at `5e54427` and accepted by the current Founder disposition. Acceptance as a foundation is not exterior PASS.
 
-Current closeout package: [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_007.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_007.md). Independent World Steward review remains pending.
+Window 007 closeout package: [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_007.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_007.md). The Founder reports and accepts Hegel's challenge to the proposed gate. The independent review text was not supplied; no broader Window 007 verdict is inferred.
 
 Current product and experience vision: [`CITADEL_EXPERIENCE_VISION.md`](../vision/CITADEL_EXPERIENCE_VISION.md).
 
-The interface-light, environment-led discovery surface remains the accepted Citadel baseline. The persistent numbered landmark HUD remains rejected. No subsequent experiential work is authorized until the Founder gives separate direction.
+The interface-light, environment-led discovery surface remains the accepted Citadel baseline. The persistent numbered landmark HUD remains rejected. Progressive revelation is accepted as product direction, with no canon effect. A first visit must remain coherent without prior music, lore, or world-state knowledge.
 
 Operating roles:
 
@@ -52,17 +52,16 @@ Founder Review packages receive a Grokbot challenge using [`GROKBOT_WORLD_STEWAR
 
 ## Active Ticket
 
-None — Autonomous Window Closed
+WORLD-READINESS-002 — Uninvolved First-Contact Observation
 
-WORLD-MATERIAL-003 is merged and verified as Move 3 of 3. Citadel Experience Window 007 is closed.
+Authorized Move 2 of the bounded exterior evidence sequence. Awaiting actual uninvolved participants and verified access to the unchanged baseline; no sessions have been conducted or synthesized.
 
-- Founder approval was recorded before the Class B PR #54 merge; the auto-merge window remained closed.
-- PR #54 merged at exact `main` revision `69a5480`; hosted validation passed in run `33936173428`.
-- Post-merge home entry, Citadel entry, resting composition, bounded near approach, discovery access, sound control, and runtime-error checks passed on exact `main`.
-- No experiential implementation ticket or subsequent autonomous or auto-merge window is active.
-- [`FOUNDER_REVIEW_CITADEL_EXPERIENCE_007.md`](FOUNDER_REVIEW_CITADEL_EXPERIENCE_007.md) is the complete closeout package awaiting independent World Steward review and Founder disposition.
-- The proposed next-three map is non-authorizing. The landscape completion gate remains unmet and undeclared pending uninvolved-visitor observation.
-- This closure changes no canon and grants no interior, threshold, Founder-reserved, Class C, publication, or external-release authority.
+- Use [`CITADEL_LANDSCAPE_COMPLETION_GATE_PROTOCOL.md`](../validation/CITADEL_LANDSCAPE_COMPLETION_GATE_PROTOCOL.md): six visitor signals plus four readiness conditions, including actual intended-device evidence.
+- Record the served revision and preserve raw evidence before interpretation. Do not redesign during observation or substitute builder/automated observations for uninvolved visitors.
+- Exterior Threshold Legibility means plausible entry and anticipation; Threshold Transformation remains outside this gate. Memory means what remains after this visit, not retention, residue or return cadence.
+- WORLD-READINESS-003 will synthesize actual evidence and recommend only PASS, PASS WITH ONE BOUNDED CORRECTION, or NOT YET for Founder disposition. It cannot implement a correction or open an interior window.
+- [`NIN9ONE_SPATIAL_EXPERIENCE`](../skills/nin9one-spatial-experience/SKILL.md) is prepared outside automatic skill discovery. Activation remains deferred until after Founder exterior PASS and before separate first-encounter authorization.
+- `WORLD_CANON.md`, the adopted vision, material language, runtime behavior and assets remain unchanged by this evidence preparation.
 
 ## Completed
 
@@ -814,15 +813,36 @@ Window closure and next-direction map recorded on 2026-09-05. This Class A gover
 - Adds no implementation, lore, asset, dependency, architecture, or canon.
 - Independent World Steward review remains pending and must be recorded separately if received.
 
+WORLD-GOVERNANCE-010
+
+Founder Exterior Readiness and Spatial Experience Disposition
+
+Founder direction recorded on 2026-09-05 against `main` revision `5e54427`.
+
+- Files the supplied strategic disposition, including the Founder's acceptance of Hegel's challenge to the proposed gate. The challenge is attributed to the Founder-supplied account; no independent response text or broader review verdict is fabricated.
+- Authorizes three bounded evidence moves and deferred spatial-skill preparation. Window 007 remains closed at 3/3; no general implementation or auto-merge window opens.
+- Requires both the six visitor signals and four readiness conditions; separates exterior entry legibility from threshold crossing and immediate post-visit memory from retention or return cadence.
+- Records progressive revelation as product direction and prepares the spatial skill as an inactive repo-native draft in `docs/skills`.
+- Changes no canon, adopted vision, material language, runtime behavior, assets, dependency, architecture or publication state.
+
+WORLD-READINESS-001
+
+Landscape Completion Gate Protocol
+
+Move 1 defined on 2026-09-05 under the Founder disposition; observation and the exterior verdict remain outstanding.
+
+- Provides minimal framing, unassisted first contact, memory after exit, neutral retrospective questions, and separate supplemental controls checks.
+- Captures raw actions and words before interpretation, including assistance, prior exposure, device coverage and contradictory evidence.
+- Uses no weighted score or numerical pass threshold. Participant feature requests remain evidence, not creative authority.
+- Supplies a session-note template and three-outcome synthesis guide without inventing participant sessions, declaring PASS, or implementing a correction.
+
 ## Upcoming
 
-The following map is proposed only. It activates no ticket and opens no autonomous or auto-merge window.
+1. WORLD-READINESS-002: conduct the authorized first-contact observation when uninvolved participants and verified access are available. Preserve the experience throughout the batch.
+2. WORLD-READINESS-003: synthesize the collected evidence and counterexamples for Founder review, recommending only PASS, PASS WITH ONE BOUNDED CORRECTION, or NOT YET. Distinguish missing evidence from observed failure.
+3. Record the Founder's exterior disposition. Any correction requires its own bounded authorization and reconsideration of the relevant condition; no general polish window follows.
 
-1. Define an observable Landscape Completion Gate Protocol against the unchanged exact-main exterior; do not declare the gate met or invent unsupported success thresholds.
-2. Run a small, bounded Uninvolved Visitor Landscape Observation that tests place, journey, control, environment distinction, threshold legibility, atmosphere, and standalone value without teaching the intended answers.
-3. Prepare an Evidence-Led Exterior or Threshold Disposition: if the gate is not met, propose the smallest exterior correction supported by observation; if it is met, prepare materially aligned threshold and first-chamber hypotheses for Founder disposition without implementing them. Any chamber hypothesis must use place, artifact, state, ritual, and residue as its experience grammar, preserve separate music and world cadences, and retain standalone value beyond music.
-
-Threshold plus one chamber remains the recommended first interior proof only after the gate is met and separate authority is granted. Trophy Room remains a preferred product hypothesis rather than canon; Throne Room meaning remains unresolved.
+Only after exterior PASS may the prepared spatial skill activate before separate consideration of Threshold + First Authored Encounter. PASS alone authorizes no interior. Trophy Room remains a preferred non-canonical hypothesis; Throne Room meaning, function and occupant remain unresolved.
 
 ## District Registry
 
