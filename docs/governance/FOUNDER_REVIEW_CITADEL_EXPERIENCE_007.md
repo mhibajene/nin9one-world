@@ -6,7 +6,9 @@ Three-move autonomous window closed at exact implementation revision `69a5480`.
 
 The Founder approved each bounded Class B result before merge on 2026-09-04 and 2026-09-05.
 
-Independent World Steward review is pending. This review package does not simulate or pre-empt Hegel's read-only advisory judgment.
+At preparation, independent World Steward review was pending. This review package does not simulate or pre-empt Hegel's read-only advisory judgment.
+
+Subsequent Founder disposition, 2026-09-05: the [Exterior Readiness and Spatial Experience Direction](FOUNDER_DISPOSITION_CITADEL_EXTERIOR_READINESS_001.md) accepts the completed exterior as a strong foundation and the Founder-reported Hegel challenge to the proposed gate. It authorizes a reconciled three-move evidence sequence and deferred spatial-skill preparation. The historical next-direction proposals below are governed by that later disposition. The original independent response was not supplied; this does not record a broader Window 007 review verdict.
 
 ## 1. What Changed
 
@@ -111,7 +113,7 @@ The Trophy Room remains a preferred product hypothesis, not confirmed canon or i
 
 ## Independent World Steward Review
 
-Pending transmission to Hegel under [`GROKBOT_WORLD_STEWARD.md`](GROKBOT_WORLD_STEWARD.md).
+At preparation, pending transmission to Hegel under [`GROKBOT_WORLD_STEWARD.md`](GROKBOT_WORLD_STEWARD.md). See the subsequent Founder disposition in Status above for the accepted challenge to the proposed gate.
 
 Hegel's eventual response will be advisory only. It cannot establish canon, approve a merge, declare the landscape gate met, open another autonomous or auto-merge window, reset the three-move budget, or authorize an interior.
 
